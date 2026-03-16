@@ -164,7 +164,7 @@ function DropdownMenuCheckboxItem({
       data-slot="dropdown-menu-checkbox-item"
       data-inset={inset}
       className={cn(
-        "relative pressible flex min-h-9 w-full items-center justify-start gap-3 rounded-2xl px-3 py-1.5 outline-none no-highlight focus:focus-ring focus:ring-primary text-sm data-inset:pl-7 [&_svg:not([class*='size-'])]:size-4 cursor-default outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "relative flex min-h-9 w-full items-center justify-start gap-3 rounded-2xl px-3 py-1.5 outline-none no-highlight focus:focus-ring focus:ring-primary text-sm data-inset:pl-7 [&_svg:not([class*='size-'])]:size-4 cursor-default outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         className,
       )}
       checked={checked}
@@ -205,7 +205,7 @@ function DropdownMenuRadioItem({
       data-slot="dropdown-menu-radio-item"
       data-inset={inset}
       className={cn(
-        "relative pressible flex min-h-9 w-full items-center justify-start gap-3 rounded-2xl px-3 py-1.5 outline-none no-highlight focus:focus-ring focus:ring-primary pr-8 pl-1.5 text-sm data-inset:pl-7 [&_svg:not([class*='size-'])]:size-4 cursor-default outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "relative flex min-h-9 w-full items-center justify-start gap-3 rounded-2xl px-3 py-1.5 outline-none no-highlight focus:focus-ring focus:ring-primary pr-8 pl-1.5 text-sm data-inset:pl-7 [&_svg:not([class*='size-'])]:size-4 cursor-default outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         className,
       )}
       {...props}
