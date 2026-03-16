@@ -18,7 +18,7 @@ export default function CollapsibleBasic() {
             Product details
             <ChevronDownIcon className="ml-auto group-data-panel-open/button:rotate-180" />
           </CollapsibleTrigger>
-          <CollapsibleContent className="flex flex-col items-start gap-2 p-2.5 pt-0 text-sm">
+          <CollapsibleContent className="flex flex-col items-start gap-2 p-2.5 pt-1 text-sm">
             <div>
               This panel can be expanded or collapsed to reveal additional
               content.
