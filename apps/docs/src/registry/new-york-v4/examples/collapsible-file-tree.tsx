@@ -76,7 +76,7 @@ export default function CollapsibleFileTree() {
               />
             }
           >
-            <ChevronRightIcon className="transition-transform group-data-[state=open]:rotate-90" />
+            <ChevronRightIcon className="group-data-panel-open:rotate-90" />
             <FolderIcon />
             {fileItem.name}
           </CollapsibleTrigger>
@@ -113,7 +113,7 @@ export default function CollapsibleFileTree() {
         </Tabs>
       </CardHeader>
       <CardContent>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 max-h-107 overflow-auto px-1">
           {fileTree.map((item) => renderItem(item))}
         </div>
       </CardContent>
