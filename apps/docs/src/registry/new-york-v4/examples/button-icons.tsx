@@ -10,19 +10,19 @@ export default function ButtonIcons() {
   return (
     <div className="flex flex-wrap items-center gap-3">
       <Button>
-        <SearchIcon className="mr-2 h-4 w-4" />
+        <SearchIcon data-icon="inline-start" />
         Search
       </Button>
       <Button variant="secondary">
-        <DownloadIcon className="mr-2 h-4 w-4" />
+        <DownloadIcon data-icon="inline-start" />
         Download
       </Button>
       <Button variant="outline">
         Next
-        <ArrowRightIcon className="ml-2 h-4 w-4" />
+        <ArrowRightIcon data-icon="inline-end" />
       </Button>
       <Button variant="destructive">
-        Delete <Trash2Icon />
+        Delete <Trash2Icon data-icon="inline-end" />
       </Button>
     </div>
   );
