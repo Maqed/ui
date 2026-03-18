@@ -170,6 +170,43 @@
       }
     },
     {
+      "name": "badge",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "light": {
+          "--eclipse": "oklch(0.2103 0.0059 285.89)",
+          "--snow": "oklch(0.9911 0 0)",
+          "--default": "oklch(94% 0.001 286.375)",
+          "--default-foreground": "var(--eclipse)",
+          "--destructive-foreground": "var(--snow)",
+          "--success": "oklch(0.7329 0.1935 150.81)",
+          "--warning": "oklch(0.7819 0.1585 72.33)"
+        },
+        "dark": {
+          "--default": "oklch(27.4% 0.006 286.033)",
+          "--default-foreground": "var(--snow)",
+          "--destructive-foreground": "var(--snow)",
+          "--warning": "oklch(0.8203 0.1388 76.34)"
+        },
+        "theme": {
+          "--color-default": "var(--default)",
+          "--color-default-foreground": "var(--default-foreground)",
+          "--color-destructive-foreground": "var(--destructive-foreground)",
+          "--color-success": "var(--success)",
+          "--color-warning": "var(--warning)"
+        }
+      }
+    },
+    {
       "name": "collapsible",
       "type": "registry:ui",
       "dependencies": [
@@ -589,6 +626,71 @@
       "files": [
         {
           "path": "src/registry/new-york-v4/examples/avatar-dropdown.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/badge-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-variants",
+      "type": "registry:example",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/badge-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-sizes",
+      "type": "registry:example",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/badge-sizes.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-icon",
+      "type": "registry:example",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/badge-icon.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "badge-colors",
+      "type": "registry:example",
+      "registryDependencies": [
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/badge-colors.tsx",
           "type": "registry:example"
         }
       ]

@@ -1,0 +1,107 @@
+---
+title: Badge
+description: Same look of HeroUI's badge
+---
+
+<ComponentPreview styleName="base-nova" name="badge-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add https://maqedui.pages.dev/r/badge.json" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install @base-ui/react" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="badge"
+  title="components/ui/badge.tsx"
+  styleName="base-nova"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Badge } from "@/components/ui/badge"
+```
+
+```tsx
+<Badge>Badge</Badge>
+<Badge variant="success">Success</Badge>
+<Badge size="sm">Small badge</Badge>
+```
+
+## Examples
+
+### Variants
+
+Use the `variant` prop to change the variant of the badge.
+
+<ComponentPreview styleName="base-nova" name="badge-variants" />
+
+### Sizes
+
+Use the `size` prop to change the size of the badge.
+
+<ComponentPreview styleName="base-nova" name="badge-sizes" />
+
+### With Icon
+
+You can render an icon inside the badge. Use `data-icon="inline-start"` to render the icon on the left and `data-icon="inline-end"` to render the icon on the right.
+
+<ComponentPreview styleName="base-nova" name="badge-icon" />
+
+### Custom Colors
+
+You can customize the colors of a badge by adding custom classes such as `bg-green-50 dark:bg-green-800` to the `Badge` component.
+
+<ComponentPreview styleName="base-nova" name="badge-colors" />
+
+
+## API Reference
+
+### Badge
+
+The `Badge` component displays a badge or a component that looks like a badge.
+
+<ApiRefTable
+  props={[
+    {
+      name: "variant",
+      type: '"default" | "primary" | "success" | "warning" | "destructive"',
+      defaultValue: '"default"',
+      description: "Visual style of the badge.",
+    },
+    {
+      name: "size",
+      type: '"default" | "sm" | "lg"',
+      defaultValue: '"default"',
+      description: "Controls the padding and typography size of the badge.",
+    },
+  ]}
+/>
+

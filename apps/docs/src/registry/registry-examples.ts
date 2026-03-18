@@ -320,4 +320,59 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "badge-demo",
+    type: "registry:example",
+    registryDependencies: ["badge"],
+    files: [
+      {
+        path: "examples/badge-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "badge-variants",
+    type: "registry:example",
+    registryDependencies: ["badge"],
+    files: [
+      {
+        path: "examples/badge-variants.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "badge-sizes",
+    type: "registry:example",
+    registryDependencies: ["badge"],
+    files: [
+      {
+        path: "examples/badge-sizes.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "badge-icon",
+    type: "registry:example",
+    registryDependencies: ["badge"],
+    files: [
+      {
+        path: "examples/badge-icon.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "badge-colors",
+    type: "registry:example",
+    registryDependencies: ["badge"],
+    files: [
+      {
+        path: "examples/badge-colors.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];
