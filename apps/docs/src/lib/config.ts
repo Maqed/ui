@@ -2,9 +2,9 @@ type SiteConfigType = {
   name: string;
   url: string;
   description: string;
-  links?: {
-    twitter?: string;
-    github?: string;
+  links: {
+    twitter: string;
+    github: string;
   };
   navItems: { href: string; label: string; isExternal?: boolean }[];
 };
