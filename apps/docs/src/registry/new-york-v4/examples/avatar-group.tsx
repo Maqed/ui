@@ -17,13 +17,9 @@ export default function AvatarGroupExample() {
         <AvatarFallback>LR</AvatarFallback>
       </Avatar>
       <Avatar>
-        <AvatarImage
-          src="https://github.com/Maqed.png"
-          alt="@0xMaqed"
-        />
+        <AvatarImage src="https://github.com/Maqed.png" alt="@0xMaqed" />
         <AvatarFallback>Mqd</AvatarFallback>
       </Avatar>
     </AvatarGroup>
   );
 }
-

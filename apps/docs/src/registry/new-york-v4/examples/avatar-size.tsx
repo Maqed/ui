@@ -1,4 +1,8 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/registry/new-york-v4/ui/avatar";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/registry/new-york-v4/ui/avatar";
 
 export default function AvatarSizeExample() {
   return (
@@ -8,14 +12,13 @@ export default function AvatarSizeExample() {
         <AvatarFallback>Mqd</AvatarFallback>
       </Avatar>
       <Avatar>
-      <AvatarImage src="https://github.com/Maqed.png" alt="@0xMaqed" />
-      <AvatarFallback>Mqd</AvatarFallback>
+        <AvatarImage src="https://github.com/Maqed.png" alt="@0xMaqed" />
+        <AvatarFallback>Mqd</AvatarFallback>
       </Avatar>
       <Avatar size="lg">
-      <AvatarImage src="https://github.com/Maqed.png" alt="@0xMaqed" />
-      <AvatarFallback>Mqd</AvatarFallback>
+        <AvatarImage src="https://github.com/Maqed.png" alt="@0xMaqed" />
+        <AvatarFallback>Mqd</AvatarFallback>
       </Avatar>
     </div>
   );
 }
-

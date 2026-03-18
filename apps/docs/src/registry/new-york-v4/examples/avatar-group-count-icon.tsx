@@ -1,3 +1,4 @@
+import { PlusIcon } from "lucide-react";
 import {
   Avatar,
   AvatarFallback,
@@ -5,7 +6,6 @@ import {
   AvatarGroupCount,
   AvatarImage,
 } from "@/registry/new-york-v4/ui/avatar";
-import { PlusIcon } from "lucide-react";
 
 export default function AvatarGroupCountIconExample() {
   return (
@@ -31,4 +31,3 @@ export default function AvatarGroupCountIconExample() {
     </AvatarGroup>
   );
 }
-

@@ -1,10 +1,10 @@
+import { PlusIcon } from "lucide-react";
 import {
   Avatar,
   AvatarBadge,
   AvatarFallback,
   AvatarImage,
 } from "@/registry/new-york-v4/ui/avatar";
-import { PlusIcon } from "lucide-react";
 
 export default function AvatarBadgeIconExample() {
   return (
@@ -17,4 +17,3 @@ export default function AvatarBadgeIconExample() {
     </Avatar>
   );
 }
-
