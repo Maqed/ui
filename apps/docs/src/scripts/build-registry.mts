@@ -443,11 +443,7 @@ async function buildPackageRegistries() {
   console.log("📦 Building package-specific registries...");
 
   // Build UI components registry
-  await buildPackageJson(
-    "ui",
-    "ui.json",
-    "All UI components from @herocn/ui",
-  );
+  await buildPackageJson("ui", "ui.json", "All UI components from @herocn/ui");
 
   // Build blocks registry
   await buildPackageJson(
