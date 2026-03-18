@@ -1,0 +1,295 @@
+# Documentation Guide
+
+This guide defines the conventions for writing component documentation pages (`.mdx` files) in `apps/docs/content/docs/components/`.
+
+---
+
+## File Structure
+
+Every component page must follow this frontmatter + section order:
+
+```mdx
+---
+title: ComponentName
+description: A short, one-sentence description of the component.
+---
+
+<ComponentPreview name="component-demo" />
+
+## Installation
+
+...
+
+## Usage
+
+...
+
+## Examples (if applicable)
+
+...
+
+## API Reference
+```
+
+---
+
+## Installation Section
+
+Always wrap the installation in a `<CodeTabs>` with two tabs: **Command** (CLI) and **Manual**.
+
+```mdx
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add https://maqedui.pages.dev/r/{name}.json" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install @base-ui/react" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="{name}"
+  title="components/ui/{name}.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+```
+
+Replace `{name}` with the registry component name (e.g. `button`, `dropdown-menu`, `avatar`).
+
+---
+
+## `<CodeBlockCommand />` — ALWAYS Use for Commands
+
+**Never use raw fenced code blocks (` ```bash `) for terminal commands.** Always use the `<CodeBlockCommand />` component instead. It automatically generates the equivalent command for `npm`, `pnpm`, `yarn`, and `bun`.
+
+### Syntax
+
+```mdx
+<CodeBlockCommand command="npx shadcn@latest add https://maqedui.pages.dev/r/{name}.json" />
+```
+
+### How It Works
+
+The component strips the package manager prefix and adapts the command for each manager:
+
+| Input prefix | npm | pnpm | yarn | bun |
+|---|---|---|---|---|
+| `npx ...` | `npx ...` | `pnpm dlx ...` | `yarn ...` | `bunx ...` |
+| `npm install ...` | `npm install ...` | `pnpm install ...` | `yarn add ...` | `bun add ...` |
+
+### Examples
+
+CLI install command:
+```mdx
+<CodeBlockCommand command="npx shadcn@latest add https://maqedui.pages.dev/r/button.json" />
+```
+
+Dependency install command:
+```mdx
+<CodeBlockCommand command="npm install @base-ui/react" />
+```
+
+---
+
+## `<ApiRefTable />` — ALWAYS Use for API Reference
+
+**Never use markdown tables for API reference.** Always use the `<ApiRefTable />` component. It renders a styled, interactive table with collapsible rows for descriptions.
+
+### Prop Shape
+
+Each entry in the `props` array supports:
+
+| Field | Type | Required | Description |
+|---|---|---|---|
+| `name` | `string` | yes | The prop name |
+| `type` | `string` | yes | The TypeScript type (as a string) |
+| `required` | `boolean` | no | Whether the prop is required (renders a `*` marker) |
+| `description` | `string` | no | Expanded description shown in a collapsible row |
+| `defaultValue` | `string` | no | The default value |
+
+### Syntax
+
+```mdx
+<ApiRefTable
+  props={[
+    {
+      name: "variant",
+      type: '"default" | "outline" | "ghost"',
+      defaultValue: '"default"',
+    },
+    {
+      name: "size",
+      type: '"default" | "sm" | "lg"',
+      defaultValue: '"default"',
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      description: "Prevents user interaction with the component.",
+    },
+    {
+      name: "onValueChange",
+      type: "(value: string) => void",
+      required: true,
+      description: "Callback fired when the selected value changes.",
+    },
+  ]}
+/>
+```
+
+### Formatting Rules
+
+- Wrap string union types in double quotes: `'"default" | "sm" | "lg"'`
+- Wrap default string values in double quotes: `'"default"'`
+- Use plain `boolean`, `number`, `string` (no quotes) for primitive types
+- Use `required: true` only for props that have no default and must be provided
+
+---
+
+## Adding Examples
+
+When adding new examples for a component, two things must be done:
+
+### 1. Create the example file
+
+Place the example `.tsx` file in:
+
+```
+apps/docs/src/registry/new-york-v4/examples/{component-name}-{example-name}.tsx
+```
+
+For example: `apps/docs/src/registry/new-york-v4/examples/button-variants.tsx`
+
+### 2. Register the example
+
+Add an entry to the `examples` array in `apps/docs/src/registry/registry-examples.ts`:
+
+```ts
+{
+  name: "{component-name}-{example-name}",
+  type: "registry:example",
+  registryDependencies: ["{component-name}"],
+  files: [
+    {
+      path: "examples/{component-name}-{example-name}.tsx",
+      type: "registry:example",
+    },
+  ],
+},
+```
+
+- `name` must match the `name` prop passed to `<ComponentPreview name="..." />` in the `.mdx` file.
+- `registryDependencies` should list all registry components the example depends on (e.g. `["button", "avatar"]`).
+- The `path` is relative to `apps/docs/src/registry/new-york-v4/`.
+
+---
+
+## Full Example
+
+```mdx
+---
+title: Button
+description: Displays a button or a component that looks like a button.
+---
+
+<ComponentPreview name="button-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add https://maqedui.pages.dev/r/button.json" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install @base-ui/react" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="button"
+  title="components/ui/button.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button"
+```
+
+```tsx
+<Button>Click me</Button>
+```
+
+## Examples
+
+### Variants
+
+<ComponentPreview name="button-variants" />
+
+### Sizes
+
+<ComponentPreview name="button-sizes" />
+
+## API Reference
+
+### Button
+
+<ApiRefTable
+  props={[
+    {
+      name: "variant",
+      type: '"default" | "outline" | "secondary" | "ghost" | "destructive"',
+      defaultValue: '"default"',
+    },
+    {
+      name: "size",
+      type: '"default" | "sm" | "lg" | "icon"',
+      defaultValue: '"default"',
+    },
+  ]}
+/>
+```
