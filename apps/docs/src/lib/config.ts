@@ -1,4 +1,15 @@
-export const siteConfig = {
+type SiteConfigType = {
+  name: string;
+  url: string;
+  description: string;
+  links?: {
+    twitter?: string;
+    github?: string;
+  };
+  navItems: { href: string; label: string; isExternal?: boolean }[];
+};
+
+export const siteConfig: SiteConfigType = {
   name: "herocn",
   url: "https://herocn.pages.dev/",
   description: "shadcn/ui abstract, heroui beautiful styles.",
@@ -14,6 +25,11 @@ export const siteConfig = {
     {
       href: "/docs/components",
       label: "Components",
+    },
+    {
+      href: "https://herocn.featurebase.app/",
+      label: "Roadmap",
+      isExternal: true,
     },
   ],
 };

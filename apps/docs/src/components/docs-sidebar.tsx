@@ -3,6 +3,7 @@
 import { ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { siteConfig } from "@/lib/config";
 import { getPagesFromFolder } from "@/lib/page-tree";
 import type { source } from "@/lib/source";
 import {
@@ -18,9 +19,7 @@ import {
   SidebarMenuSubItem,
 } from "@/registry/new-york-v4/ui/sidebar";
 
-const EXTERNALS = [
-  { name: "Roadmap", href: "https://herocn.featurebase.app/" },
-];
+const EXTERNALS = siteConfig.navItems.filter((item) => item.isExternal);
 
 export function DocsSidebar({
   tree,
@@ -46,11 +45,11 @@ export function DocsSidebar({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {externalLink.name}
+                    {externalLink.label}
                     <ExternalLinkIcon />
                   </Link>
                 }
-                key={`external-link-${externalLink.name}`}
+                key={`external-link-${externalLink.label}`}
               />
             ))}
           </SidebarGroupContent>

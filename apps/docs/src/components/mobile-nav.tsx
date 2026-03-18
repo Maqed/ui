@@ -1,9 +1,9 @@
 "use client";
 
+import { ExternalLinkIcon } from "lucide-react";
 import Link, { type LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import * as React from "react";
-
 import { getPagesFromFolder } from "@/lib/page-tree";
 import type { source } from "@/lib/source";
 import { cn } from "@/lib/utils";
@@ -20,7 +20,7 @@ export function MobileNav({
   className,
 }: {
   tree: typeof source.pageTree;
-  items: { href: string; label: string }[];
+  items: { href: string; label: string; isExternal?: boolean }[];
   className?: string;
 }) {
   const [open, setOpen] = React.useState(false);
@@ -80,8 +80,9 @@ export function MobileNav({
                   key={`mobile-link-${index}`}
                   href={item.href}
                   onOpenChange={setOpen}
+                  isExternal={item?.isExternal}
                 >
-                  {item.label}
+                  {item.label} {item?.isExternal && <ExternalLinkIcon />}
                 </MobileLink>
               ))}
             </div>
@@ -129,13 +130,30 @@ function MobileLink({
   onOpenChange,
   className,
   children,
+  isExternal,
   ...props
 }: LinkProps & {
   onOpenChange?: (open: boolean) => void;
   children: React.ReactNode;
   className?: string;
+  isExternal?: boolean;
 }) {
   const router = useRouter();
+  if (isExternal) {
+    return (
+      <a
+        href={href.toString()}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          "flex items-center gap-2 text-2xl font-medium",
+          className,
+        )}
+      >
+        {children}
+      </a>
+    );
+  }
   return (
     <Link
       href={href}
