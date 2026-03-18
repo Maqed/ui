@@ -48,7 +48,7 @@ Always wrap the installation in a `<CodeTabs>` with two tabs: **Command** (CLI) 
 </TabsList>
 <TabsContent value="cli">
 
-<CodeBlockCommand command="npx shadcn@latest add https://herocn.pages.dev/r/{name}.json" />
+<CodeBlockCommand command="npx shadcn@latest add @herocn/{name}.json" />
 
 </TabsContent>
 
@@ -84,7 +84,7 @@ Replace `{name}` with the registry component name (e.g. `button`, `dropdown-menu
 ### Syntax
 
 ```mdx
-<CodeBlockCommand command="npx shadcn@latest add https://herocn.pages.dev/r/{name}.json" />
+<CodeBlockCommand command="npx shadcn@latest add @herocn/{name}.json" />
 ```
 
 ### How It Works
@@ -101,7 +101,7 @@ The component strips the package manager prefix and adapts the command for each 
 CLI install command:
 
 ```mdx
-<CodeBlockCommand command="npx shadcn@latest add https://herocn.pages.dev/r/button.json" />
+<CodeBlockCommand command="npx shadcn@latest add @herocn/button" />
 ```
 
 Dependency install command:
@@ -226,7 +226,7 @@ description: Displays a button or a component that looks like a button.
 </TabsList>
 <TabsContent value="cli">
 
-<CodeBlockCommand command="npx shadcn@latest add https://herocn.pages.dev/r/button.json" />
+<CodeBlockCommand command="npx shadcn@latest add @herocn/button" />
 
 </TabsContent>
 
