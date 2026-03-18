@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "Maqed UI",
-  url: "https://maqedui.pages.dev/",
-  description: "Build your next styled shadcn/ui components",
+  name: "herocn",
+  url: "https://herocn.pages.dev/",
+  description: "shadcn/ui abstract, heroui beautiful styles.",
   links: {
     twitter: "https://twitter.com/0xMaqed",
-    github: "https://github.com/Maqed/ui",
+    github: "https://github.com/Maqed/herocn",
   },
   navItems: [
     {

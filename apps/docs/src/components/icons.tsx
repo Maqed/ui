@@ -11,7 +11,7 @@ export const Icons = {
       width={width}
       height={height}
     >
-      <title>Maqed/ui Logo</title>
+      <title>herocn Logo</title>
       <rect width="256" height="256" fill="none" />
 
       <path

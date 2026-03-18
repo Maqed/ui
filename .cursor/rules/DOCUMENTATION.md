@@ -48,7 +48,7 @@ Always wrap the installation in a `<CodeTabs>` with two tabs: **Command** (CLI) 
 </TabsList>
 <TabsContent value="cli">
 
-<CodeBlockCommand command="npx shadcn@latest add https://maqedui.pages.dev/r/{name}.json" />
+<CodeBlockCommand command="npx shadcn@latest add https://herocn.pages.dev/r/{name}.json" />
 
 </TabsContent>
 
@@ -62,10 +62,7 @@ Always wrap the installation in a `<CodeTabs>` with two tabs: **Command** (CLI) 
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource
-  name="{name}"
-  title="components/ui/{name}.tsx"
-/>
+<ComponentSource name="{name}" title="components/ui/{name}.tsx" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -87,26 +84,28 @@ Replace `{name}` with the registry component name (e.g. `button`, `dropdown-menu
 ### Syntax
 
 ```mdx
-<CodeBlockCommand command="npx shadcn@latest add https://maqedui.pages.dev/r/{name}.json" />
+<CodeBlockCommand command="npx shadcn@latest add https://herocn.pages.dev/r/{name}.json" />
 ```
 
 ### How It Works
 
 The component strips the package manager prefix and adapts the command for each manager:
 
-| Input prefix | npm | pnpm | yarn | bun |
-|---|---|---|---|---|
-| `npx ...` | `npx ...` | `pnpm dlx ...` | `yarn ...` | `bunx ...` |
+| Input prefix      | npm               | pnpm               | yarn           | bun           |
+| ----------------- | ----------------- | ------------------ | -------------- | ------------- |
+| `npx ...`         | `npx ...`         | `pnpm dlx ...`     | `yarn ...`     | `bunx ...`    |
 | `npm install ...` | `npm install ...` | `pnpm install ...` | `yarn add ...` | `bun add ...` |
 
 ### Examples
 
 CLI install command:
+
 ```mdx
-<CodeBlockCommand command="npx shadcn@latest add https://maqedui.pages.dev/r/button.json" />
+<CodeBlockCommand command="npx shadcn@latest add https://herocn.pages.dev/r/button.json" />
 ```
 
 Dependency install command:
+
 ```mdx
 <CodeBlockCommand command="npm install @base-ui/react" />
 ```
@@ -121,13 +120,13 @@ Dependency install command:
 
 Each entry in the `props` array supports:
 
-| Field | Type | Required | Description |
-|---|---|---|---|
-| `name` | `string` | yes | The prop name |
-| `type` | `string` | yes | The TypeScript type (as a string) |
-| `required` | `boolean` | no | Whether the prop is required (renders a `*` marker) |
-| `description` | `string` | no | Expanded description shown in a collapsible row |
-| `defaultValue` | `string` | no | The default value |
+| Field          | Type      | Required | Description                                         |
+| -------------- | --------- | -------- | --------------------------------------------------- |
+| `name`         | `string`  | yes      | The prop name                                       |
+| `type`         | `string`  | yes      | The TypeScript type (as a string)                   |
+| `required`     | `boolean` | no       | Whether the prop is required (renders a `*` marker) |
+| `description`  | `string`  | no       | Expanded description shown in a collapsible row     |
+| `defaultValue` | `string`  | no       | The default value                                   |
 
 ### Syntax
 
@@ -209,7 +208,7 @@ Add an entry to the `examples` array in `apps/docs/src/registry/registry-example
 
 ## Full Example
 
-```mdx
+````mdx
 ---
 title: Button
 description: Displays a button or a component that looks like a button.
@@ -227,7 +226,7 @@ description: Displays a button or a component that looks like a button.
 </TabsList>
 <TabsContent value="cli">
 
-<CodeBlockCommand command="npx shadcn@latest add https://maqedui.pages.dev/r/button.json" />
+<CodeBlockCommand command="npx shadcn@latest add https://herocn.pages.dev/r/button.json" />
 
 </TabsContent>
 
@@ -241,10 +240,7 @@ description: Displays a button or a component that looks like a button.
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource
-  name="button"
-  title="components/ui/button.tsx"
-/>
+<ComponentSource name="button" title="components/ui/button.tsx" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -257,8 +253,9 @@ description: Displays a button or a component that looks like a button.
 ## Usage
 
 ```tsx
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 ```
+````
 
 ```tsx
 <Button>Click me</Button>
@@ -279,17 +276,20 @@ import { Button } from "@/components/ui/button"
 ### Button
 
 <ApiRefTable
-  props={[
-    {
-      name: "variant",
-      type: '"default" | "outline" | "secondary" | "ghost" | "destructive"',
-      defaultValue: '"default"',
-    },
-    {
-      name: "size",
-      type: '"default" | "sm" | "lg" | "icon"',
-      defaultValue: '"default"',
-    },
-  ]}
+props={[
+{
+name: "variant",
+type: '"default" | "outline" | "secondary" | "ghost" | "destructive"',
+defaultValue: '"default"',
+},
+{
+name: "size",
+type: '"default" | "sm" | "lg" | "icon"',
+defaultValue: '"default"',
+},
+]}
 />
+
+```
+
 ```

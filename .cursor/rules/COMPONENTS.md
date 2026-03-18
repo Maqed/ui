@@ -1,5 +1,5 @@
 ---
-description: Guide for adding new components to the maqed-ui registry
+description: Guide for adding new components to the herocn registry
 globs: apps/docs/src/registry/**
 alwaysApply: false
 ---
@@ -32,10 +32,10 @@ Every component must be registered in `apps/docs/src/registry/registry-ui.ts`. T
 
 `apps/docs/src/registry/shared.ts` exports two objects:
 
-| Export | What it contains |
-|--------|-----------------|
+| Export    | What it contains                                                                                                    |
+| --------- | ------------------------------------------------------------------------------------------------------------------- |
 | `cssVars` | Custom color tokens: `--default`, `--snow`, `--eclipse`, `--success`, `--warning`, `--destructive-foreground`, etc. |
-| `css` | Custom Tailwind utilities: `@utility pressible`, `@utility focus-ring` |
+| `css`     | Custom Tailwind utilities: `@utility pressible`, `@utility focus-ring`                                              |
 
 ### Include `cssVars` when the component uses a custom color token
 

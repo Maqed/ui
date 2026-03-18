@@ -1,4 +1,4 @@
-# maqedui
+# herocn
 
 Minimal template for building shadcn registry with docs
 
@@ -31,7 +31,7 @@ bun run dev
 ## Project Structure
 
 ```
-maqedui/
+herocn/
 ├── apps/
 │   └── docs/          # Next.js + Fumadocs app with the registry UI
 └── packages/

@@ -44,7 +44,7 @@
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* maqed-ui Colors */
+  /* herocn Colors */
   --default: oklch(94% 0.001 286.375);
   --default-foreground: var(--eclipse);
   --success: oklch(0.7329 0.1935 150.81);
@@ -87,7 +87,7 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.439 0 0);
 
-  /* maqed-ui Colors */
+  /* herocn Colors */
   --default: oklch(27.4% 0.006 286.033);
   --default-foreground: var(--snow);
   --warning: oklch(0.8203 0.1388 76.34);
@@ -138,7 +138,7 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* maqed-ui Colors */
+  /* herocn Colors */
   --color-default: var(--default);
   --color-default-foreground: var(--default-foreground);
   --color-success: var(--success);

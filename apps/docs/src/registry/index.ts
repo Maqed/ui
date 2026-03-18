@@ -5,7 +5,7 @@ import { ui } from "./registry-ui";
 import { css, cssVars } from "./shared";
 
 // Shared between index and style for backward compatibility.
-const MAQEDUI_STYLE = {
+const HEROCN_STYLE = {
   type: "registry:style" as const,
   dependencies: ["class-variance-authority", "lucide-react"],
   devDependencies: ["tw-animate-css"],
@@ -16,16 +16,16 @@ const MAQEDUI_STYLE = {
 };
 
 export const registry = {
-  name: "maqedui/ui",
+  name: "herocn",
   homepage: siteConfig.url,
   items: [
     {
       name: "index",
-      ...MAQEDUI_STYLE,
+      ...HEROCN_STYLE,
     },
     {
       name: "style",
-      ...MAQEDUI_STYLE,
+      ...HEROCN_STYLE,
     },
     ...ui,
     ...examples,
