@@ -36,7 +36,7 @@ export function DocsSidebar({
             (item.type === "folder" && item.index && item.index.url);
 
           return (
-            <SidebarGroup key={item.$id}>
+            <SidebarGroup className="py-0" key={item.$id}>
               {hasLink ? (
                 <SidebarMenuButton
                   render={
