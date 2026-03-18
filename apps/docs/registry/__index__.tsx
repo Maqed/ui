@@ -20,6 +20,21 @@ export const Index: Record<string, any> = {
     files: [],
     component: null,
   },
+  "avatar": {
+    name: "avatar",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "src/registry/new-york-v4/ui/avatar.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/avatar.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   "button": {
     name: "button",
     type: "registry:ui",
@@ -361,6 +376,141 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/examples/dropdown-menu-complex.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "avatar-demo": {
+    name: "avatar-demo",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/avatar-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/avatar-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "avatar-basic": {
+    name: "avatar-basic",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/avatar-basic.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/avatar-basic.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "avatar-badge": {
+    name: "avatar-badge",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/avatar-badge.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/avatar-badge.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "avatar-badge-icon": {
+    name: "avatar-badge-icon",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/avatar-badge-icon.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/avatar-badge-icon.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "avatar-group": {
+    name: "avatar-group",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/avatar-group.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/avatar-group.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "avatar-group-count": {
+    name: "avatar-group-count",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/avatar-group-count.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/avatar-group-count.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "avatar-group-count-icon": {
+    name: "avatar-group-count-icon",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/avatar-group-count-icon.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/avatar-group-count-icon.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "avatar-size": {
+    name: "avatar-size",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/avatar-size.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/avatar-size.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "avatar-dropdown": {
+    name: "avatar-dropdown",
+    type: "registry:example",
+    registryDependencies: ["avatar","button","dropdown-menu"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/avatar-dropdown.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/avatar-dropdown.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

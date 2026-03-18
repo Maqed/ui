@@ -1,0 +1,139 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+---
+
+<ComponentPreview
+  styleName="base-nova"
+  name="avatar-demo"
+  previewClassName="h-72"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add https://maqedui.pages.dev/r/avatar.json" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install @base-ui/react" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="avatar"
+  title="components/ui/avatar.tsx"
+  styleName="base-nova"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+```
+
+```tsx
+<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
+```
+
+## Examples
+
+### Basic
+
+A basic avatar component with an image and a fallback.
+
+<ComponentPreview styleName="base-nova" name="avatar-basic" />
+
+### Badge
+
+Use the `AvatarBadge` component to add a badge to the avatar. The badge is positioned at the bottom right of the avatar.
+
+<ComponentPreview styleName="base-nova" name="avatar-badge" />
+
+Use the `className` prop to add custom styles to the badge such as custom colors, sizes, etc.
+
+```tsx 
+<Avatar>
+  <AvatarImage src="https://github.com/Maqed.png" alt="@0xMaqed" />
+  <AvatarFallback>Mqd</AvatarFallback>
+  <AvatarBadge className="bg-green-600 dark:bg-green-800" />
+</Avatar>
+```
+
+### Badge with Icon
+
+You can also use an icon inside `<AvatarBadge>`.
+
+<ComponentPreview styleName="base-nova" name="avatar-badge-icon" />
+
+### Avatar Group
+
+Use the `AvatarGroup` component to add a group of avatars.
+
+<ComponentPreview styleName="base-nova" name="avatar-group" />
+
+### Avatar Group Count
+
+Use `<AvatarGroupCount>` to add a count to the group.
+
+<ComponentPreview styleName="base-nova" name="avatar-group-count" />
+
+### Avatar Group with Icon
+
+You can also use an icon inside `<AvatarGroupCount>`.
+
+<ComponentPreview styleName="base-nova" name="avatar-group-count-icon" />
+
+### Sizes
+
+Use the `size` prop to change the size of the avatar.
+
+<ComponentPreview styleName="base-nova" name="avatar-size" />
+
+### Dropdown
+
+You can use the `Avatar` component as a trigger for a dropdown menu.
+
+<ComponentPreview styleName="base-nova" name="avatar-dropdown" />
+
+## API Reference
+
+### Avatar
+
+The `Avatar` component is the root component that wraps the avatar image and fallback.
+
+<ApiRefTable
+  props={[
+    {
+      name: "size",
+      type: '"default" | "sm" | "lg"',
+      defaultValue: '"default"',
+    }
+  ]}
+/>
+
+For more information about Base UI Avatar props, see the [Base UI documentation](https://base-ui.com/react/components/avatar#api-reference).

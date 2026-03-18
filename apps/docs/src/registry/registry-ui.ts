@@ -3,6 +3,17 @@ import { css, cssVars } from "./shared";
 
 export const ui: Registry["items"] = [
   {
+    name: "avatar",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react"],
+    files: [
+      {
+        path: "ui/avatar.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "button",
     type: "registry:ui",
     dependencies: ["@base-ui/react"],

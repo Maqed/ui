@@ -221,4 +221,103 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "avatar-demo",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [
+      {
+        path: "examples/avatar-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "avatar-basic",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [
+      {
+        path: "examples/avatar-basic.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "avatar-badge",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [
+      {
+        path: "examples/avatar-badge.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "avatar-badge-icon",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [
+      {
+        path: "examples/avatar-badge-icon.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "avatar-group",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [
+      {
+        path: "examples/avatar-group.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "avatar-group-count",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [
+      {
+        path: "examples/avatar-group-count.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "avatar-group-count-icon",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [
+      {
+        path: "examples/avatar-group-count-icon.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "avatar-size",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    files: [
+      {
+        path: "examples/avatar-size.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "avatar-dropdown",
+    type: "registry:example",
+    registryDependencies: ["avatar", "button", "dropdown-menu"],
+    files: [
+      {
+        path: "examples/avatar-dropdown.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];
