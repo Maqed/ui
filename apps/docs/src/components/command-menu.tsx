@@ -4,7 +4,6 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 import * as React from "react";
 import type { source } from "@/lib/source";
-import { cn } from "@/lib/utils";
 import { Button } from "@/registry/new-york-v4/ui/button";
 import {
   Command,
@@ -119,9 +118,7 @@ export function CommandMenu({
         render={
           <Button
             variant="outline"
-            className={cn(
-              "relative h-8 w-fit justify-start rounded-lg md:pl-3 font-normal text-foreground shadow-none hover:bg-muted/50 md:w-48 lg:w-40 xl:w-64 dark:bg-card",
-            )}
+            className="max-md:size-8 max-md:[&_svg:not([class*='size-'])]:size-4.5 max-md:border-none md:pe-10"
             onClick={() => setOpen(true)}
             {...props}
           >

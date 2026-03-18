@@ -12,9 +12,8 @@ export function GitHubLink() {
           <Icons.gitHub />
         </Link>
       }
-      size="sm"
+      size="icon-sm"
       variant="ghost"
-      className="h-8 shadow-none"
     />
   );
 }
