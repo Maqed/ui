@@ -5,32 +5,24 @@ type IconProps = React.SVGProps<SVGSVGElement>;
 export const Icons = {
   logo: ({ width = 32, height = 32, ...props }: IconProps) => (
     <svg
-      {...props}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 256 256"
-      width={width}
-      height={height}
+      viewBox="0 0 144 144"
+      width={144}
+      height={144}
+      fill="none"
+      {...props}
     >
       <title>herocn Logo</title>
-      <rect width="256" height="256" fill="none" />
-
-      <path
-        d="M 128 40 L 208 86 V 170 L 128 216 L 48 170 V 86 Z"
-        fill="none"
+      <g
         stroke="currentColor"
-        strokeWidth="24"
-        strokeLinejoin="round"
+        strokeWidth={16}
         strokeLinecap="round"
-      />
-
-      <path
-        d="M 128 40 V 128 L 208 170"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="24"
         strokeLinejoin="round"
-        strokeLinecap="round"
-      />
+      >
+        <path d="M25 45 L25 80 L55 100 V65 L80 50 V135 L120 120 V35 L80 50 V10 L25 45 Z" />
+        <line x1={120} y1={80} x2={80} y2={125} />
+        <line x1={120} y1={45} x2={80} y2={90} />
+      </g>
     </svg>
   ),
   twitter: (props: IconProps) => (
