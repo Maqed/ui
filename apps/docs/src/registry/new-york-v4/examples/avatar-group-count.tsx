@@ -8,7 +8,7 @@ import {
 
 export default function AvatarGroupCountExample() {
   return (
-    <AvatarGroup className="grayscale">
+    <AvatarGroup>
       <Avatar>
         <AvatarImage src="https://github.com/Maqed.png" alt="@0xMaqed" />
         <AvatarFallback>Mqd</AvatarFallback>

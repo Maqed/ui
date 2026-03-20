@@ -6,7 +6,7 @@ import {
 
 export default function AvatarSizeExample() {
   return (
-    <div className="flex flex-wrap items-center gap-2 grayscale">
+    <div className="flex flex-wrap items-center gap-2">
       <Avatar size="sm">
         <AvatarImage src="https://github.com/Maqed.png" alt="@0xMaqed" />
         <AvatarFallback>Mqd</AvatarFallback>

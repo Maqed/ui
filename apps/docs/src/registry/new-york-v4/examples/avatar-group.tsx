@@ -7,7 +7,7 @@ import {
 
 export default function AvatarGroupExample() {
   return (
-    <AvatarGroup className="grayscale">
+    <AvatarGroup>
       <Avatar>
         <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
         <AvatarFallback>CN</AvatarFallback>

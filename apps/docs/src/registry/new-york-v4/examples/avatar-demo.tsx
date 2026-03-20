@@ -11,11 +11,7 @@ export default function AvatarDemo() {
   return (
     <div className="flex flex-row flex-wrap items-center gap-6 md:gap-12">
       <Avatar>
-        <AvatarImage
-          src="https://github.com/Maqed.png"
-          alt="@0xMaqed"
-          className="grayscale"
-        />
+        <AvatarImage src="https://github.com/Maqed.png" alt="@0xMaqed" />
         <AvatarFallback>Mqd</AvatarFallback>
       </Avatar>
       <Avatar>
@@ -26,7 +22,7 @@ export default function AvatarDemo() {
         <AvatarFallback>ER</AvatarFallback>
         <AvatarBadge className="bg-green-600 dark:bg-green-800" />
       </Avatar>
-      <AvatarGroup className="grayscale">
+      <AvatarGroup>
         <Avatar>
           <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
           <AvatarFallback>CN</AvatarFallback>
