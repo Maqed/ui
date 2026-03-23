@@ -1,5 +1,6 @@
 import { docs } from "fumadocs-mdx:collections/server";
 import { type InferPageType, loader } from "fumadocs-core/source";
+import { absoluteUrl } from "@/lib/utils";
 
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
@@ -10,10 +11,11 @@ export const source = loader({
 
 export function getPageImage(page: InferPageType<typeof source>) {
   const segments = [...page.slugs, "image.webp"];
+  const path = `/og/docs/${segments.join("/")}`;
 
   return {
     segments,
-    url: `/og/docs/${segments.join("/")}`,
+    url: absoluteUrl(path),
   };
 }
 
