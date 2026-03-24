@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/registry/new-york-v4/ui/button";
+
+export const metadata: Metadata = {
+  title: "herocn",
+  description: "shadcn's abstraction. HeroUI's design system.",
+};
 
 export default function HomePage() {
   return (
