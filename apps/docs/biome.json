@@ -35,7 +35,8 @@
         "useKeyWithClickEvents": "off"
       },
       "suspicious": {
-        "noArrayIndexKey": "off"
+        "noArrayIndexKey": "off",
+        "noDocumentCookie": "off"
       }
     },
     "domains": {

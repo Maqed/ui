@@ -27,9 +27,9 @@ const buttonVariants = cva(
       },
       size: {
         default:
-          "h-10 w-fit md:h-9 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3 ",
-        sm: "h-9 px-3 gap-1 md:h-8 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 [&_svg:not([class*='size-'])]:size-3.5",
-        lg: "h-11 gap-1.5 text-base md:h-10 has-data-[icon=inline-end]:pr-3 has-data-[icon=inline-start]:pl-3 [&_svg:not([class*='size-'])]:size-4",
+          "h-10 w-fit md:h-9 has-data-[icon=inline-end]:pe-3 has-data-[icon=inline-start]:ps-3 ",
+        sm: "h-9 px-3 gap-1 md:h-8 has-data-[icon=inline-end]:pe-2 has-data-[icon=inline-start]:ps-2 [&_svg:not([class*='size-'])]:size-3.5",
+        lg: "h-11 gap-1.5 text-base md:h-10 has-data-[icon=inline-end]:pe-3 has-data-[icon=inline-start]:ps-3 [&_svg:not([class*='size-'])]:size-4",
         icon: "size-9 [&_svg:not([class*='size-'])]:size-5.5",
         "icon-sm": "size-8 [&_svg:not([class*='size-'])]:size-4.5",
         "icon-lg": "size-10 [&_svg:not([class*='size-'])]:size-6",
