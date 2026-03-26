@@ -9,6 +9,7 @@ export function ComponentPreview({
   type,
   className,
   previewClassName,
+  direction = "ltr",
   align = "center",
   hideCode = false,
   caption,
@@ -18,6 +19,7 @@ export function ComponentPreview({
   align?: "center" | "start" | "end";
   description?: string;
   hideCode?: boolean;
+  direction?: "ltr" | "rtl";
   type?: "block" | "component" | "example";
   previewClassName?: string;
   caption?: string;
@@ -75,6 +77,7 @@ export function ComponentPreview({
       className={className}
       previewClassName={previewClassName}
       align={align}
+      direction={direction}
       hideCode={hideCode}
       component={React.createElement(Component)}
       source={<ComponentSource name={name} collapsible={false} />}

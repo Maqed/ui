@@ -185,6 +185,21 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "button-rtl": {
+    name: "button-rtl",
+    type: "registry:example",
+    registryDependencies: ["button"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-rtl.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-rtl.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   "collapsible-demo": {
     name: "collapsible-demo",
     type: "registry:example",

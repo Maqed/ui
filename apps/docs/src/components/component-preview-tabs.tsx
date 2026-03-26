@@ -1,12 +1,28 @@
 "use client";
+import { AlertCircleIcon } from "lucide-react";
 import * as React from "react";
+import {
+  LanguageProvider,
+  LanguageSelector,
+  type Translations,
+  useLanguageContext,
+  useTranslation,
+} from "@/components/language-selector";
 import { cn } from "@/lib/utils";
 import { Button } from "@/registry/new-york-v4/ui/button";
+import { DirectionProvider } from "@/registry/new-york-v4/ui/direction";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/registry/new-york-v4/ui/popover";
+import { Separator } from "@/registry/new-york-v4/ui/separator";
 
 export function ComponentPreviewTabs({
   className,
   previewClassName,
   align = "center",
+  direction = "ltr",
   hideCode = false,
   component,
   source,
@@ -15,6 +31,7 @@ export function ComponentPreviewTabs({
 }: React.ComponentProps<"div"> & {
   previewClassName?: string;
   align?: "center" | "start" | "end";
+  direction?: "ltr" | "rtl";
   hideCode?: boolean;
   component: React.ReactNode;
   source: React.ReactNode;
@@ -31,9 +48,54 @@ export function ComponentPreviewTabs({
       )}
       {...props}
     >
-      <PreviewWrapper align={align} previewClassName={previewClassName}>
-        {component}
-      </PreviewWrapper>
+      {direction === "rtl" ? (
+        <LanguageProvider defaultLanguage="ar">
+          <div className="flex h-16 items-center justify-between border-b px-4">
+            <RtlLanguageSelector />
+            <Popover>
+              <PopoverTrigger
+                render={
+                  <Button variant="ghost" size="icon-sm">
+                    <AlertCircleIcon />
+                    <span className="sr-only">Toggle</span>
+                  </Button>
+                }
+              ></PopoverTrigger>
+              <PopoverContent
+                side="bottom"
+                align="end"
+                className="w-56 text-xs"
+              >
+                <div>
+                  I used AI to translate the text for demonstration purposes.
+                  It&apos;s not perfect and may contain errors.
+                </div>
+                <Separator className="-mx-2.5 w-auto!" />
+                <div data-lang="ar">
+                  لقد استخدمت الذكاء الاصطناعي لترجمة النص للأغراض التجريبية
+                  فقط. قد لا تكون الترجمة دقيقة وقد تحتوي على أخطاء.
+                </div>
+                <Separator className="-mx-2.5 w-auto!" />
+                <div data-lang="he">
+                  השתמשתי בבינה מלאכותית כדי לתרגם את הטקסט למטרות הדגמה. זה לא
+                  מושלם ויכול להכיל שגיאות.
+                </div>
+              </PopoverContent>
+            </Popover>
+          </div>
+          <PreviewWrapper align={align} previewClassName={previewClassName}>
+            <DirectionProviderWrapper dir="rtl">
+              {component}
+            </DirectionProviderWrapper>
+          </PreviewWrapper>
+        </LanguageProvider>
+      ) : (
+        <DirectionProviderWrapper dir="ltr">
+          <PreviewWrapper align={align} previewClassName={previewClassName}>
+            {component}
+          </PreviewWrapper>
+        </DirectionProviderWrapper>
+      )}
       {!hideCode && (
         <div
           data-slot="code"
@@ -94,4 +156,48 @@ function PreviewWrapper({
       </div>
     </div>
   );
+}
+
+const directionTranslations: Translations<Record<string, never>> = {
+  en: {
+    dir: "ltr",
+    values: {},
+  },
+  ar: {
+    dir: "rtl",
+    values: {},
+  },
+  he: {
+    dir: "rtl",
+    values: {},
+  },
+};
+
+function RtlLanguageSelector({ className }: { className?: string }) {
+  const context = useLanguageContext();
+  if (!context) {
+    return null;
+  }
+  return (
+    <LanguageSelector
+      value={context.language}
+      onValueChange={context.setLanguage}
+      className={className}
+    />
+  );
+}
+
+function DirectionProviderWrapper({
+  dir: explicitDir,
+  children,
+}: {
+  dir?: "ltr" | "rtl";
+  children: React.ReactNode;
+}) {
+  // useTranslation handles the case when there's no LanguageProvider context.
+  // It will fall back to local state with defaultLanguage.
+  const translation = useTranslation(directionTranslations, "ar");
+  const dir = explicitDir ?? translation.dir;
+
+  return <DirectionProvider direction={dir}>{children}</DirectionProvider>;
 }

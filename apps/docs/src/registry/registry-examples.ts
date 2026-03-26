@@ -46,6 +46,17 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "button-rtl",
+    type: "registry:example",
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "examples/button-rtl.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "collapsible-demo",
     type: "registry:example",
     registryDependencies: ["collapsible"],

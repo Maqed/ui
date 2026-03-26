@@ -4,6 +4,16 @@
 @import "fumadocs-ui/css/preset.css";
 
 /* Docs */
+@layer base {
+  [data-lang="ar"] {
+    font-family: var(--font-ar);
+  }
+
+  [data-lang="he"] {
+    font-family: var(--font-he);
+  }
+}
+
 @layer components {
   .steps {
     &:first-child {

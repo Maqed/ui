@@ -240,6 +240,116 @@ Add an entry to the `examples` array in `apps/docs/src/registry/registry-example
 
 ---
 
+## RTL Support
+
+When a component has meaningful RTL layout differences, add an RTL section to the docs page and a dedicated example file.
+
+### 1. Add the RTL section in the `.mdx` file
+
+Place the `## RTL` section after all other example sections and before `## Reference`. Pass `direction="rtl"` to `<ComponentPreview />`:
+
+```mdx
+## RTL
+
+<ComponentPreview name="button-rtl" direction="rtl" />
+```
+
+The `direction="rtl"` prop activates a language selector toolbar (English / Arabic / Hebrew) above the preview and wraps the component in a `DirectionProvider`.
+
+### 2. Create the RTL example file
+
+Place the file at:
+
+```
+apps/docs/src/registry/new-york-v4/examples/{component-name}-rtl.tsx
+```
+
+#### Required pattern
+
+```tsx
+"use client"
+
+import { useTranslation, type Translations } from "@/components/language-selector"
+
+const translations: Translations = {
+  en: {
+    dir: "ltr",
+    values: {
+      label: "Label",
+    },
+  },
+  ar: {
+    dir: "rtl",
+    values: {
+      label: "تسمية",
+    },
+  },
+  he: {
+    dir: "rtl",
+    values: {
+      label: "תווית",
+    },
+  },
+}
+
+export function ComponentRtl() {
+  const { dir, language, t } = useTranslation(translations, "ar")
+
+  return (
+    <div lang={language} dir={dir}>
+      {/* render the component using t.label, etc. */}
+    </div>
+  )
+}
+```
+
+Key rules:
+- Always define all three languages: `en`, `ar`, `he`.
+- Use `"use client"` because `useTranslation` is a client hook.
+- Apply `lang={language} dir={dir}` on the outermost container element — **not** on individual child components.
+- Default to `"ar"` as the initial language in `useTranslation(translations, "ar")`.
+
+### 3. Register the RTL example
+
+Add an entry to `apps/docs/src/registry/registry-examples.ts` with `registryDependencies` that includes all registry components used:
+
+```ts
+{
+  name: "{component-name}-rtl",
+  type: "registry:example",
+  registryDependencies: ["{component-name}"],
+  files: [
+    {
+      path: "examples/{component-name}-rtl.tsx",
+      type: "registry:example",
+    },
+  ],
+},
+```
+
+### Directional icons
+
+When rendering icons that should flip in RTL, apply `rtl:rotate-180` via Tailwind. Use `data-icon` to control inline spacing relative to text direction:
+
+| `data-icon` value | Position      | LTR margin | RTL margin |
+| ----------------- | ------------- | ---------- | ---------- |
+| `"inline-start"`  | Before text   | `mr-*`     | `ml-*`     |
+| `"inline-end"`    | After text    | `ml-*`     | `mr-*`     |
+
+```tsx
+{/* Arrow that flips direction */}
+<ArrowRightIcon className="rtl:rotate-180" data-icon="inline-end" />
+
+{/* Spinner/icon before text */}
+<Spinner data-icon="inline-start" />
+```
+
+### `LanguageProvider` context
+
+The `<ComponentPreview direction="rtl" />` automatically wraps the preview in a `LanguageProvider`. The `useTranslation` hook reads from this context, so switching languages in the toolbar updates all components inside the preview simultaneously.
+
+---
+
 ## Full Example
 
 ````mdx
