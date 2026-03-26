@@ -34,6 +34,7 @@ export function DocsSidebar({
       {...props}
     >
       <SidebarContent className="mx-auto no-scrollbar w-(--sidebar-menu-width) overflow-x-hidden px-2">
+        <div className="sticky top-0 z-10 h-16 shrink-0 bg-linear-to-b from-background via-background/80 to-background/50 blur-xs" />
         <SidebarGroup className="py-0 mb-5">
           <SidebarGroupLabel>Externals</SidebarGroupLabel>
           <SidebarGroupContent>
