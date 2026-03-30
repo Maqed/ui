@@ -94,7 +94,7 @@ export function CardRtl() {
                 <Label htmlFor="password-rtl">{t.password}</Label>
                 <a
                   href="#"
-                  className="ms-auto inline-block text-sm underline-offset-4 hover:underline"
+                  className="ms-auto inline-block text-xs md:text-sm underline-offset-4 hover:underline"
                 >
                   {t.forgotPassword}
                 </a>

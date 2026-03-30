@@ -148,7 +148,7 @@ function PreviewWrapper({
       <div
         data-align={align}
         className={cn(
-          "preview relative not-prose flex h-72 w-full justify-center p-10 data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start data-[chromeless=true]:h-auto data-[chromeless=true]:p-0",
+          "preview relative not-prose flex h-72 w-full justify-center p-10 px-0.5 sm:px-4 md:px-10 data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start data-[chromeless=true]:h-auto data-[chromeless=true]:p-0",
           previewClassName,
         )}
       >

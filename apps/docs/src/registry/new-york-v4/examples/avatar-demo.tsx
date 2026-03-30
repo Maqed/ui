@@ -9,7 +9,7 @@ import {
 
 export default function AvatarDemo() {
   return (
-    <div className="flex flex-row flex-wrap items-center gap-6 md:gap-12">
+    <div className="flex flex-row flex-wrap justify-center items-center gap-6 md:gap-12">
       <Avatar>
         <AvatarImage src="https://github.com/Maqed.png" alt="@0xMaqed" />
         <AvatarFallback>Mqd</AvatarFallback>

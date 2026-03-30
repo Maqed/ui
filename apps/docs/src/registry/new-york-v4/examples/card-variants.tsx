@@ -9,7 +9,7 @@ import {
 export default function CardVariants() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      <Card className="w-[320px]" variant="transparent">
+      <Card variant="transparent">
         <CardHeader>
           <CardTitle>Transparent</CardTitle>
           <CardDescription>
@@ -21,7 +21,7 @@ export default function CardVariants() {
         </CardContent>
       </Card>
 
-      <Card className="w-[320px]" variant="default">
+      <Card variant="default">
         <CardHeader>
           <CardTitle>Default</CardTitle>
           <CardDescription>
@@ -33,7 +33,7 @@ export default function CardVariants() {
         </CardContent>
       </Card>
 
-      <Card className="w-[320px]" variant="secondary">
+      <Card variant="secondary">
         <CardHeader>
           <CardTitle>Secondary</CardTitle>
           <CardDescription>
@@ -45,7 +45,7 @@ export default function CardVariants() {
         </CardContent>
       </Card>
 
-      <Card className="w-[320px]" variant="tertiary">
+      <Card variant="tertiary">
         <CardHeader>
           <CardTitle>Tertiary</CardTitle>
           <CardDescription>
