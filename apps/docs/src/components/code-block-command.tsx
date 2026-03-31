@@ -1,22 +1,16 @@
 "use client";
 
 import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
-import { CheckIcon, CopyIcon, Terminal } from "lucide-react";
+import { Terminal } from "lucide-react";
 import * as React from "react";
 import { copyToClipboard } from "@/components/copy-button";
 import { useConfig } from "@/hooks/use-config";
-import { Button } from "@/registry/new-york-v4/ui/button";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/registry/new-york-v4/ui/tabs";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/registry/new-york-v4/ui/tooltip";
 
 type PackageManager = "npm" | "yarn" | "pnpm" | "bun";
 
@@ -109,23 +103,6 @@ export function CodeBlockCommandWrapper({
           })}
         </div>
       </Tabs>
-      <Tooltip>
-        <TooltipTrigger
-          render={
-            <Button
-              data-slot="copy-button"
-              size="icon-sm"
-              variant="ghost"
-              className="absolute right-2 top-2 z-10 opacity-70 hover:opacity-100 focus-visible:opacity-100"
-              onClick={copyCommand}
-            >
-              <span className="sr-only">Copy</span>
-              {hasCopied ? <CheckIcon /> : <CopyIcon />}
-            </Button>
-          }
-        />
-        <TooltipContent>Copy</TooltipContent>
-      </Tooltip>
     </div>
   );
 }
