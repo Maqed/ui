@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-icons",
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "components/examples/tabs-icons.tsx",
+      "content": "import { AppWindowIcon, CodeIcon } from \"lucide-react\";\r\n\r\nimport {\r\n  Tabs,\r\n  TabsContent,\r\n  TabsList,\r\n  TabsTrigger,\r\n} from \"@/components/ui/tabs\";\r\n\r\nexport function TabsIcons() {\r\n  return (\r\n    <Tabs defaultValue=\"preview\" className=\"w-[400px]\">\r\n      <TabsList>\r\n        <TabsTrigger value=\"preview\">\r\n          <AppWindowIcon />\r\n          Preview\r\n        </TabsTrigger>\r\n        <TabsTrigger value=\"code\">\r\n          <CodeIcon />\r\n          Code\r\n        </TabsTrigger>\r\n      </TabsList>\r\n      <TabsContent value=\"preview\">\r\n        <p className=\"text-sm text-muted-foreground\">\r\n          See a live preview of your component as it will appear in the browser.\r\n        </p>\r\n      </TabsContent>\r\n      <TabsContent value=\"code\">\r\n        <p className=\"text-sm text-muted-foreground\">\r\n          View and copy the source code for this component to use in your\r\n          project.\r\n        </p>\r\n      </TabsContent>\r\n    </Tabs>\r\n  );\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

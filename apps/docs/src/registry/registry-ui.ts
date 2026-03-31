@@ -235,4 +235,29 @@ export const ui: Registry["items"] = [
         css["@utility invalid-field-ring-focus"],
     },
   },
+  {
+    name: "tabs",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react"],
+    files: [
+      {
+        path: "ui/tabs.tsx",
+        type: "registry:ui",
+      },
+    ],
+    cssVars: {
+      light: {
+        "--default": cssVars.light["--default"],
+        "--surface": cssVars.light["--surface"],
+      },
+      dark: {
+        "--default": cssVars.dark["--default"],
+        "--surface": cssVars.dark["--surface"],
+      },
+      theme: {
+        "--color-default": cssVars.theme["--color-default"],
+        "--color-surface": cssVars.theme["--color-surface"],
+      },
+    },
+  },
 ];

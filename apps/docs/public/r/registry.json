@@ -40,7 +40,7 @@
           "--destructive-foreground": "var(--snow)",
           "--border": "oklch(0.92 0.004 286.32)",
           "--input": "white",
-          "--ring": "oklch(0.708 0 0)",
+          "--ring": "var(--color-primary)",
           "--chart-1": "oklch(0.809 0.105 251.813)",
           "--chart-2": "oklch(0.623 0.214 259.815)",
           "--chart-3": "oklch(0.546 0.245 262.881)",
@@ -53,7 +53,7 @@
           "--sidebar-accent": "oklch(0.967 0.001 286.375)",
           "--sidebar-accent-foreground": "oklch(0.21 0.006 285.885)",
           "--sidebar-border": "oklch(0.92 0.004 286.32)",
-          "--sidebar-ring": "oklch(0.708 0 0)",
+          "--sidebar-ring": "var(--color-foreground)",
           "--default": "oklch(94% 0.001 286.375)",
           "--default-foreground": "var(--eclipse)",
           "--success": "oklch(0.7329 0.1935 150.81)",
@@ -83,7 +83,7 @@
           "--destructive-foreground": "var(--snow)",
           "--border": "oklch(1 0 0 / 10%)",
           "--input": "oklch(0.2103 0.0059 285.89)",
-          "--ring": "oklch(0.556 0 0)",
+          "--ring": "var(--color-primary))",
           "--chart-1": "oklch(0.809 0.105 251.813)",
           "--chart-2": "oklch(0.623 0.214 259.815)",
           "--chart-3": "oklch(0.546 0.245 262.881)",
@@ -96,7 +96,7 @@
           "--sidebar-accent": "oklch(0.274 0.006 286.033)",
           "--sidebar-accent-foreground": "oklch(0.985 0 0)",
           "--sidebar-border": "oklch(1 0 0 / 10%)",
-          "--sidebar-ring": "oklch(0.439 0 0)",
+          "--sidebar-ring": "var(--color-foreground)",
           "--default": "oklch(27.4% 0.006 286.033)",
           "--default-foreground": "var(--snow)",
           "--warning": "oklch(0.8203 0.1388 76.34)",
@@ -211,7 +211,7 @@
           "--destructive-foreground": "var(--snow)",
           "--border": "oklch(0.92 0.004 286.32)",
           "--input": "white",
-          "--ring": "oklch(0.708 0 0)",
+          "--ring": "var(--color-primary)",
           "--chart-1": "oklch(0.809 0.105 251.813)",
           "--chart-2": "oklch(0.623 0.214 259.815)",
           "--chart-3": "oklch(0.546 0.245 262.881)",
@@ -224,7 +224,7 @@
           "--sidebar-accent": "oklch(0.967 0.001 286.375)",
           "--sidebar-accent-foreground": "oklch(0.21 0.006 285.885)",
           "--sidebar-border": "oklch(0.92 0.004 286.32)",
-          "--sidebar-ring": "oklch(0.708 0 0)",
+          "--sidebar-ring": "var(--color-foreground)",
           "--default": "oklch(94% 0.001 286.375)",
           "--default-foreground": "var(--eclipse)",
           "--success": "oklch(0.7329 0.1935 150.81)",
@@ -254,7 +254,7 @@
           "--destructive-foreground": "var(--snow)",
           "--border": "oklch(1 0 0 / 10%)",
           "--input": "oklch(0.2103 0.0059 285.89)",
-          "--ring": "oklch(0.556 0 0)",
+          "--ring": "var(--color-primary))",
           "--chart-1": "oklch(0.809 0.105 251.813)",
           "--chart-2": "oklch(0.623 0.214 259.815)",
           "--chart-3": "oklch(0.546 0.245 262.881)",
@@ -267,7 +267,7 @@
           "--sidebar-accent": "oklch(0.274 0.006 286.033)",
           "--sidebar-accent-foreground": "oklch(0.985 0 0)",
           "--sidebar-border": "oklch(1 0 0 / 10%)",
-          "--sidebar-ring": "oklch(0.439 0 0)",
+          "--sidebar-ring": "var(--color-foreground)",
           "--default": "oklch(27.4% 0.006 286.033)",
           "--default-foreground": "var(--snow)",
           "--warning": "oklch(0.8203 0.1388 76.34)",
@@ -595,6 +595,33 @@
         "@utility invalid-field-ring-focus": {
           "@apply ring-2 outline-none ring-destructive ring-offset-0": {},
           "--tw-ring-offset-width": "0px"
+        }
+      }
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "light": {
+          "--default": "oklch(94% 0.001 286.375)",
+          "--surface": "white"
+        },
+        "dark": {
+          "--default": "oklch(27.4% 0.006 286.033)",
+          "--surface": "oklch(0.2103 0.0059 285.89)"
+        },
+        "theme": {
+          "--color-default": "var(--default)",
+          "--color-surface": "var(--surface)"
         }
       }
     },
@@ -1359,6 +1386,99 @@
       "files": [
         {
           "path": "src/registry/new-york-v4/examples/input-button-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "card",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/tabs-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-line",
+      "type": "registry:example",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/tabs-line.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-vertical",
+      "type": "registry:example",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/tabs-vertical.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-vertical-line",
+      "type": "registry:example",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/tabs-vertical-line.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-disabled",
+      "type": "registry:example",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/tabs-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-icons",
+      "type": "registry:example",
+      "registryDependencies": [
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/tabs-icons.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "tabs-rtl",
+      "type": "registry:example",
+      "registryDependencies": [
+        "card",
+        "tabs"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/tabs-rtl.tsx",
           "type": "registry:example"
         }
       ]

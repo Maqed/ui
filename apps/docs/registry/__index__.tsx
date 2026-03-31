@@ -140,6 +140,21 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "tabs": {
+    name: "tabs",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "src/registry/new-york-v4/ui/tabs.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/tabs.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   "card-demo": {
     name: "card-demo",
     type: "registry:example",
@@ -976,6 +991,111 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/examples/input-button-group.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "tabs-demo": {
+    name: "tabs-demo",
+    type: "registry:example",
+    registryDependencies: ["card","tabs"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/tabs-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/tabs-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "tabs-line": {
+    name: "tabs-line",
+    type: "registry:example",
+    registryDependencies: ["tabs"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/tabs-line.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/tabs-line.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "tabs-vertical": {
+    name: "tabs-vertical",
+    type: "registry:example",
+    registryDependencies: ["tabs"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/tabs-vertical.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/tabs-vertical.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "tabs-vertical-line": {
+    name: "tabs-vertical-line",
+    type: "registry:example",
+    registryDependencies: ["tabs"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/tabs-vertical-line.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/tabs-vertical-line.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "tabs-disabled": {
+    name: "tabs-disabled",
+    type: "registry:example",
+    registryDependencies: ["tabs"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/tabs-disabled.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/tabs-disabled.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "tabs-icons": {
+    name: "tabs-icons",
+    type: "registry:example",
+    registryDependencies: ["tabs"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/tabs-icons.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/tabs-icons.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "tabs-rtl": {
+    name: "tabs-rtl",
+    type: "registry:example",
+    registryDependencies: ["card","tabs"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/tabs-rtl.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/tabs-rtl.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

@@ -617,4 +617,81 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "tabs-demo",
+    type: "registry:example",
+    registryDependencies: ["card", "tabs"],
+    files: [
+      {
+        path: "examples/tabs-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tabs-line",
+    type: "registry:example",
+    registryDependencies: ["tabs"],
+    files: [
+      {
+        path: "examples/tabs-line.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tabs-vertical",
+    type: "registry:example",
+    registryDependencies: ["tabs"],
+    files: [
+      {
+        path: "examples/tabs-vertical.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tabs-vertical-line",
+    type: "registry:example",
+    registryDependencies: ["tabs"],
+    files: [
+      {
+        path: "examples/tabs-vertical-line.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tabs-disabled",
+    type: "registry:example",
+    registryDependencies: ["tabs"],
+    files: [
+      {
+        path: "examples/tabs-disabled.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tabs-icons",
+    type: "registry:example",
+    registryDependencies: ["tabs"],
+    files: [
+      {
+        path: "examples/tabs-icons.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tabs-rtl",
+    type: "registry:example",
+    registryDependencies: ["card", "tabs"],
+    files: [
+      {
+        path: "examples/tabs-rtl.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

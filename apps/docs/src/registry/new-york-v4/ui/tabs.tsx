@@ -14,8 +14,9 @@ function Tabs({
     <TabsPrimitive.Root
       data-slot="tabs"
       data-orientation={orientation}
+      orientation={orientation}
       className={cn(
-        "gap-2 group/tabs flex data-[orientation=horizontal]:flex-col",
+        "group/tabs flex gap-2 data-[orientation=horizontal]:flex-col data-[orientation=vertical]:flex-row",
         className,
       )}
       {...props}
@@ -24,12 +25,21 @@ function Tabs({
 }
 
 const tabsListVariants = cva(
-  "rounded-lg p-[3px] group-data-[orientation=horizontal]/tabs:h-8 data-[variant=line]:rounded-none group/tabs-list inline-flex w-fit items-center justify-center text-muted-foreground group-data-[orientation=vertical]/tabs:h-fit group-data-[orientation=vertical]/tabs:flex-col",
+  "group/tabs-list relative isolate inline-flex items-center justify-center",
   {
     variants: {
       variant: {
-        default: "bg-muted",
-        line: "gap-1 bg-transparent",
+        default: [
+          "bg-default p-1",
+          "rounded-[calc(var(--radius-2xl)+0.25rem)]",
+          "group-data-[orientation=horizontal]/tabs:w-full group-data-[orientation=horizontal]/tabs:flex-row",
+          "group-data-[orientation=vertical]/tabs:flex-col group-data-[orientation=vertical]/tabs:gap-1",
+        ],
+        line: [
+          "rounded-none bg-transparent p-0",
+          "group-data-[orientation=horizontal]/tabs:flex-row group-data-[orientation=horizontal]/tabs:overflow-x-auto group-data-[orientation=horizontal]/tabs:[scrollbar-width:none] group-data-[orientation=horizontal]/tabs:border-b group-data-[orientation=horizontal]/tabs:border-border",
+          "group-data-[orientation=vertical]/tabs:flex-col group-data-[orientation=vertical]/tabs:border-s group-data-[orientation=vertical]/tabs:border-border",
+        ],
       },
     },
     defaultVariants: {
@@ -41,15 +51,20 @@ const tabsListVariants = cva(
 function TabsList({
   className,
   variant = "default",
+  children,
   ...props
 }: TabsPrimitive.List.Props & VariantProps<typeof tabsListVariants>) {
   return (
     <TabsPrimitive.List
       data-slot="tabs-list"
+      activateOnFocus={true}
       data-variant={variant}
       className={cn(tabsListVariants({ variant }), className)}
       {...props}
-    />
+    >
+      {children}
+      <TabsIndicator />
+    </TabsPrimitive.List>
   );
 }
 
@@ -58,10 +73,55 @@ function TabsTrigger({ className, ...props }: TabsPrimitive.Tab.Props) {
     <TabsPrimitive.Tab
       data-slot="tabs-trigger"
       className={cn(
-        "gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium group-data-[variant=default]/tabs-list:data-active:shadow-sm group-data-[variant=line]/tabs-list:data-active:shadow-none [&_svg:not([class*='size-'])]:size-4 relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center whitespace-nowrap text-foreground/60 transition-all group-data-[orientation=vertical]/tabs:w-full group-data-[orientation=vertical]/tabs:justify-start hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 dark:text-muted-foreground dark:hover:text-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        "group-data-[variant=line]/tabs-list:bg-transparent group-data-[variant=line]/tabs-list:data-active:bg-transparent dark:group-data-[variant=line]/tabs-list:data-active:border-transparent dark:group-data-[variant=line]/tabs-list:data-active:bg-transparent",
-        "data-active:bg-background data-active:text-foreground dark:data-active:border-input dark:data-active:bg-input/30 dark:data-active:text-foreground",
-        "after:absolute after:bg-foreground after:opacity-0 after:transition-opacity group-data-[orientation=horizontal]/tabs:after:inset-x-0 group-data-[orientation=horizontal]/tabs:after:bottom-[-5px] group-data-[orientation=horizontal]/tabs:after:h-0.5 group-data-[orientation=vertical]/tabs:after:inset-y-0 group-data-[orientation=vertical]/tabs:after:-end-1 group-data-[orientation=vertical]/tabs:after:w-0.5 group-data-[variant=line]/tabs-list:data-active:after:opacity-100",
+        // Base
+        "relative z-1 flex h-8 w-full cursor-pointer select-none items-center justify-center gap-1.5 whitespace-nowrap px-4 text-center text-sm font-medium text-muted-foreground outline-none",
+        "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "transition-[color] duration-150 ease-out motion-reduce:transition-none",
+        // Default variant: pill shape + vertical min-width
+        "group-data-[variant=default]/tabs-list:rounded-3xl",
+        "group-data-[variant=default]/tabs-list:group-data-[orientation=vertical]/tabs:min-w-20",
+        // Line variant: no rounding
+        "group-data-[variant=line]/tabs-list:rounded-none",
+        // Selected state
+        "data-active:text-foreground",
+        // Hover
+        "hover:text-foreground/80 data-active:hover:text-foreground",
+        // Disabled
+        "disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50",
+        // Focus visible
+        "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function TabsIndicator({ className, ...props }: TabsPrimitive.Indicator.Props) {
+  return (
+    <TabsPrimitive.Indicator
+      data-slot="tabs-indicator"
+      className={cn(
+        // Base positioning – tracks the active tab via CSS variables
+        "absolute top-0 start-0 -z-1",
+        "translate-x-(--active-tab-left) translate-y-(--active-tab-top)",
+        "w-(--active-tab-width) h-(--active-tab-height)",
+        "transition-[translate,width,height] duration-200 ease-out motion-reduce:transition-none",
+        // Default variant: animated pill
+        "group-data-[variant=default]/tabs-list:rounded-3xl",
+        "group-data-[variant=default]/tabs-list:bg-surface",
+        "group-data-[variant=default]/tabs-list:shadow-sm",
+        // Line variant: flat, accent coloured, no shadow
+        "group-data-[variant=line]/tabs-list:rounded-none",
+        "group-data-[variant=line]/tabs-list:bg-ring",
+        // Line + horizontal: collapse to a bottom 2px rule
+        "group-data-[variant=line]/tabs-list:group-data-[orientation=horizontal]/tabs:top-auto",
+        "group-data-[variant=line]/tabs-list:group-data-[orientation=horizontal]/tabs:bottom-0",
+        "group-data-[variant=line]/tabs-list:group-data-[orientation=horizontal]/tabs:translate-y-0",
+        "group-data-[variant=line]/tabs-list:group-data-[orientation=horizontal]/tabs:h-0.5",
+        // Line + vertical: collapse to a start-side 2px rule
+        "group-data-[variant=line]/tabs-list:group-data-[orientation=vertical]/tabs:translate-x-0",
+        "group-data-[variant=line]/tabs-list:group-data-[orientation=vertical]/tabs:w-0.5",
         className,
       )}
       {...props}
@@ -73,10 +133,22 @@ function TabsContent({ className, ...props }: TabsPrimitive.Panel.Props) {
   return (
     <TabsPrimitive.Panel
       data-slot="tabs-content"
-      className={cn("text-sm flex-1 outline-none", className)}
+      className={cn(
+        "w-full flex-1 p-2 outline-none",
+        "group-data-[orientation=horizontal]/tabs:mt-4",
+        "group-data-[orientation=vertical]/tabs:ms-4",
+        className,
+      )}
       {...props}
     />
   );
 }
 
-export { Tabs, TabsList, TabsTrigger, TabsContent, tabsListVariants };
+export {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsIndicator,
+  TabsContent,
+  tabsListVariants,
+};
