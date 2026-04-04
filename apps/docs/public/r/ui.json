@@ -4,7 +4,8 @@
   "type": "registry:ui",
   "description": "All UI components from @herocn/ui",
   "dependencies": [
-    "@base-ui/react"
+    "@base-ui/react",
+    "lucide-react"
   ],
   "registryDependencies": [
     "@herocn/avatar",
@@ -14,6 +15,7 @@
     "@herocn/collapsible",
     "@herocn/dropdown-menu",
     "@herocn/input",
+    "@herocn/select",
     "@herocn/surface",
     "@herocn/tabs"
   ]

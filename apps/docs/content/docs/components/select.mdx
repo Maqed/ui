@@ -1,0 +1,172 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from—triggered by a button.
+---
+
+<ComponentPreview name="select-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add @herocn/select" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install @base-ui/react" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="select" title="components/ui/select.tsx" />
+
+<Step>Add the following css colors & utilities</Step>
+
+<RenderCSSShared
+  light={["--surface-secondary"]}
+  dark={["--surface-secondary"]}
+  theme={["--color-surface-secondary"]}
+  css={["@utility pressible", "@utility focus-ring", "@utility invalid-field-ring", "@utility invalid-field-ring-focus",
+  ]}
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+```
+
+Pass an `items` array to `Select` so `SelectValue` can show the label for the selected option. Render `SelectItem` children for each option (including groups and separators as needed).
+
+```tsx
+const items = [
+  { label: "Select a fruit", value: null },
+  { label: "Apple", value: "apple" },
+  { label: "Banana", value: "banana" },
+]
+
+<Select items={items}>
+  <SelectTrigger className="w-full max-w-48">
+    <SelectValue />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectGroup>
+      {items.map((item) => (
+        <SelectItem key={item.label} value={item.value}>
+          {item.label}
+        </SelectItem>
+      ))}
+    </SelectGroup>
+  </SelectContent>
+</Select>
+```
+
+## Examples
+
+### Groups
+
+Use `SelectGroup`, `SelectLabel`, and `SelectSeparator` to organize items.
+
+<ComponentPreview name="select-groups" />
+
+### Multiple
+
+Set `multiple` on `Select` and control selection with an array `value` and `onValueChange`.
+
+<ComponentPreview name="select-multiple" />
+
+### Scrollable
+
+A select with many items scrolls inside the popup.
+
+<ComponentPreview previewClassName="*:max-w-md" name="select-scrollable" />
+
+### Disabled
+
+Set `disabled` on the root `Select` to disable the whole control, or on individual `SelectItem` components to disable specific options.
+
+<ComponentPreview name="select-disabled" />
+
+### Invalid
+
+Add the `data-invalid` attribute to the `Field` component and the `aria-invalid` attribute to the `SelectTrigger` component to show an error state.
+
+```tsx showLineNumbers /data-invalid/ /aria-invalid/
+<Field data-invalid>
+  <FieldLabel>Fruit</FieldLabel>
+  <SelectTrigger aria-invalid>
+    <SelectValue />
+  </SelectTrigger>
+</Field>
+```
+
+<ComponentPreview name="select-invalid" />
+
+### Variants
+
+The Select component supports two visual variants:
+
+- `primary` (default) - Standard styling with shadow, suitable for most use cases
+- `secondary` - Lower emphasis variant without shadow, suitable for use in Surface components
+
+<ComponentPreview previewClassName="*:max-w-sm" name="select-variants" />
+
+### In Surface
+
+Place the select inside a [`Surface`](/docs/components/surface) panel. Use `variant="secondary"` on `Select` so the trigger sits cleanly on the surface background.
+
+<ComponentPreview previewClassName="*:max-w-md" name="select-surface" />
+
+## RTL
+
+To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+
+<ComponentPreview name="select-rtl" direction="rtl" />
+
+## API Reference
+
+The select is built on [Base UI Select](https://base-ui.com/react/components/select). `Select` forwards props to the root; `SelectTrigger` adds styling and a `size` option.
+
+### Select
+
+<ApiRefTable
+  props={[
+    {
+      name: "variant",
+      type: '"default" | "secondary"',
+      defaultValue: '"default"',
+      description:
+        "Sets the trigger background style via context (secondary uses the secondary surface).",
+    },
+  ]}
+/>
+
+See the [Base UI Select API reference](https://base-ui.com/react/components/select#api-reference) for all other props (`items`, `value`, `onValueChange`, positioning, etc.).

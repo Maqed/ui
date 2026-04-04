@@ -694,4 +694,103 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "select-demo",
+    type: "registry:example",
+    registryDependencies: ["select"],
+    files: [
+      {
+        path: "examples/select-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "select-variants",
+    type: "registry:example",
+    registryDependencies: ["select"],
+    files: [
+      {
+        path: "examples/select-variants.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "select-surface",
+    type: "registry:example",
+    registryDependencies: ["select", "surface"],
+    files: [
+      {
+        path: "examples/select-surface.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "select-groups",
+    type: "registry:example",
+    registryDependencies: ["select"],
+    files: [
+      {
+        path: "examples/select-groups.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "select-multiple",
+    type: "registry:example",
+    registryDependencies: ["select"],
+    files: [
+      {
+        path: "examples/select-multiple.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "select-scrollable",
+    type: "registry:example",
+    registryDependencies: ["select"],
+    files: [
+      {
+        path: "examples/select-scrollable.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "select-disabled",
+    type: "registry:example",
+    registryDependencies: ["select"],
+    files: [
+      {
+        path: "examples/select-disabled.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "select-invalid",
+    type: "registry:example",
+    registryDependencies: ["field", "select"],
+    files: [
+      {
+        path: "examples/select-invalid.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "select-rtl",
+    type: "registry:example",
+    registryDependencies: ["select"],
+    files: [
+      {
+        path: "examples/select-rtl.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

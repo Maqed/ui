@@ -236,6 +236,35 @@ export const ui: Registry["items"] = [
     },
   },
   {
+    name: "select",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react", "lucide-react"],
+    files: [
+      {
+        path: "ui/select.tsx",
+        type: "registry:ui",
+      },
+    ],
+    cssVars: {
+      light: {
+        "--surface-secondary": cssVars.light["--surface-secondary"],
+      },
+      dark: {
+        "--surface-secondary": cssVars.dark["--surface-secondary"],
+      },
+      theme: {
+        "--color-surface-secondary": cssVars.theme["--color-surface-secondary"],
+      },
+    },
+    css: {
+      "@utility pressible": css["@utility pressible"],
+      "@utility focus-ring": css["@utility focus-ring"],
+      "@utility invalid-field-ring": css["@utility invalid-field-ring"],
+      "@utility invalid-field-ring-focus":
+        css["@utility invalid-field-ring-focus"],
+    },
+  },
+  {
     name: "tabs",
     type: "registry:ui",
     dependencies: ["@base-ui/react"],
