@@ -323,4 +323,41 @@ export const ui: Registry["items"] = [
       },
     },
   },
+  {
+    name: "textarea",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/textarea.tsx",
+        type: "registry:ui",
+      },
+    ],
+    cssVars: {
+      light: {
+        "--eclipse": cssVars.light["--eclipse"],
+        "--snow": cssVars.light["--snow"],
+        "--default": cssVars.light["--default"],
+        "--default-foreground": cssVars.light["--default-foreground"],
+        "--destructive-foreground": cssVars.light["--destructive-foreground"],
+      },
+      dark: {
+        "--default": cssVars.dark["--default"],
+        "--default-foreground": cssVars.dark["--default-foreground"],
+        "--destructive-foreground": cssVars.dark["--destructive-foreground"],
+      },
+      theme: {
+        "--color-default": cssVars.theme["--color-default"],
+        "--color-default-foreground":
+          cssVars.theme["--color-default-foreground"],
+        "--color-destructive-foreground":
+          cssVars.theme["--color-destructive-foreground"],
+      },
+    },
+    css: {
+      "@utility focus-field-ring": css["@utility focus-field-ring"],
+      "@utility invalid-field-ring": css["@utility invalid-field-ring"],
+      "@utility invalid-field-ring-focus":
+        css["@utility invalid-field-ring-focus"],
+    },
+  },
 ];

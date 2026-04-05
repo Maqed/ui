@@ -1,0 +1,121 @@
+---
+title: Textarea
+description: Displays a form textarea or a component that looks like a textarea.
+---
+
+<ComponentPreview previewClassName="*:max-w-xs" name="textarea-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add @herocn/textarea" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install @base-ui/react" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="textarea" title="components/ui/textarea.tsx" />
+
+<Step>Add the following css colors & utilities</Step>
+
+<RenderCSSShared
+  light={[
+    "--eclipse",
+    "--snow",
+    "--default",
+    "--default-foreground",
+    "--destructive-foreground",
+  ]}
+  dark={[
+    "--default",
+    "--default-foreground",
+    "--destructive-foreground",
+  ]}
+  theme={[
+    "--color-default",
+    "--color-default-foreground",
+    "--color-destructive-foreground",
+  ]}
+  css={["@utility focus-field-ring", "@utility invalid-field-ring", "@utility invalid-field-ring-focus"]}
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Textarea } from "@/components/ui/textarea"
+```
+
+```tsx
+<Textarea placeholder="Type your message here." />
+```
+
+## Examples
+
+### Variants
+
+Use the `variant` prop for a softer background on the secondary style.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="textarea-variants" />
+
+### States
+
+Disabled textareas are non-interactive. Set `aria-invalid` for error styling (for example when validation fails).
+
+<ComponentPreview previewClassName="*:max-w-xs" name="textarea-states" />
+
+### With field
+
+Pair `Textarea` with `Field`, `FieldLabel`, and `FieldDescription` for accessible labels and helper text.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="textarea-field" />
+
+### With button
+
+Stack a submit action below the control for quick feedback or messaging forms.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="textarea-button" />
+
+## RTL
+
+<ComponentPreview previewClassName="*:max-w-xs" name="textarea-rtl" direction="rtl" />
+
+## API Reference
+
+### Textarea
+
+The `Textarea` component accepts all props from a native [`<textarea>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) plus the following:
+
+<ApiRefTable
+  props={[
+    {
+      name: "variant",
+      type: '"default" | "secondary"',
+      defaultValue: '"default"',
+      description:
+        "Secondary uses the surface secondary background and drops the shadow for a subtler block.",
+    },
+  ]}
+/>

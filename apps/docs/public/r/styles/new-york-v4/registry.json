@@ -713,6 +713,49 @@
       }
     },
     {
+      "name": "textarea",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "light": {
+          "--eclipse": "oklch(0.2103 0.0059 285.89)",
+          "--snow": "oklch(0.9911 0 0)",
+          "--default": "oklch(94% 0.001 286.375)",
+          "--default-foreground": "var(--eclipse)",
+          "--destructive-foreground": "var(--snow)"
+        },
+        "dark": {
+          "--default": "oklch(27.4% 0.006 286.033)",
+          "--default-foreground": "var(--snow)",
+          "--destructive-foreground": "var(--snow)"
+        },
+        "theme": {
+          "--color-default": "var(--default)",
+          "--color-default-foreground": "var(--default-foreground)",
+          "--color-destructive-foreground": "var(--destructive-foreground)"
+        }
+      },
+      "css": {
+        "@utility focus-field-ring": {
+          "@apply ring-2 ring-ring ring-offset-0 outline-none": {},
+          "--tw-ring-offset-width": "0px"
+        },
+        "@utility invalid-field-ring": {
+          "@apply outline-1 outline-destructive outline-solid": {},
+          "--tw-ring-offset-width": "3px"
+        },
+        "@utility invalid-field-ring-focus": {
+          "@apply ring-2 outline-none ring-destructive ring-offset-0": {},
+          "--tw-ring-offset-width": "0px"
+        }
+      }
+    },
+    {
       "name": "card-demo",
       "type": "registry:example",
       "registryDependencies": [
@@ -873,6 +916,87 @@
       "files": [
         {
           "path": "src/registry/new-york-v4/examples/input-rtl.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textarea-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/textarea-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textarea-variants",
+      "type": "registry:example",
+      "registryDependencies": [
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/textarea-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textarea-states",
+      "type": "registry:example",
+      "registryDependencies": [
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/textarea-states.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textarea-field",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/textarea-field.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textarea-button",
+      "type": "registry:example",
+      "registryDependencies": [
+        "button",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/textarea-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "textarea-rtl",
+      "type": "registry:example",
+      "registryDependencies": [
+        "field",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/textarea-rtl.tsx",
           "type": "registry:example"
         }
       ]
