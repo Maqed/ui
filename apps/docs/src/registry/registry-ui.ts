@@ -76,6 +76,18 @@ export const ui: Registry["items"] = [
     },
   },
   {
+    name: "button-group",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react"],
+    registryDependencies: ["@herocn/button-group"],
+    files: [
+      {
+        path: "ui/button-group.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "badge",
     type: "registry:ui",
     dependencies: ["@base-ui/react"],

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-size",
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "components/examples/button-group-size.tsx",
+      "content": "import { PlusIcon } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\n\r\nexport default function ButtonGroupSize() {\r\n  return (\r\n    <div className=\"flex flex-col items-start gap-8\">\r\n      <ButtonGroup>\r\n        <Button variant=\"tertiary\" size=\"sm\">\r\n          Small\r\n        </Button>\r\n        <Button variant=\"tertiary\" size=\"sm\">\r\n          Button\r\n        </Button>\r\n        <Button variant=\"tertiary\" size=\"sm\">\r\n          Group\r\n        </Button>\r\n        <Button variant=\"tertiary\" size=\"icon-sm\">\r\n          <PlusIcon />\r\n        </Button>\r\n      </ButtonGroup>\r\n      <ButtonGroup>\r\n        <Button variant=\"tertiary\">Default</Button>\r\n        <Button variant=\"tertiary\">Button</Button>\r\n        <Button variant=\"tertiary\">Group</Button>\r\n        <Button variant=\"tertiary\" size=\"icon\">\r\n          <PlusIcon />\r\n        </Button>\r\n      </ButtonGroup>\r\n      <ButtonGroup>\r\n        <Button variant=\"tertiary\" size=\"lg\">\r\n          Large\r\n        </Button>\r\n        <Button variant=\"tertiary\" size=\"lg\">\r\n          Button\r\n        </Button>\r\n        <Button variant=\"tertiary\" size=\"lg\">\r\n          Group\r\n        </Button>\r\n        <Button variant=\"tertiary\" size=\"icon-lg\">\r\n          <PlusIcon />\r\n        </Button>\r\n      </ButtonGroup>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-separator",
+  "registryDependencies": [
+    "button",
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "components/examples/button-group-separator.tsx",
+      "content": "import { Button } from \"@/components/ui/button\";\r\nimport {\r\n  ButtonGroup,\r\n  ButtonGroupSeparator,\r\n} from \"@/components/ui/button-group\";\r\n\r\nexport default function ButtonGroupSeparatorDemo() {\r\n  return (\r\n    <div className=\"flex flex-col items-center justify-center gap-4\">\r\n      <ButtonGroup orientation=\"horizontal\">\r\n        <Button variant=\"secondary\" size=\"sm\">\r\n          Copy\r\n        </Button>\r\n        <ButtonGroupSeparator />\r\n        <Button variant=\"secondary\" size=\"sm\">\r\n          Paste\r\n        </Button>\r\n      </ButtonGroup>\r\n      <ButtonGroup orientation=\"vertical\" className=\"w-fit\">\r\n        <Button variant=\"secondary\" size=\"sm\">\r\n          Copy\r\n        </Button>\r\n        <ButtonGroupSeparator orientation=\"horizontal\" />\r\n        <Button variant=\"secondary\" size=\"sm\">\r\n          Paste\r\n        </Button>\r\n      </ButtonGroup>\r\n    </div>\r\n  );\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

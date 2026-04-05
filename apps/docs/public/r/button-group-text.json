@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-text",
+  "registryDependencies": [
+    "button-group",
+    "input",
+    "label"
+  ],
+  "files": [
+    {
+      "path": "components/examples/button-group-text.tsx",
+      "content": "import { ButtonGroup, ButtonGroupText } from \"@/components/ui/button-group\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport { Label } from \"@/components/ui/label\";\r\n\r\nexport default function ButtonGroupTextDemo() {\r\n  return (\r\n    <ButtonGroup className=\"max-w-sm\">\r\n      <ButtonGroupText\r\n        render={\r\n          <Label htmlFor=\"button-group-text-name\">Text</Label>\r\n        }\r\n      />\r\n      <Input\r\n        id=\"button-group-text-name\"\r\n        variant=\"secondary\"\r\n        placeholder=\"Type something here...\"\r\n      />\r\n    </ButtonGroup>\r\n  );\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

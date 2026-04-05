@@ -1,0 +1,238 @@
+---
+title: Button Group
+description: A container that groups related buttons together with consistent styling.
+---
+
+<ComponentPreview name="button-group-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add @herocn/button-group" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install @base-ui/react" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="button-group"
+  title="components/ui/button-group.tsx"
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  ButtonGroup,
+  ButtonGroupSeparator,
+  ButtonGroupText,
+} from "@/components/ui/button-group"
+```
+
+```tsx
+<ButtonGroup>
+  <Button>Button 1</Button>
+  <Button>Button 2</Button>
+</ButtonGroup>
+```
+
+## Accessibility
+
+- The `ButtonGroup` component sets `role="group"` on the container.
+- Use the `Tab` key to move focus between controls inside the group.
+- Provide an accessible name with `aria-label` or `aria-labelledby`.
+
+```tsx showLineNumbers
+<ButtonGroup aria-label="Button group">
+  <Button>Button 1</Button>
+  <Button>Button 2</Button>
+</ButtonGroup>
+```
+
+## ButtonGroup vs selection controls
+
+Use `ButtonGroup` when each control performs a **one-shot action** (navigate, submit, open a menu). When you need a **single selected option** among several (pressed / active state), use [Tabs](/docs/components/tabs), a radio group, or another selection pattern instead.
+
+## Examples
+
+### Orientation
+
+Set the `orientation` prop to change the layout.
+
+<ComponentPreview name="button-group-orientation" />
+
+### Size
+
+Control sizing with the `size` prop on each `Button`.
+
+<ComponentPreview name="button-group-size" />
+
+### Separator
+
+`ButtonGroupSeparator` visually divides items. Outline buttons often rely on shared borders; for other variants, a separator can clarify hierarchy.
+
+<ComponentPreview name="button-group-separator" />
+
+### Split
+
+Pair a primary action with an icon button, separated by `ButtonGroupSeparator`.
+
+<ComponentPreview name="button-group-split" />
+
+### Input
+
+Place an `Input` beside buttons in the same group.
+
+<ComponentPreview previewClassName="*:max-w-full" name="button-group-input" />
+
+### Input group
+
+Combine with `InputGroup` for richer controls (addons, inline buttons).
+
+<ComponentPreview
+  previewClassName="*:max-w-full"
+  name="button-group-input-group"
+/>
+
+### Dropdown menu
+
+Attach a `DropdownMenu` for a split button or overflow actions.
+
+<ComponentPreview name="button-group-dropdown" />
+
+### Select
+
+Use alongside `Select` for compound fields such as currency plus amount.
+
+<ComponentPreview previewClassName="*:max-w-full" name="button-group-select" />
+
+### Popover
+
+Pair with `Popover` for secondary panels tied to the group.
+
+<ComponentPreview name="button-group-popover" />
+
+### RTL
+
+To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+
+<ComponentPreview name="button-group-rtl" direction="rtl" />
+
+## API Reference
+
+### ButtonGroup
+
+Container that groups related controls with shared border and radius treatment.
+
+<ApiRefTable
+  props={[
+    {
+      name: "orientation",
+      type: '"horizontal" | "vertical"',
+      defaultValue: '"horizontal"',
+      description: "Layout direction for direct children.",
+    },
+  ]}
+/>
+
+```tsx
+<ButtonGroup>
+  <Button>Button 1</Button>
+  <Button>Button 2</Button>
+</ButtonGroup>
+```
+
+Nest multiple `ButtonGroup` components to create spaced clusters. See the [nested](#nested) example.
+
+```tsx
+<ButtonGroup>
+  <ButtonGroup>{/* … */}</ButtonGroup>
+  <ButtonGroup>{/* … */}</ButtonGroup>
+</ButtonGroup>
+```
+
+### ButtonGroupSeparator
+
+Visually divides adjacent controls. Orientation follows the separator: use `vertical` (default) between horizontally arranged buttons, or `horizontal` inside a vertical group.
+
+<ApiRefTable
+  props={[
+    {
+      name: "orientation",
+      type: '"horizontal" | "vertical"',
+      defaultValue: '"vertical"',
+      description: "Separator axis; should be orthogonal to the group orientation.",
+    },
+  ]}
+/>
+
+```tsx
+<ButtonGroup>
+  <Button>Button 1</Button>
+  <ButtonGroupSeparator />
+  <Button>Button 2</Button>
+</ButtonGroup>
+```
+
+### ButtonGroupText
+
+Static text or label region inside the group. Uses Base UI’s `render` prop (not `asChild`) to compose with a custom element.
+
+<ApiRefTable
+  props={[
+    {
+      name: "render",
+      type: "React.ReactElement",
+      description:
+        "Optional element to render as the root (e.g. a `Label`) while merging styles and behavior.",
+    },
+  ]}
+/>
+
+```tsx
+<ButtonGroup>
+  <ButtonGroupText>Text</ButtonGroupText>
+  <Button>Button</Button>
+</ButtonGroup>
+```
+
+Use `render` to associate text with a form control:
+
+<ComponentPreview previewClassName="*:max-w-full" name="button-group-text" />
+
+```tsx showLineNumbers
+import { ButtonGroup, ButtonGroupText } from "@/components/ui/button-group"
+import { Label } from "@/components/ui/label"
+
+export function ButtonGroupTextExample() {
+  return (
+    <ButtonGroup>
+      <ButtonGroupText render={<Label htmlFor="name">Text</Label>} />
+      <Input placeholder="Type something here..." id="name" />
+    </ButtonGroup>
+  )
+}
+```

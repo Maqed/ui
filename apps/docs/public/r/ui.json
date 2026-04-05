@@ -11,6 +11,7 @@
     "@herocn/avatar",
     "@herocn/badge",
     "@herocn/button",
+    "@herocn/button-group",
     "@herocn/card",
     "@herocn/collapsible",
     "@herocn/dropdown-menu",

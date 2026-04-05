@@ -50,6 +50,21 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "button-group": {
+    name: "button-group",
+    type: "registry:ui",
+    registryDependencies: ["@herocn/button-group"],
+    files: [{
+      path: "src/registry/new-york-v4/ui/button-group.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/button-group.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   "badge": {
     name: "badge",
     type: "registry:ui",
@@ -1021,6 +1036,186 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/examples/input-button-group.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "button-group-demo": {
+    name: "button-group-demo",
+    type: "registry:example",
+    registryDependencies: ["button","button-group","dropdown-menu"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "button-group-orientation": {
+    name: "button-group-orientation",
+    type: "registry:example",
+    registryDependencies: ["button","button-group"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-group-orientation.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-group-orientation.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "button-group-size": {
+    name: "button-group-size",
+    type: "registry:example",
+    registryDependencies: ["button","button-group"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-group-size.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-group-size.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "button-group-separator": {
+    name: "button-group-separator",
+    type: "registry:example",
+    registryDependencies: ["button","button-group"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-group-separator.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-group-separator.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "button-group-split": {
+    name: "button-group-split",
+    type: "registry:example",
+    registryDependencies: ["button","button-group"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-group-split.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-group-split.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "button-group-input": {
+    name: "button-group-input",
+    type: "registry:example",
+    registryDependencies: ["button","button-group","input"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-group-input.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-group-input.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "button-group-input-group": {
+    name: "button-group-input-group",
+    type: "registry:example",
+    registryDependencies: ["button","button-group","input-group","tooltip"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-group-input-group.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-group-input-group.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "button-group-dropdown": {
+    name: "button-group-dropdown",
+    type: "registry:example",
+    registryDependencies: ["button","button-group","dropdown-menu"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-group-dropdown.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-group-dropdown.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "button-group-select": {
+    name: "button-group-select",
+    type: "registry:example",
+    registryDependencies: ["button","button-group","input","select"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-group-select.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-group-select.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "button-group-popover": {
+    name: "button-group-popover",
+    type: "registry:example",
+    registryDependencies: ["button","button-group","field","popover","textarea"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-group-popover.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-group-popover.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "button-group-rtl": {
+    name: "button-group-rtl",
+    type: "registry:example",
+    registryDependencies: ["button","button-group","dropdown-menu"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-group-rtl.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-group-rtl.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "button-group-text": {
+    name: "button-group-text",
+    type: "registry:example",
+    registryDependencies: ["button-group","input","label"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/button-group-text.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/button-group-text.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

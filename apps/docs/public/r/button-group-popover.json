@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-popover",
+  "registryDependencies": [
+    "button",
+    "button-group",
+    "field",
+    "popover",
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "components/examples/button-group-popover.tsx",
+      "content": "import { BotIcon, ChevronDownIcon } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\nimport {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/components/ui/field\";\r\nimport {\r\n  Popover,\r\n  PopoverContent,\r\n  PopoverDescription,\r\n  PopoverHeader,\r\n  PopoverTitle,\r\n  PopoverTrigger,\r\n} from \"@/components/ui/popover\";\r\nimport { Textarea } from \"@/components/ui/textarea\";\r\n\r\nexport default function ButtonGroupPopover() {\r\n  return (\r\n    <ButtonGroup>\r\n      <Button variant=\"outline\">\r\n        <BotIcon /> Copilot\r\n      </Button>\r\n      <Popover>\r\n        <PopoverTrigger\r\n          render={\r\n            <Button variant=\"outline\" size=\"icon\" aria-label=\"Open Popover\" />\r\n          }\r\n        >\r\n          <ChevronDownIcon />\r\n        </PopoverTrigger>\r\n        <PopoverContent align=\"end\" className=\"rounded-xl text-sm\">\r\n          <PopoverHeader>\r\n            <PopoverTitle>Start a new task with Copilot</PopoverTitle>\r\n            <PopoverDescription>\r\n              Describe your task in natural language.\r\n            </PopoverDescription>\r\n          </PopoverHeader>\r\n          <Field>\r\n            <FieldLabel htmlFor=\"button-group-task\" className=\"sr-only\">\r\n              Task Description\r\n            </FieldLabel>\r\n            <Textarea\r\n              id=\"button-group-task\"\r\n              placeholder=\"I need to...\"\r\n              className=\"resize-none\"\r\n            />\r\n            <FieldDescription>\r\n              Copilot will open a pull request for review.\r\n            </FieldDescription>\r\n          </Field>\r\n        </PopoverContent>\r\n      </Popover>\r\n    </ButtonGroup>\r\n  );\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

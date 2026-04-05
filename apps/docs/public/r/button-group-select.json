@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-select",
+  "registryDependencies": [
+    "button",
+    "button-group",
+    "input",
+    "select"
+  ],
+  "files": [
+    {
+      "path": "components/examples/button-group-select.tsx",
+      "content": "\"use client\";\r\n\r\nimport * as React from \"react\";\r\nimport { ArrowRightIcon } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\nimport { Input } from \"@/components/ui/input\";\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectGroup,\r\n  SelectItem,\r\n  SelectTrigger,\r\n} from \"@/components/ui/select\";\r\n\r\nconst CURRENCIES = [\r\n  { label: \"US Dollar\", value: \"$\" },\r\n  { label: \"Euro\", value: \"€\" },\r\n  { label: \"British Pound\", value: \"£\" },\r\n];\r\n\r\nexport default function ButtonGroupSelect() {\r\n  const [currency, setCurrency] = React.useState(\"$\");\r\n\r\n  return (\r\n    <ButtonGroup>\r\n      <ButtonGroup>\r\n        <Select\r\n          items={CURRENCIES}\r\n          value={currency}\r\n          variant=\"secondary\"\r\n          onValueChange={(value) => setCurrency(value as string)}\r\n        >\r\n          <SelectTrigger>{currency}</SelectTrigger>\r\n          <SelectContent align=\"start\">\r\n            <SelectGroup>\r\n              {CURRENCIES.map((item) => (\r\n                <SelectItem key={item.value} value={item.value}>\r\n                  {item.value}{\" \"}\r\n                  <span className=\"text-muted-foreground\">{item.label}</span>\r\n                </SelectItem>\r\n              ))}\r\n            </SelectGroup>\r\n          </SelectContent>\r\n        </Select>\r\n        <Input\r\n          variant=\"secondary\"\r\n          placeholder=\"10.00\"\r\n          pattern=\"[0-9]*\"\r\n        />\r\n      </ButtonGroup>\r\n      <ButtonGroup>\r\n        <Button aria-label=\"Send\" size=\"icon\" variant=\"tertiary\">\r\n          <ArrowRightIcon />\r\n        </Button>\r\n      </ButtonGroup>\r\n    </ButtonGroup>\r\n  );\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}
