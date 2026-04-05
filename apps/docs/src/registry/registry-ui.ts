@@ -79,7 +79,7 @@ export const ui: Registry["items"] = [
     name: "button-group",
     type: "registry:ui",
     dependencies: ["@base-ui/react"],
-    registryDependencies: ["@herocn/button-group"],
+    registryDependencies: ["@herocn/separator"],
     files: [
       {
         path: "ui/button-group.tsx",
@@ -286,6 +286,17 @@ export const ui: Registry["items"] = [
       "@utility invalid-field-ring-focus":
         css["@utility invalid-field-ring-focus"],
     },
+  },
+  {
+    name: "separator",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react"],
+    files: [
+      {
+        path: "ui/separator.tsx",
+        type: "registry:ui",
+      },
+    ],
   },
   {
     name: "tabs",

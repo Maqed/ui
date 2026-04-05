@@ -53,7 +53,7 @@ export const Index: Record<string, any> = {
   "button-group": {
     name: "button-group",
     type: "registry:ui",
-    registryDependencies: ["@herocn/button-group"],
+    registryDependencies: ["@herocn/separator"],
     files: [{
       path: "src/registry/new-york-v4/ui/button-group.tsx",
       type: "registry:ui",
@@ -181,6 +181,21 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/ui/select.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "separator": {
+    name: "separator",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "src/registry/new-york-v4/ui/separator.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/separator.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

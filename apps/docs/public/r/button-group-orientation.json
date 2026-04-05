@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "components/examples/button-group-orientation.tsx",
-      "content": "import { MinusIcon, PlusIcon } from \"lucide-react\";\r\n\r\nimport { Button } from \"@/components/ui/button\";\r\nimport { ButtonGroup } from \"@/components/ui/button-group\";\r\n\r\nexport default function ButtonGroupOrientation() {\r\n  return (\r\n    <ButtonGroup\r\n      orientation=\"vertical\"\r\n      aria-label=\"Media controls\"\r\n      className=\"h-fit\"\r\n    >\r\n      <Button variant=\"tertiary\" size=\"icon\">\r\n        <PlusIcon />\r\n      </Button>\r\n      <Button variant=\"tertiary\" size=\"icon\">\r\n        <MinusIcon />\r\n      </Button>\r\n    </ButtonGroup>\r\n  );\r\n}\r\n",
+      "content": "import { MinusIcon, PlusIcon } from \"lucide-react\";\n\nimport { Button } from \"@/components/ui/button\";\nimport { ButtonGroup } from \"@/components/ui/button-group\";\n\nexport default function ButtonGroupOrientation() {\n  return (\n    <ButtonGroup\n      orientation=\"vertical\"\n      aria-label=\"Media controls\"\n      className=\"h-fit\"\n    >\n      <Button variant=\"tertiary\" size=\"icon\">\n        <PlusIcon />\n      </Button>\n      <Button variant=\"tertiary\" size=\"icon\">\n        <MinusIcon />\n      </Button>\n    </ButtonGroup>\n  );\n}\n",
       "type": "registry:example"
     }
   ],

@@ -18,6 +18,7 @@
     "@herocn/input",
     "@herocn/popover",
     "@herocn/select",
+    "@herocn/separator",
     "@herocn/surface",
     "@herocn/tabs"
   ]

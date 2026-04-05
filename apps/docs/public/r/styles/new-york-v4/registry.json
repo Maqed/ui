@@ -430,7 +430,7 @@
         "@base-ui/react"
       ],
       "registryDependencies": [
-        "@herocn/button-group"
+        "@herocn/separator"
       ],
       "files": [
         {
@@ -669,6 +669,19 @@
           "--tw-ring-offset-width": "0px"
         }
       }
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
     },
     {
       "name": "tabs",
