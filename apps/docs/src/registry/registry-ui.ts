@@ -340,6 +340,12 @@ export const ui: Registry["items"] = [
         type: "registry:ui",
       },
     ],
+    css: {
+      "@utility focus-ring": css["@utility focus-ring"],
+      "@utility invalid-field-ring": css["@utility invalid-field-ring"],
+      "@utility invalid-field-ring-focus":
+        css["@utility invalid-field-ring-focus"],
+    },
   },
   {
     name: "tabs",
