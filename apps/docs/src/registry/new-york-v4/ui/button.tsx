@@ -17,7 +17,7 @@ const buttonVariants = cva(
         secondary:
           "bg-default text-primary hover:bg-default/80 active:bg-default/80",
         tertiary:
-          "bg-default text-foreground hover:bg-default/80 active:bg-default/80",
+          "bg-default text-default-foreground hover:bg-default/80 active:bg-default/80",
         ghost:
           "hover:bg-muted hover:text-foreground active:bg-muted active:text-foreground dark:hover:bg-muted/50 aria-expanded:bg-muted aria-expanded:text-foreground",
         destructive:
