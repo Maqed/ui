@@ -1305,4 +1305,59 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "toggle-demo",
+    type: "registry:example",
+    registryDependencies: ["toggle"],
+    files: [
+      {
+        path: "examples/toggle-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-ghost",
+    type: "registry:example",
+    registryDependencies: ["toggle"],
+    files: [
+      {
+        path: "examples/toggle-ghost.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-sizes",
+    type: "registry:example",
+    registryDependencies: ["toggle"],
+    files: [
+      {
+        path: "examples/toggle-sizes.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-disabled",
+    type: "registry:example",
+    registryDependencies: ["toggle"],
+    files: [
+      {
+        path: "examples/toggle-disabled.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-rtl",
+    type: "registry:example",
+    registryDependencies: ["toggle"],
+    files: [
+      {
+        path: "examples/toggle-rtl.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

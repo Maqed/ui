@@ -1,0 +1,124 @@
+---
+title: Toggle
+description: A two-state button that can be either on or off.
+---
+
+<ComponentPreview name="toggle-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add @herocn/toggle.json" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install @base-ui/react" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="toggle" title="components/ui/toggle.tsx" />
+
+<Step>Add the following css colors & utilities</Step>
+<RenderCSSShared
+  light={["--eclipse", "--snow", "--default", "--default-foreground"]}
+  dark={["--default", "--default-foreground"]}
+  theme={["--color-default", "--color-default-foreground"]}
+  css={["@utility pressible", "@utility focus-ring"]}
+/>
+
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Toggle } from "@/components/ui/toggle"
+```
+
+```tsx
+<Toggle>Toggle</Toggle>
+```
+
+## Examples
+
+### Ghost
+
+Use `variant="ghost"` for a ghost style.
+
+<ComponentPreview name="toggle-ghost" />
+
+### Sizes
+
+Use the `size` prop to change the size of the toggle. Icon-only sizes are available with `"icon-sm"`, `"icon"`, and `"icon-lg"`.
+
+<ComponentPreview name="toggle-sizes" />
+
+### Disabled
+
+<ComponentPreview name="toggle-disabled" />
+
+## RTL
+
+<ComponentPreview name="toggle-rtl" direction="rtl" />
+
+## API Reference
+
+### Toggle
+
+<ApiRefTable
+  props={[
+    {
+      name: "variant",
+      type: '"default" | "ghost"',
+      defaultValue: '"default"',
+      description: "Controls the visual style of the toggle.",
+    },
+    {
+      name: "size",
+      type: '"default" | "sm" | "lg" | "icon" | "icon-sm" | "icon-lg"',
+      defaultValue: '"default"',
+      description: "Controls the size of the toggle. Use icon sizes for icon-only toggles.",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: "false",
+      description: "Prevents user interaction with the toggle.",
+    },
+    {
+      name: "pressed",
+      type: "boolean",
+      description: "Controls the pressed state of the toggle (controlled mode).",
+    },
+    {
+      name: "defaultPressed",
+      type: "boolean",
+      defaultValue: "false",
+      description: "The initial pressed state of the toggle (uncontrolled mode).",
+    },
+    {
+      name: "onPressedChange",
+      type: "(pressed: boolean) => void",
+      description: "Callback fired when the pressed state changes.",
+    },
+  ]}
+/>

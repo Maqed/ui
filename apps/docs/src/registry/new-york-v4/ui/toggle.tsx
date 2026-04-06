@@ -1,0 +1,49 @@
+"use client";
+
+import { Toggle as TogglePrimitive } from "@base-ui/react/toggle";
+import { cva, type VariantProps } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+const toggleVariants = cva(
+  "pressible relative isolate inline-flex w-fit origin-center items-center cursor-pointer justify-center gap-2 rounded-3xl px-4 text-sm font-medium whitespace-nowrap outline-none select-none no-highlight  focus-visible:focus-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed aria-disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:opacity-70 aria-pressed:bg-primary/15   aria-pressed:text-primary [&_svg:not([class*='size-'])]:size-4 group/button shrink-0 transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  {
+    variants: {
+      variant: {
+        default:
+          "bg-default text-default-foreground hover:bg-default/80 active:bg-default/80",
+        ghost: "hover:bg-muted hover:text-foreground dark:hover:bg-muted/50",
+      },
+      size: {
+        default:
+          "h-9 w-fit has-data-[icon=inline-end]:pe-3 has-data-[icon=inline-start]:ps-3 ",
+        sm: "h-8 px-3 gap-1 has-data-[icon=inline-end]:pe-2 has-data-[icon=inline-start]:ps-2 [&_svg:not([class*='size-'])]:size-3.5",
+        lg: "h-10 gap-1.5 text-base has-data-[icon=inline-end]:pe-3 has-data-[icon=inline-start]:ps-3 [&_svg:not([class*='size-'])]:size-4",
+        icon: "size-9 [&_svg:not([class*='size-'])]:size-5",
+        "icon-sm": "size-8 [&_svg:not([class*='size-'])]:size-4",
+        "icon-lg": "size-10 [&_svg:not([class*='size-'])]:size-5.5",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  },
+);
+
+function Toggle({
+  className,
+  variant = "default",
+  size = "default",
+  ...props
+}: TogglePrimitive.Props & VariantProps<typeof toggleVariants>) {
+  return (
+    <TogglePrimitive
+      data-slot="toggle"
+      className={cn(toggleVariants({ variant, size, className }))}
+      {...props}
+    />
+  );
+}
+
+export { Toggle, toggleVariants };

@@ -22,6 +22,7 @@
     "@herocn/separator",
     "@herocn/surface",
     "@herocn/tabs",
-    "@herocn/textarea"
+    "@herocn/textarea",
+    "@herocn/toggle"
   ]
 }

@@ -356,6 +356,38 @@ export const ui: Registry["items"] = [
     },
   },
   {
+    name: "toggle",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react"],
+    files: [
+      {
+        path: "ui/toggle.tsx",
+        type: "registry:ui",
+      },
+    ],
+    cssVars: {
+      light: {
+        "--eclipse": cssVars.light["--eclipse"],
+        "--snow": cssVars.light["--snow"],
+        "--default": cssVars.light["--default"],
+        "--default-foreground": cssVars.light["--default-foreground"],
+      },
+      dark: {
+        "--default": cssVars.dark["--default"],
+        "--default-foreground": cssVars.dark["--default-foreground"],
+      },
+      theme: {
+        "--color-default": cssVars.theme["--color-default"],
+        "--color-default-foreground":
+          cssVars.theme["--color-default-foreground"],
+      },
+    },
+    css: {
+      "@utility pressible": css["@utility pressible"],
+      "@utility focus-ring": css["@utility focus-ring"],
+    },
+  },
+  {
     name: "textarea",
     type: "registry:ui",
     files: [
