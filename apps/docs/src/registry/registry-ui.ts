@@ -388,6 +388,18 @@ export const ui: Registry["items"] = [
     },
   },
   {
+    name: "toggle-group",
+    type: "registry:ui",
+    dependencies: ["@base-ui/react"],
+    registryDependencies: ["@herocn/toggle"],
+    files: [
+      {
+        path: "ui/toggle-group.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "textarea",
     type: "registry:ui",
     files: [

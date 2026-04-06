@@ -245,6 +245,21 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "toggle-group": {
+    name: "toggle-group",
+    type: "registry:ui",
+    registryDependencies: ["@herocn/toggle"],
+    files: [{
+      path: "src/registry/new-york-v4/ui/toggle-group.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/toggle-group.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   "textarea": {
     name: "textarea",
     type: "registry:ui",
@@ -2101,6 +2116,111 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/examples/toggle-rtl.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "toggle-group-demo": {
+    name: "toggle-group-demo",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/toggle-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/toggle-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "toggle-group-sizes": {
+    name: "toggle-group-sizes",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/toggle-group-sizes.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/toggle-group-sizes.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "toggle-group-spacing": {
+    name: "toggle-group-spacing",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/toggle-group-spacing.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/toggle-group-spacing.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "toggle-group-vertical": {
+    name: "toggle-group-vertical",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/toggle-group-vertical.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/toggle-group-vertical.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "toggle-group-disabled": {
+    name: "toggle-group-disabled",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/toggle-group-disabled.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/toggle-group-disabled.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "toggle-group-custom": {
+    name: "toggle-group-custom",
+    type: "registry:example",
+    registryDependencies: ["toggle-group","field"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/toggle-group-custom.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/toggle-group-custom.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "toggle-group-rtl": {
+    name: "toggle-group-rtl",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/toggle-group-rtl.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/toggle-group-rtl.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

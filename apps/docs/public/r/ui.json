@@ -23,6 +23,7 @@
     "@herocn/surface",
     "@herocn/tabs",
     "@herocn/textarea",
-    "@herocn/toggle"
+    "@herocn/toggle",
+    "@herocn/toggle-group"
   ]
 }

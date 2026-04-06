@@ -1360,4 +1360,81 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "toggle-group-demo",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: [
+      {
+        path: "examples/toggle-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-group-sizes",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: [
+      {
+        path: "examples/toggle-group-sizes.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-group-spacing",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: [
+      {
+        path: "examples/toggle-group-spacing.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-group-vertical",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: [
+      {
+        path: "examples/toggle-group-vertical.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-group-disabled",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: [
+      {
+        path: "examples/toggle-group-disabled.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-group-custom",
+    type: "registry:example",
+    registryDependencies: ["toggle-group", "field"],
+    files: [
+      {
+        path: "examples/toggle-group-custom.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-group-rtl",
+    type: "registry:example",
+    registryDependencies: ["toggle-group"],
+    files: [
+      {
+        path: "examples/toggle-group-rtl.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];
