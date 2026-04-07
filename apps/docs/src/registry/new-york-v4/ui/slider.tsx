@@ -47,8 +47,17 @@ function Slider({
           <SliderPrimitive.Thumb
             data-slot="slider-thumb"
             key={index}
-            className="block data-[orientation=horizontal]:h-4 data-[orientation=horizontal]:w-5.5 data-[orientation=vertical]:h-5.5 data-[orientation=vertical]:w-4 shrink-0 rounded-full bg-background shadow-sm transition-colors select-none cursor-grab data-dragging:cursor-grabbing has-focus:data-dragging:scale-90 has-focus-visible:focus-ring has-focus-visible:ring-offset-2 outline-hidden disabled:pointer-events-none disabled:opacity-50 dark:bg-foreground"
-          />
+            className="group/slider-thumb data-[orientation=horizontal]:h-4.5 data-[orientation=horizontal]:w-6 data-[orientation=vertical]:h-6 data-[orientation=vertical]:w-4.5 shrink-0 rounded-full bg-primary shadow-sm transition-colors select-none cursor-grab data-dragging:cursor-grabbing has-focus-visible:focus-ring has-focus-visible:ring-offset-2 outline-hidden disabled:pointer-events-none disabled:opacity-50 flex items-center justify-center"
+          >
+            <div
+              className={cn(
+                "bg-white block group-active/slider-thumb:scale-90",
+                "group-data-[orientation=horizontal]/slider-thumb:h-3.5 group-data-[orientation=horizontal]/slider-thumb:w-5",
+                "group-data-[orientation=vertical]/slider-thumb:h-5 group-data-[orientation=vertical]/slider-thumb:w-3.5",
+                "rounded-full",
+              )}
+            />
+          </SliderPrimitive.Thumb>
         ))}
       </SliderPrimitive.Control>
     </SliderPrimitive.Root>
