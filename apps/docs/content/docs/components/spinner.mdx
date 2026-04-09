@@ -1,0 +1,126 @@
+---
+title: Spinner
+description: An indicator that can be used to show a loading state.
+---
+
+<ComponentPreview name="spinner-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add @herocn/spinner" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="spinner" title="components/ui/spinner.tsx" />
+
+<Step>Add the following css colors & utilities</Step>
+
+<RenderCSSShared
+  light={["--success", "--warning"]}
+  dark={["--warning"]}
+  theme={["--color-success", "--color-warning"]}
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Spinner } from "@/components/ui/spinner"
+```
+
+```tsx
+<Spinner />
+```
+
+## Examples
+
+### Variants
+
+Use the `variant` prop to match the spinner color to your status or intent.
+
+<ComponentPreview name="spinner-variants" />
+
+### Size
+
+Use the `size` prop from the HeroCN spinner (`sm`, `default`, `lg`, `xl`).
+
+<ComponentPreview name="spinner-sizes" />
+
+### Button
+
+Add a spinner to a button to indicate a loading state. Place the spinner before
+the label with `data-icon="inline-start"` or after it with
+`data-icon="inline-end"`.
+
+<ComponentPreview name="spinner-button" />
+
+### Badge
+
+Add a spinner to a badge to indicate background activity.
+
+<ComponentPreview name="spinner-badge" />
+
+### Input Group
+
+Use a spinner in input addons to indicate async validation or processing.
+
+<ComponentPreview name="spinner-input-group" />
+
+### Empty
+
+Use a spinner in empty states when data is loading.
+
+<ComponentPreview name="spinner-empty" />
+
+## RTL
+
+<ComponentPreview name="spinner-rtl" direction="rtl" />
+
+## API Reference
+
+### Spinner
+
+The `Spinner` component accepts all native SVG props plus the following:
+
+<ApiRefTable
+  props={[
+    {
+      name: "variant",
+      type: '"default" | "primary" | "destructive" | "success" | "warning"',
+      defaultValue: '"default"',
+      description: "Controls the spinner color.",
+    },
+    {
+      name: "size",
+      type: '"sm" | "default" | "lg" | "xl"',
+      defaultValue: '"default"',
+      description: "Controls the spinner size.",
+    },
+    {
+      name: "className",
+      type: "string",
+      description: "Adds custom classes to the underlying SVG element.",
+    },
+  ]}
+/>

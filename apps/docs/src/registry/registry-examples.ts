@@ -1694,6 +1694,98 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "spinner-demo",
+    type: "registry:example",
+    registryDependencies: ["@herocn/spinner"],
+    files: [
+      {
+        path: "examples/spinner-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spinner-variants",
+    type: "registry:example",
+    registryDependencies: ["@herocn/spinner"],
+    files: [
+      {
+        path: "examples/spinner-variants.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spinner-sizes",
+    type: "registry:example",
+    registryDependencies: ["@herocn/spinner"],
+    files: [
+      {
+        path: "examples/spinner-sizes.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spinner-button",
+    type: "registry:example",
+    registryDependencies: ["@herocn/button", "@herocn/spinner"],
+    files: [
+      {
+        path: "examples/spinner-button.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spinner-badge",
+    type: "registry:example",
+    registryDependencies: ["@herocn/badge", "@herocn/spinner"],
+    files: [
+      {
+        path: "examples/spinner-badge.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spinner-input-group",
+    type: "registry:example",
+    registryDependencies: ["@herocn/input-group", "@herocn/spinner"],
+    files: [
+      {
+        path: "examples/spinner-input-group.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spinner-empty",
+    type: "registry:example",
+    registryDependencies: [
+      "@herocn/button",
+      "@herocn/empty",
+      "@herocn/spinner",
+    ],
+    files: [
+      {
+        path: "examples/spinner-empty.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "spinner-rtl",
+    type: "registry:example",
+    registryDependencies: ["@herocn/spinner"],
+    files: [
+      {
+        path: "examples/spinner-rtl.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "slider-demo",
     type: "registry:example",
     registryDependencies: ["@herocn/slider"],

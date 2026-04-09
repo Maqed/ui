@@ -23,6 +23,7 @@
     "@herocn/separator",
     "@herocn/skeleton",
     "@herocn/slider",
+    "@herocn/spinner",
     "@herocn/surface",
     "@herocn/switch",
     "@herocn/tabs",

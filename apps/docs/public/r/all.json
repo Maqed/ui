@@ -16,6 +16,7 @@
     "@herocn/card",
     "@herocn/collapsible",
     "@herocn/dropdown-menu",
+    "@herocn/empty",
     "@herocn/field",
     "@herocn/input",
     "@herocn/input-group",
@@ -132,6 +133,12 @@
       "type": "registry:ui",
       "target": "",
       "content": "import { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"@/lib/utils\";\n\nconst skeletonAnimationTypes = cva(\n  \"skeleton pointer-events-none relative overflow-hidden rounded-sm bg-surface-tertiary/70\",\n  {\n    variants: {\n      animationType: {\n        shimmer: \"skeleton--shimmer\",\n        pulse: \"animate-pulse\",\n        none: \"\",\n      },\n    },\n    defaultVariants: {\n      animationType: \"shimmer\",\n    },\n  },\n);\n\nfunction Skeleton({\n  className,\n  animationType,\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof skeletonAnimationTypes>) {\n  return (\n    <div\n      data-slot=\"skeleton\"\n      className={cn(skeletonAnimationTypes({ animationType, className }))}\n      {...props}\n    />\n  );\n}\n\nexport { Skeleton, skeletonAnimationTypes };\n"
+    },
+    {
+      "path": "components/ui/spinner.tsx",
+      "type": "registry:ui",
+      "target": "",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\";\nimport { useId } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nfunction SpinnerIcon({ ...props }: React.ComponentProps<\"svg\">) {\n  const id = useId();\n\n  return (\n    <svg data-slot=\"spinner-icon\" viewBox=\"0 0 24 24\" {...props}>\n      <title>Spinner SVG</title>\n      <defs>\n        <linearGradient\n          id={`«data-slot-icon-def-1»-${id}`}\n          x1=\"50%\"\n          x2=\"50%\"\n          y1=\"5.271%\"\n          y2=\"91.793%\"\n        >\n          <stop offset=\"0%\" stopColor=\"currentColor\" />\n          <stop offset=\"100%\" stopColor=\"currentColor\" stopOpacity={0.55} />\n        </linearGradient>\n        <linearGradient\n          id={`«data-slot-icon-def-2»-${id}`}\n          x1=\"50%\"\n          x2=\"50%\"\n          y1=\"15.24%\"\n          y2=\"87.15%\"\n        >\n          <stop offset=\"0%\" stopColor=\"currentColor\" stopOpacity={0} />\n          <stop offset=\"100%\" stopColor=\"currentColor\" stopOpacity={0.55} />\n        </linearGradient>\n      </defs>\n      <g fill=\"none\">\n        <path d=\"m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z\" />\n        <path\n          d=\"M8.749.021a1.5 1.5 0 0 1 .497 2.958A7.5 7.5 0 0 0 3 10.375a7.5 7.5 0 0 0 7.5 7.5v3c-5.799 0-10.5-4.7-10.5-10.5C0 5.23 3.726.865 8.749.021\"\n          fill={`url(#«data-slot-icon-def-1»-${id})`}\n          transform=\"translate(1.5 1.625)\"\n        />\n        <path\n          d=\"M15.392 2.673a1.5 1.5 0 0 1 2.119-.115A10.48 10.48 0 0 1 21 10.375c0 5.8-4.701 10.5-10.5 10.5v-3a7.5 7.5 0 0 0 5.007-13.084a1.5 1.5 0 0 1-.115-2.118\"\n          fill={`url(#«data-slot-icon-def-2»-${id})`}\n          transform=\"translate(1.5 1.625)\"\n        />\n      </g>\n    </svg>\n  );\n}\n\nconst spinnerVariants = cva(\n  \"pointer-events-none relative origin-center animate-spin animation-duration-750\",\n  {\n    variants: {\n      variant: {\n        default: \"text-inherit\",\n        primary: \"text-primary\",\n        destructive: \"text-destructive\",\n        success: \"text-success\",\n        warning: \"text-warning\",\n      },\n      size: {\n        default: \"size-6\",\n        sm: \"size-4\",\n        lg: \"size-8\",\n        xl: \"size-10\",\n      },\n    },\n    defaultVariants: {\n      size: \"default\",\n      variant: \"default\",\n    },\n  },\n);\n\nfunction Spinner({\n  className,\n  variant,\n  size,\n  ...props\n}: React.ComponentProps<\"svg\"> & VariantProps<typeof spinnerVariants>) {\n  return (\n    <SpinnerIcon\n      role=\"status\"\n      aria-label=\"Loading\"\n      className={cn(spinnerVariants({ variant, size, className }))}\n      {...props}\n    />\n  );\n}\n\nexport { Spinner };\n"
     },
     {
       "path": "components/ui/tabs.tsx",
@@ -1032,6 +1039,54 @@
       "type": "registry:example",
       "target": "",
       "content": "\"use client\";\n\nimport {\n  type Translations,\n  useTranslation,\n} from \"@/components/language-selector\";\nimport {\n  Field,\n  FieldContent,\n  FieldDescription,\n  FieldLabel,\n} from \"@/components/ui/field\";\nimport { Switch } from \"@/components/ui/switch\";\n\nconst translations: Translations = {\n  en: {\n    dir: \"ltr\",\n    values: {\n      label: \"Share across devices\",\n      description:\n        \"Focus is shared across devices, and turns off when you leave the app.\",\n    },\n  },\n  ar: {\n    dir: \"rtl\",\n    values: {\n      label: \"المشاركة عبر الأجهزة\",\n      description:\n        \"يتم مشاركة التركيز عبر الأجهزة، ويتم إيقاف تشغيله عند مغادرة التطبيق.\",\n    },\n  },\n  he: {\n    dir: \"rtl\",\n    values: {\n      label: \"שיתוף בין מכשירים\",\n      description: \"המיקוד משותף בין מכשירים, וכבה כשאתה עוזב את האפליקציה.\",\n    },\n  },\n};\n\nexport function SwitchRtl() {\n  const { dir, language, t } = useTranslation(translations, \"ar\");\n\n  return (\n    <div lang={language} dir={dir}>\n      <Field orientation=\"horizontal\" className=\"max-w-sm\">\n        <FieldContent>\n          <FieldLabel htmlFor=\"switch-focus-mode-rtl\">{t.label}</FieldLabel>\n          <FieldDescription>{t.description}</FieldDescription>\n        </FieldContent>\n        <Switch id=\"switch-focus-mode-rtl\" />\n      </Field>\n    </div>\n  );\n}\n"
+    },
+    {
+      "path": "examples/spinner-demo.tsx",
+      "type": "registry:example",
+      "target": "",
+      "content": "import { Spinner } from \"@/components/ui/spinner\";\nimport { Surface } from \"@/components/ui/surface\";\n\nexport default function SpinnerDemo() {\n  return (\n    <Surface className=\"flex w-full max-w-sm items-center gap-3 rounded-3xl p-6\">\n      <Spinner />\n      <div className=\"flex min-w-0 flex-1 flex-col\">\n        <span className=\"truncate text-base font-medium\">\n          Processing payment...\n        </span>\n        <span className=\"text-sm text-muted-foreground\">Please wait</span>\n      </div>\n      <span className=\"text-base tabular-nums\">$100.00</span>\n    </Surface>\n  );\n}\n"
+    },
+    {
+      "path": "examples/spinner-variants.tsx",
+      "type": "registry:example",
+      "target": "",
+      "content": "import { Spinner } from \"@/components/ui/spinner\";\n\nexport default function SpinnerVariants() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-6\">\n      <Spinner variant=\"default\" />\n      <Spinner variant=\"primary\" />\n      <Spinner variant=\"success\" />\n      <Spinner variant=\"warning\" />\n      <Spinner variant=\"destructive\" />\n    </div>\n  );\n}\n"
+    },
+    {
+      "path": "examples/spinner-sizes.tsx",
+      "type": "registry:example",
+      "target": "",
+      "content": "import { Spinner } from \"@/components/ui/spinner\";\n\nexport default function SpinnerSizes() {\n  return (\n    <div className=\"flex items-center gap-6\">\n      <Spinner size=\"sm\" />\n      <Spinner size=\"default\" />\n      <Spinner size=\"lg\" />\n      <Spinner size=\"xl\" />\n    </div>\n  );\n}\n"
+    },
+    {
+      "path": "examples/spinner-button.tsx",
+      "type": "registry:example",
+      "target": "",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport { Spinner } from \"@/components/ui/spinner\";\n\nexport default function SpinnerButton() {\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <Button disabled size=\"sm\">\n        <Spinner data-icon=\"inline-start\" size=\"sm\" />\n        Loading...\n      </Button>\n      <Button variant=\"outline\" disabled size=\"sm\">\n        <Spinner data-icon=\"inline-start\" size=\"sm\" />\n        Please wait\n      </Button>\n      <Button variant=\"secondary\" disabled size=\"sm\">\n        <Spinner data-icon=\"inline-end\" size=\"sm\" />\n        Processing\n      </Button>\n    </div>\n  );\n}\n"
+    },
+    {
+      "path": "examples/spinner-badge.tsx",
+      "type": "registry:example",
+      "target": "",
+      "content": "import { Badge } from \"@/components/ui/badge\";\nimport { Spinner } from \"@/components/ui/spinner\";\n\nexport default function SpinnerBadge() {\n  return (\n    <div className=\"flex items-center gap-4\">\n      <Badge>\n        <Spinner data-icon=\"inline-start\" size=\"sm\" />\n        Syncing\n      </Badge>\n      <Badge variant=\"primary\">\n        <Spinner data-icon=\"inline-start\" size=\"sm\" />\n        Updating\n      </Badge>\n      <Badge variant=\"warning\">\n        <Spinner data-icon=\"inline-start\" size=\"sm\" />\n        Processing\n      </Badge>\n    </div>\n  );\n}\n"
+    },
+    {
+      "path": "examples/spinner-input-group.tsx",
+      "type": "registry:example",
+      "target": "",
+      "content": "import { ArrowUpIcon } from \"lucide-react\";\n\nimport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupInput,\n  InputGroupTextarea,\n} from \"@/components/ui/input-group\";\nimport { Spinner } from \"@/components/ui/spinner\";\n\nexport default function SpinnerInputGroup() {\n  return (\n    <div className=\"flex w-full max-w-md flex-col gap-4\">\n      <InputGroup>\n        <InputGroupInput placeholder=\"Send a message...\" disabled />\n        <InputGroupAddon align=\"inline-end\">\n          <Spinner size=\"sm\" />\n        </InputGroupAddon>\n      </InputGroup>\n      <InputGroup>\n        <InputGroupTextarea placeholder=\"Send a message...\" disabled />\n        <InputGroupAddon align=\"block-end\">\n          <Spinner size=\"sm\" /> Validating...\n          <InputGroupButton className=\"ml-auto\" variant=\"default\">\n            <ArrowUpIcon />\n            <span className=\"sr-only\">Send</span>\n          </InputGroupButton>\n        </InputGroupAddon>\n      </InputGroup>\n    </div>\n  );\n}\n"
+    },
+    {
+      "path": "examples/spinner-empty.tsx",
+      "type": "registry:example",
+      "target": "",
+      "content": "import { Button } from \"@/components/ui/button\";\nimport {\n  Empty,\n  EmptyContent,\n  EmptyDescription,\n  EmptyHeader,\n  EmptyMedia,\n  EmptyTitle,\n} from \"@/components/ui/empty\";\nimport { Spinner } from \"@/components/ui/spinner\";\n\nexport default function SpinnerEmpty() {\n  return (\n    <Empty className=\"w-full\">\n      <EmptyHeader>\n        <EmptyMedia variant=\"icon\">\n          <Spinner />\n        </EmptyMedia>\n        <EmptyTitle>Processing your request</EmptyTitle>\n        <EmptyDescription>\n          Please wait while we process your request. Do not refresh the page.\n        </EmptyDescription>\n      </EmptyHeader>\n      <EmptyContent>\n        <Button variant=\"outline\" size=\"sm\">\n          Cancel\n        </Button>\n      </EmptyContent>\n    </Empty>\n  );\n}\n"
+    },
+    {
+      "path": "examples/spinner-rtl.tsx",
+      "type": "registry:example",
+      "target": "",
+      "content": "\"use client\";\n\nimport {\n  type Translations,\n  useTranslation,\n} from \"@/components/language-selector\";\nimport { Spinner } from \"@/components/ui/spinner\";\nimport { Surface } from \"@/components/ui/surface\";\n\nconst translations: Translations = {\n  en: {\n    dir: \"ltr\",\n    values: {\n      title: \"Processing payment...\",\n      amount: \"$100.00\",\n    },\n  },\n  ar: {\n    dir: \"rtl\",\n    values: {\n      title: \"جاري معالجة الدفع...\",\n      amount: \"١٠٠.٠٠ دولار\",\n    },\n  },\n  he: {\n    dir: \"rtl\",\n    values: {\n      title: \"מעבד תשלום...\",\n      amount: \"$100.00\",\n    },\n  },\n};\n\nexport function SpinnerRtl() {\n  const { dir, language, t } = useTranslation(translations, \"ar\");\n\n  return (\n    <Surface\n      className=\"flex w-full max-w-sm items-center gap-3 rounded-3xl p-6\"\n      lang={language}\n      dir={dir}\n    >\n      <Spinner />\n      <div className=\"flex min-w-0 flex-1 flex-col\">\n        <span className=\"truncate text-sm font-medium\">{t.title}</span>\n      </div>\n      <span className=\"text-sm tabular-nums\">{t.amount}</span>\n    </Surface>\n  );\n}\n"
     },
     {
       "path": "examples/slider-demo.tsx",
