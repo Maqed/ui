@@ -245,6 +245,21 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "skeleton": {
+    name: "skeleton",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "src/registry/new-york-v4/ui/skeleton.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/skeleton.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   "tabs": {
     name: "tabs",
     type: "registry:ui",
@@ -451,6 +466,141 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/examples/button-rtl.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "skeleton-demo": {
+    name: "skeleton-demo",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/skeleton-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/skeleton-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "skeleton-avatar": {
+    name: "skeleton-avatar",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/skeleton-avatar.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/skeleton-avatar.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "skeleton-card": {
+    name: "skeleton-card",
+    type: "registry:example",
+    registryDependencies: ["card","skeleton"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/skeleton-card.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/skeleton-card.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "skeleton-text": {
+    name: "skeleton-text",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/skeleton-text.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/skeleton-text.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "skeleton-form": {
+    name: "skeleton-form",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/skeleton-form.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/skeleton-form.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "skeleton-table": {
+    name: "skeleton-table",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/skeleton-table.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/skeleton-table.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "skeleton-animation-types": {
+    name: "skeleton-animation-types",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/skeleton-animation-types.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/skeleton-animation-types.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "skeleton-single-shimmer": {
+    name: "skeleton-single-shimmer",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/skeleton-single-shimmer.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/skeleton-single-shimmer.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "skeleton-rtl": {
+    name: "skeleton-rtl",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/skeleton-rtl.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/skeleton-rtl.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

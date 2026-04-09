@@ -362,6 +362,39 @@ export const ui: Registry["items"] = [
     },
   },
   {
+    name: "skeleton",
+    type: "registry:ui",
+    dependencies: ["class-variance-authority"],
+    files: [
+      {
+        path: "ui/skeleton.tsx",
+        type: "registry:ui",
+      },
+    ],
+    cssVars: {
+      light: {
+        "--surface-tertiary": cssVars.light["--surface-tertiary"],
+      },
+      dark: {
+        "--surface-tertiary": cssVars.dark["--surface-tertiary"],
+      },
+      theme: {
+        "--color-surface-tertiary": cssVars.theme["--color-surface-tertiary"],
+        "--animate-skeleton": cssVars.theme["--animate-skeleton"],
+      },
+    },
+    css: {
+      "@keyframes skeleton": css["@keyframes skeleton"],
+      ".skeleton--shimmer::after": css[".skeleton--shimmer::after"],
+      ".skeleton--shimmer:has(.skeleton)::after":
+        css[".skeleton--shimmer:has(.skeleton)::after"],
+      ".skeleton--shimmer:has(.skeleton)::before":
+        css[".skeleton--shimmer:has(.skeleton)::before"],
+      ".skeleton--shimmer:has(.skeleton) .skeleton::after":
+        css[".skeleton--shimmer:has(.skeleton) .skeleton::after"],
+    },
+  },
+  {
     name: "tabs",
     type: "registry:ui",
     dependencies: ["@base-ui/react"],

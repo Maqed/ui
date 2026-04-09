@@ -1,0 +1,121 @@
+---
+title: Skeleton
+description: Use to show a placeholder while content is loading.
+---
+
+<ComponentPreview name="skeleton-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add @herocn/skeleton" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install class-variance-authority" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="skeleton" title="components/ui/skeleton.tsx" />
+
+<Step>Add the following css colors & utilities</Step>
+
+<RenderCSSShared
+  light={["--surface-tertiary"]}
+  dark={["--surface-tertiary"]}
+  theme={["--color-surface-tertiary", "--animate-skeleton"]}
+  css={[
+    "@keyframes skeleton",
+    ".skeleton--shimmer::after",
+    ".skeleton--shimmer:has(.skeleton)::after",
+    ".skeleton--shimmer:has(.skeleton)::before",
+    ".skeleton--shimmer:has(.skeleton) .skeleton::after",
+  ]}
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Skeleton } from "@/components/ui/skeleton"
+```
+
+```tsx
+<Skeleton className="h-[20px] w-[100px] rounded-full" />
+```
+
+## Examples
+
+### Animation types
+
+<ComponentPreview name="skeleton-animation-types" />
+
+### Avatar
+
+<ComponentPreview name="skeleton-avatar" />
+
+### Card
+
+<ComponentPreview name="skeleton-card" />
+
+### Text
+
+<ComponentPreview name="skeleton-text" />
+
+### Form
+
+<ComponentPreview name="skeleton-form" />
+
+### Table
+
+<ComponentPreview name="skeleton-table" />
+
+### Single shimmer
+
+<ComponentPreview name="skeleton-single-shimmer" />
+
+## RTL
+
+To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+
+<ComponentPreview name="skeleton-rtl" direction="rtl" />
+
+## API Reference
+
+### Skeleton
+
+<ApiRefTable
+  props={[
+    {
+      name: "animationType",
+      type: '"shimmer" | "pulse" | "none"',
+      defaultValue: '"shimmer"',
+      description: "Controls the loading animation style.",
+    },
+    {
+      name: "className",
+      type: "string",
+      description: "Adds custom classes to control shape, size, and layout.",
+    },
+  ]}
+/>

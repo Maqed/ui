@@ -146,7 +146,8 @@
           "--color-warning-foreground": "var(--warning-foreground)",
           "--color-surface": "var(--surface)",
           "--color-surface-secondary": "var(--surface-secondary)",
-          "--color-surface-tertiary": "var(--surface-tertiary)"
+          "--color-surface-tertiary": "var(--surface-tertiary)",
+          "--animate-skeleton": "skeleton 2s linear infinite"
         }
       },
       "css": {
@@ -165,6 +166,27 @@
         },
         "@utility invalid-field-ring-focus": {
           "@apply ring-2 outline-none ring-destructive ring-offset-0": {}
+        },
+        "@keyframes skeleton": {
+          "100%": {
+            "transform": "translateX(200%)"
+          }
+        },
+        ".skeleton--shimmer::after": {
+          "@apply absolute inset-0 -translate-x-full animate-skeleton bg-linear-to-r from-transparent via-surface-tertiary to-transparent content-['']": {}
+        },
+        ".skeleton--shimmer:has(.skeleton)::after": {
+          "content": "none"
+        },
+        ".skeleton--shimmer:has(.skeleton)::before": {
+          "@apply absolute inset-0 -translate-x-full animate-skeleton content-['']": {},
+          "background": "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%)",
+          "z-index": "10",
+          "pointer-events": "none",
+          "mix-blend-mode": "overlay"
+        },
+        ".skeleton--shimmer:has(.skeleton) .skeleton::after": {
+          "content": "none"
         }
       },
       "files": []
@@ -313,7 +335,8 @@
           "--color-warning-foreground": "var(--warning-foreground)",
           "--color-surface": "var(--surface)",
           "--color-surface-secondary": "var(--surface-secondary)",
-          "--color-surface-tertiary": "var(--surface-tertiary)"
+          "--color-surface-tertiary": "var(--surface-tertiary)",
+          "--animate-skeleton": "skeleton 2s linear infinite"
         }
       },
       "css": {
@@ -332,6 +355,27 @@
         },
         "@utility invalid-field-ring-focus": {
           "@apply ring-2 outline-none ring-destructive ring-offset-0": {}
+        },
+        "@keyframes skeleton": {
+          "100%": {
+            "transform": "translateX(200%)"
+          }
+        },
+        ".skeleton--shimmer::after": {
+          "@apply absolute inset-0 -translate-x-full animate-skeleton bg-linear-to-r from-transparent via-surface-tertiary to-transparent content-['']": {}
+        },
+        ".skeleton--shimmer:has(.skeleton)::after": {
+          "content": "none"
+        },
+        ".skeleton--shimmer:has(.skeleton)::before": {
+          "@apply absolute inset-0 -translate-x-full animate-skeleton content-['']": {},
+          "background": "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%)",
+          "z-index": "10",
+          "pointer-events": "none",
+          "mix-blend-mode": "overlay"
+        },
+        ".skeleton--shimmer:has(.skeleton) .skeleton::after": {
+          "content": "none"
         }
       },
       "files": []
@@ -749,6 +793,54 @@
       }
     },
     {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "light": {
+          "--surface-tertiary": "oklch(0.9373 0.0013 286.37)"
+        },
+        "dark": {
+          "--surface-tertiary": "oklch(0.2721 0.0024 247.91)"
+        },
+        "theme": {
+          "--color-surface-tertiary": "var(--surface-tertiary)",
+          "--animate-skeleton": "skeleton 2s linear infinite"
+        }
+      },
+      "css": {
+        "@keyframes skeleton": {
+          "100%": {
+            "transform": "translateX(200%)"
+          }
+        },
+        ".skeleton--shimmer::after": {
+          "@apply absolute inset-0 -translate-x-full animate-skeleton bg-linear-to-r from-transparent via-surface-tertiary to-transparent content-['']": {}
+        },
+        ".skeleton--shimmer:has(.skeleton)::after": {
+          "content": "none"
+        },
+        ".skeleton--shimmer:has(.skeleton)::before": {
+          "@apply absolute inset-0 -translate-x-full animate-skeleton content-['']": {},
+          "background": "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%)",
+          "z-index": "10",
+          "pointer-events": "none",
+          "mix-blend-mode": "overlay"
+        },
+        ".skeleton--shimmer:has(.skeleton) .skeleton::after": {
+          "content": "none"
+        }
+      }
+    },
+    {
       "name": "tabs",
       "type": "registry:ui",
       "dependencies": [
@@ -1008,6 +1100,124 @@
       "files": [
         {
           "path": "src/registry/new-york-v4/examples/button-rtl.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/skeleton-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-avatar",
+      "type": "registry:example",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/skeleton-avatar.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-card",
+      "type": "registry:example",
+      "registryDependencies": [
+        "card",
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/skeleton-card.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-text",
+      "type": "registry:example",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/skeleton-text.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-form",
+      "type": "registry:example",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/skeleton-form.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-table",
+      "type": "registry:example",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/skeleton-table.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-animation-types",
+      "type": "registry:example",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/skeleton-animation-types.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-single-shimmer",
+      "type": "registry:example",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/skeleton-single-shimmer.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "skeleton-rtl",
+      "type": "registry:example",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/skeleton-rtl.tsx",
           "type": "registry:example"
         }
       ]

@@ -156,6 +156,15 @@
   --color-surface: var(--surface);
   --color-surface-secondary: var(--surface-secondary);
   --color-surface-tertiary: var(--surface-tertiary);
+
+  /* herocn animations */
+  --animate-skeleton: skeleton 2s linear infinite;
+}
+
+@keyframes skeleton {
+  100% {
+    transform: translateX(200%);
+  }
 }
 
 @layer base {
@@ -167,6 +176,40 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+.skeleton--shimmer {
+  &::after {
+    @apply absolute inset-0 -translate-x-full animate-skeleton bg-linear-to-r from-transparent via-surface-tertiary to-transparent content-[''];
+  }
+
+  /* When applied to a parent container with multiple skeletons */
+  &:has(.skeleton) {
+    &::after {
+      content: none;
+    }
+
+    /* Single synchronized shimmer that passes over all children */
+    &::before {
+      @apply absolute inset-0 -translate-x-full animate-skeleton content-[''];
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        transparent 100%
+      );
+      z-index: 10;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+    }
+
+    /* Ensure children don't have their own shimmer */
+    & .skeleton {
+      &::after {
+        content: none;
+      }
+    }
   }
 }
 

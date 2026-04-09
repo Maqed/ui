@@ -112,6 +112,105 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "skeleton-demo",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [
+      {
+        path: "examples/skeleton-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "skeleton-avatar",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [
+      {
+        path: "examples/skeleton-avatar.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "skeleton-card",
+    type: "registry:example",
+    registryDependencies: ["card", "skeleton"],
+    files: [
+      {
+        path: "examples/skeleton-card.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "skeleton-text",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [
+      {
+        path: "examples/skeleton-text.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "skeleton-form",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [
+      {
+        path: "examples/skeleton-form.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "skeleton-table",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [
+      {
+        path: "examples/skeleton-table.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "skeleton-animation-types",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [
+      {
+        path: "examples/skeleton-animation-types.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "skeleton-single-shimmer",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [
+      {
+        path: "examples/skeleton-single-shimmer.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "skeleton-rtl",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [
+      {
+        path: "examples/skeleton-rtl.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "badge-rtl",
     type: "registry:example",
     registryDependencies: ["badge"],

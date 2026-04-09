@@ -128,6 +128,7 @@ export const cssVars = {
     "--color-surface": "var(--surface)",
     "--color-surface-secondary": "var(--surface-secondary)",
     "--color-surface-tertiary": "var(--surface-tertiary)",
+    "--animate-skeleton": "skeleton 2s linear infinite",
   },
 };
 export const css = {
@@ -149,5 +150,29 @@ export const css = {
   },
   "@utility invalid-field-ring-focus": {
     "@apply ring-2 outline-none ring-destructive ring-offset-0": {},
+  },
+  "@keyframes skeleton": {
+    "100%": {
+      transform: "translateX(200%)",
+    },
+  },
+  ".skeleton--shimmer::after": {
+    "@apply absolute inset-0 -translate-x-full animate-skeleton bg-linear-to-r from-transparent via-surface-tertiary to-transparent content-['']":
+      {},
+  },
+  ".skeleton--shimmer:has(.skeleton)::after": {
+    content: "none",
+  },
+  ".skeleton--shimmer:has(.skeleton)::before": {
+    "@apply absolute inset-0 -translate-x-full animate-skeleton content-['']":
+      {},
+    background:
+      "linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%)",
+    "z-index": "10",
+    "pointer-events": "none",
+    "mix-blend-mode": "overlay",
+  },
+  ".skeleton--shimmer:has(.skeleton) .skeleton::after": {
+    content: "none",
   },
 };

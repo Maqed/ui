@@ -5,6 +5,7 @@
   "description": "All UI components from @herocn/ui",
   "dependencies": [
     "@base-ui/react",
+    "class-variance-authority",
     "lucide-react"
   ],
   "registryDependencies": [
@@ -20,6 +21,7 @@
     "@herocn/popover",
     "@herocn/select",
     "@herocn/separator",
+    "@herocn/skeleton",
     "@herocn/slider",
     "@herocn/surface",
     "@herocn/switch",
