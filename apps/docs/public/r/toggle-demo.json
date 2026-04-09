@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "components/examples/toggle-demo.tsx",
-      "content": "import { BookmarkIcon } from \"lucide-react\";\n\nimport { Toggle } from \"@/components/ui/toggle\";\n\nexport default function ToggleDemo() {\n  return (\n    <Toggle aria-label=\"Toggle bookmark\">\n      <BookmarkIcon className=\"group-aria-pressed/button:fill-primary\" />\n      Bookmark\n    </Toggle>\n  );\n}\n",
+      "content": "import { BookmarkIcon } from \"lucide-react\";\n\nimport { Toggle } from \"@/components/ui/toggle\";\n\nexport default function ToggleDemo() {\n  return (\n    <Toggle aria-label=\"Toggle bookmark\">\n      <BookmarkIcon className=\"group-aria-pressed/toggle:fill-primary\" />\n      Bookmark\n    </Toggle>\n  );\n}\n",
       "type": "registry:example"
     }
   ],
