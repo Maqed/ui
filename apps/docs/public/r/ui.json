@@ -6,7 +6,9 @@
   "dependencies": [
     "@base-ui/react",
     "class-variance-authority",
-    "lucide-react"
+    "lucide-react",
+    "next-themes",
+    "sonner"
   ],
   "registryDependencies": [
     "https://herocn.dev/r/avatar.json",
@@ -25,6 +27,7 @@
     "https://herocn.dev/r/separator.json",
     "https://herocn.dev/r/skeleton.json",
     "https://herocn.dev/r/slider.json",
+    "https://herocn.dev/r/sonner.json",
     "https://herocn.dev/r/spinner.json",
     "https://herocn.dev/r/surface.json",
     "https://herocn.dev/r/switch.json",

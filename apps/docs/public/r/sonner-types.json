@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner-types",
+  "registryDependencies": [
+    "https://herocn.dev/r/button.json",
+    "https://herocn.dev/r/sonner.json"
+  ],
+  "files": [
+    {
+      "path": "components/examples/sonner-types.tsx",
+      "content": "\"use client\"\r\n\r\nimport { toast } from \"sonner\"\r\n\r\nimport { Button } from \"@/components/ui/button\"\r\n\r\nexport function SonnerTypes() {\r\n  return (\r\n    <div className=\"flex flex-wrap gap-2\">\r\n      <Button variant=\"tertiary\" onClick={() => toast(\"Event has been created\")}>\r\n        Default\r\n      </Button>\r\n      <Button\r\n        variant=\"tertiary\"\r\n        className=\"text-success\"\r\n        onClick={() => toast.success(\"Event has been created\")}\r\n      >\r\n        Success\r\n      </Button>\r\n      <Button\r\n        variant=\"tertiary\"\r\n        className=\"text-primary\"\r\n        onClick={() => toast.info(\"Be at the area 10 minutes before the event time\")}\r\n      >\r\n        Info\r\n      </Button>\r\n      <Button\r\n        variant=\"tertiary\"\r\n        className=\"text-warning\"\r\n        onClick={() => toast.warning(\"Event start time cannot be earlier than 8am\")}\r\n      >\r\n        Warning\r\n      </Button>\r\n      <Button\r\n        variant=\"tertiary\"\r\n        className=\"text-destructive\"\r\n        onClick={() => toast.error(\"Event has not been created\")}\r\n      >\r\n        Error\r\n      </Button>\r\n      <Button\r\n        variant=\"tertiary\"\r\n        onClick={() => {\r\n          toast.promise<{ name: string }>(\r\n            () =>\r\n              new Promise((resolve) =>\r\n                setTimeout(() => resolve({ name: \"Event\" }), 2000)\r\n              ),\r\n            {\r\n              loading: \"Loading...\",\r\n              success: (data) => `${data.name} has been created`,\r\n              error: \"Error\",\r\n            }\r\n          )\r\n        }}\r\n      >\r\n        Promise\r\n      </Button>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

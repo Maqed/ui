@@ -2261,4 +2261,60 @@ export const examples: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "sonner-demo",
+    type: "registry:example",
+    registryDependencies: [
+      getRegistryItemInstallationAlias("button"),
+      getRegistryItemInstallationAlias("sonner"),
+    ],
+    files: [
+      {
+        path: "examples/sonner-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "sonner-types",
+    type: "registry:example",
+    registryDependencies: [
+      getRegistryItemInstallationAlias("button"),
+      getRegistryItemInstallationAlias("sonner"),
+    ],
+    files: [
+      {
+        path: "examples/sonner-types.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "sonner-description",
+    type: "registry:example",
+    registryDependencies: [
+      getRegistryItemInstallationAlias("button"),
+      getRegistryItemInstallationAlias("sonner"),
+    ],
+    files: [
+      {
+        path: "examples/sonner-description.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "sonner-position",
+    type: "registry:example",
+    registryDependencies: [
+      getRegistryItemInstallationAlias("button"),
+      getRegistryItemInstallationAlias("sonner"),
+    ],
+    files: [
+      {
+        path: "examples/sonner-position.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ];

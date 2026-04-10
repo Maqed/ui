@@ -388,6 +388,43 @@ export const ui: Registry["items"] = [
     },
   },
   {
+    name: "sonner",
+    type: "registry:ui",
+    dependencies: ["lucide-react", "next-themes", "sonner"],
+    files: [
+      {
+        path: "ui/sonner.tsx",
+        type: "registry:ui",
+      },
+    ],
+    cssVars: {
+      light: {
+        "--surface": cssVars.light["--surface"],
+        "--success": cssVars.light["--success"],
+        "--warning": cssVars.light["--warning"],
+        "--default": cssVars.light["--default"],
+        "--default-foreground": cssVars.light["--default-foreground"],
+      },
+      dark: {
+        "--surface": cssVars.dark["--surface"],
+        "--warning": cssVars.dark["--warning"],
+        "--default": cssVars.dark["--default"],
+        "--default-foreground": cssVars.dark["--default-foreground"],
+      },
+      theme: {
+        "--color-surface": cssVars.theme["--color-surface"],
+        "--color-success": cssVars.theme["--color-success"],
+        "--color-warning": cssVars.theme["--color-warning"],
+        "--color-default": cssVars.theme["--color-default"],
+        "--color-default-foreground":
+          cssVars.theme["--color-default-foreground"],
+      },
+    },
+    css: {
+      "@utility pressible": css["@utility pressible"],
+    },
+  },
+  {
     name: "skeleton",
     type: "registry:ui",
     dependencies: ["class-variance-authority"],

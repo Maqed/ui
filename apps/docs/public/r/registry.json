@@ -820,6 +820,49 @@
       }
     },
     {
+      "name": "sonner",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react",
+        "next-themes",
+        "sonner"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "light": {
+          "--surface": "white",
+          "--success": "oklch(0.7329 0.1935 150.81)",
+          "--warning": "oklch(0.7819 0.1585 72.33)",
+          "--default": "oklch(94% 0.001 286.375)",
+          "--default-foreground": "var(--eclipse)"
+        },
+        "dark": {
+          "--surface": "oklch(0.2103 0.0059 285.89)",
+          "--warning": "oklch(0.8203 0.1388 76.34)",
+          "--default": "oklch(27.4% 0.006 286.033)",
+          "--default-foreground": "var(--snow)"
+        },
+        "theme": {
+          "--color-surface": "var(--surface)",
+          "--color-success": "var(--success)",
+          "--color-warning": "var(--warning)",
+          "--color-default": "var(--default)",
+          "--color-default-foreground": "var(--default-foreground)"
+        }
+      },
+      "css": {
+        "@utility pressible": {
+          "transition": "transform 250ms var(--ease-smooth), background-color 100ms var(--ease-out), box-shadow 100ms var(--ease-out)",
+          "@apply transform-gpu motion-reduce:transition-none active:scale-[0.97] aria-expanded:scale-[0.97]": {}
+        }
+      }
+    },
+    {
       "name": "skeleton",
       "type": "registry:ui",
       "dependencies": [
@@ -3448,6 +3491,62 @@
       "files": [
         {
           "path": "src/registry/new-york-v4/examples/slider-rtl.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sonner-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/sonner.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/sonner-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sonner-types",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/sonner.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/sonner-types.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sonner-description",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/sonner.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/sonner-description.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sonner-position",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/sonner.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/sonner-position.tsx",
           "type": "registry:example"
         }
       ]
