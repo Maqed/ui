@@ -1764,6 +1764,49 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "label-demo",
+    type: "registry:example",
+    registryDependencies: [
+      getRegistryItemInstallationAlias("input"),
+      getRegistryItemInstallationAlias("label"),
+    ],
+    files: [
+      {
+        path: "examples/label-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "label-in-field",
+    type: "registry:example",
+    registryDependencies: [
+      getRegistryItemInstallationAlias("field"),
+      getRegistryItemInstallationAlias("input"),
+      getRegistryItemInstallationAlias("label"),
+    ],
+    files: [
+      {
+        path: "examples/label-in-field.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "label-rtl",
+    type: "registry:example",
+    registryDependencies: [
+      getRegistryItemInstallationAlias("label"),
+      getRegistryItemInstallationAlias("switch"),
+    ],
+    files: [
+      {
+        path: "examples/label-rtl.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "switch-demo",
     type: "registry:example",
     registryDependencies: [

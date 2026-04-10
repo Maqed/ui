@@ -698,6 +698,16 @@
       }
     },
     {
+      "name": "label",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "select",
       "type": "registry:ui",
       "dependencies": [
@@ -2903,6 +2913,49 @@
       "files": [
         {
           "path": "src/registry/new-york-v4/examples/toggle-group-rtl.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "label-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/input.json",
+        "https://herocn.dev/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/label-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "label-in-field",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/field.json",
+        "https://herocn.dev/r/input.json",
+        "https://herocn.dev/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/label-in-field.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "label-rtl",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/label.json",
+        "https://herocn.dev/r/switch.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/label-rtl.tsx",
           "type": "registry:example"
         }
       ]

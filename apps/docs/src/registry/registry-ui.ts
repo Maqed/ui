@@ -292,6 +292,16 @@ export const ui: Registry["items"] = [
     },
   },
   {
+    name: "label",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/label.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "select",
     type: "registry:ui",
     dependencies: ["@base-ui/react", "lucide-react"],
