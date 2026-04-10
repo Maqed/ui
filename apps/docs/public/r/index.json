@@ -124,7 +124,7 @@
       "--destructive-foreground": "var(--snow)",
       "--border": "oklch(1 0 0 / 10%)",
       "--input": "oklch(0.2103 0.0059 285.89)",
-      "--ring": "var(--color-primary))",
+      "--ring": "var(--color-primary)",
       "--chart-1": "oklch(0.809 0.105 251.813)",
       "--chart-2": "oklch(0.623 0.214 259.815)",
       "--chart-3": "oklch(0.546 0.245 262.881)",
