@@ -24,6 +24,10 @@ description: A short, one-sentence description of the component.
 
 ...
 
+## Composition
+
+...
+
 ## Examples (if applicable)
 
 ...
@@ -74,6 +78,32 @@ Always wrap the installation in a `<CodeTabs>` with two tabs: **Command** (CLI) 
 ```
 
 Replace `{name}` with the registry component name (e.g. `button`, `dropdown-menu`, `avatar`).
+
+---
+
+## Composition Section
+
+Add a `## Composition` section immediately after `## Usage` to show how subcomponents are structured.
+
+Use a fenced `text` block for the hierarchy and include only the component parts needed for the documented composition.
+
+### Example (`Card`)
+
+```mdx
+## Composition
+
+Use the following composition to build a `Card`:
+
+```text
+Card
+├── CardHeader
+│   ├── CardTitle
+│   ├── CardDescription
+│   └── CardAction
+├── CardContent
+└── CardFooter
+```
+```
 
 ---
 
@@ -403,6 +433,14 @@ import { Button } from "@/components/ui/button";
 
 ```tsx
 <Button>Click me</Button>
+```
+
+## Composition
+
+Use the following composition to build a `Button`:
+
+```text
+Button
 ```
 
 ## Examples
