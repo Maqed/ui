@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
+
 :root {
 	/* Primitive Colors (Do not change between light and dark) */
 	--snow: oklch(0.9911 0 0);
@@ -159,11 +161,10 @@
 
 	/* herocn animations */
 	--animate-skeleton: skeleton 2s linear infinite;
-}
-
-@keyframes skeleton {
-	100% {
-		transform: translateX(200%);
+	@keyframes skeleton {
+		100% {
+			transform: translateX(200%);
+		}
 	}
 }
 
@@ -176,40 +177,6 @@
 	}
 	html {
 		@apply font-sans;
-	}
-}
-
-.skeleton--shimmer {
-	&::after {
-		@apply absolute inset-0 -translate-x-full animate-skeleton bg-linear-to-r from-transparent via-surface-tertiary to-transparent content-[''];
-	}
-
-	/* When applied to a parent container with multiple skeletons */
-	&:has(.skeleton) {
-		&::after {
-			content: none;
-		}
-
-		/* Single synchronized shimmer that passes over all children */
-		&::before {
-			@apply absolute inset-0 -translate-x-full animate-skeleton content-[''];
-			background: linear-gradient(
-				90deg,
-				transparent 0%,
-				rgba(255, 255, 255, 0.5) 50%,
-				transparent 100%
-			);
-			z-index: 10;
-			pointer-events: none;
-			mix-blend-mode: overlay;
-		}
-
-		/* Ensure children don't have their own shimmer */
-		& .skeleton {
-			&::after {
-				content: none;
-			}
-		}
 	}
 }
 
@@ -235,4 +202,29 @@
 		background-color 100ms var(--ease-out),
 		box-shadow 100ms var(--ease-out);
 	@apply transform-gpu motion-reduce:transition-none active:scale-[0.97] aria-expanded:scale-[0.97];
+}
+
+.skeleton--shimmer::after {
+	@apply absolute inset-0 -translate-x-full animate-skeleton bg-linear-to-r from-transparent via-surface-tertiary to-transparent content-[''];
+}
+
+.skeleton--shimmer:has(.skeleton)::after {
+	content: none;
+}
+
+.skeleton--shimmer:has(.skeleton)::before {
+	@apply absolute inset-0 -translate-x-full animate-skeleton content-[''];
+	background: linear-gradient(
+		90deg,
+		transparent 0%,
+		rgba(255, 255, 255, 0.5) 50%,
+		transparent 100%
+	);
+	z-index: 10;
+	pointer-events: none;
+	mix-blend-mode: overlay;
+}
+
+.skeleton--shimmer:has(.skeleton) .skeleton::after {
+	content: none;
 }
