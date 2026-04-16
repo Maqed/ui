@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "components/ui/surface.tsx",
-      "content": "import { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"@/lib/utils\";\n\nexport const surfaceVariants = cva(\"relative text-foreground\", {\n\tvariants: {\n\t\tvariant: {\n\t\t\tdefault: \"bg-surface\",\n\t\t\tsecondary: \"bg-surface-secondary\",\n\t\t\ttertiary: \"bg-surface-tertiary\",\n\t\t\ttransparent: \"bg-transparent\",\n\t\t},\n\t},\n\tdefaultVariants: {\n\t\tvariant: \"default\",\n\t},\n});\n\nfunction Surface({\n\tclassName,\n\tvariant,\n\t...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof surfaceVariants>) {\n\treturn (\n\t\t<div className={cn(surfaceVariants({ variant }), className)} {...props} />\n\t);\n}\n\nexport { Surface };\n",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"@/lib/utils\";\n\nexport const surfaceVariants = cva(\"group/surface relative text-foreground\", {\n\tvariants: {\n\t\tvariant: {\n\t\t\tdefault: \"bg-surface\",\n\t\t\tsecondary: \"bg-surface-secondary\",\n\t\t\ttertiary: \"bg-surface-tertiary\",\n\t\t\ttransparent: \"bg-transparent\",\n\t\t},\n\t},\n\tdefaultVariants: {\n\t\tvariant: \"default\",\n\t},\n});\n\nfunction Surface({\n\tclassName,\n\tvariant,\n\t...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof surfaceVariants>) {\n\treturn (\n\t\t<div\n\t\t\tdata-slot=\"surface\"\n\t\t\tclassName={cn(surfaceVariants({ variant }), className)}\n\t\t\t{...props}\n\t\t/>\n\t);\n}\n\nexport { Surface };\n",
       "type": "registry:ui"
     }
   ],

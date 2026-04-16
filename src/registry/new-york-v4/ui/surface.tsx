@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-export const surfaceVariants = cva("relative text-foreground", {
+export const surfaceVariants = cva("group/surface relative text-foreground", {
 	variants: {
 		variant: {
 			default: "bg-surface",
@@ -21,7 +21,11 @@ function Surface({
 	...props
 }: React.ComponentProps<"div"> & VariantProps<typeof surfaceVariants>) {
 	return (
-		<div className={cn(surfaceVariants({ variant }), className)} {...props} />
+		<div
+			data-slot="surface"
+			className={cn(surfaceVariants({ variant }), className)}
+			{...props}
+		/>
 	);
 }
 
