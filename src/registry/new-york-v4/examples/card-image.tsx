@@ -11,7 +11,7 @@ import {
 
 export default function CardImage() {
 	return (
-		<Card className="relative w-full max-w-sm px-0 pt-0">
+		<Card className="relative w-full max-w-sm">
 			<img
 				src="https://avatar.vercel.sh/shadcn1"
 				alt="Event cover"
