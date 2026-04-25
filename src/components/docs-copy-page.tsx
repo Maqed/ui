@@ -176,8 +176,8 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
 			<DropdownMenu>
 				<DropdownMenuTrigger
 					render={
-						<Button variant="tertiary" size="icon-sm">
-							<ChevronDownIcon className="rotate-180 sm:rotate-0" />
+						<Button className="group" variant="tertiary" size="icon-sm">
+							<ChevronDownIcon className="rotate-0 transition group-data-popup-open:rotate-180" />
 						</Button>
 					}
 					className="hidden sm:flex"
