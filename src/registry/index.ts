@@ -6,7 +6,7 @@ import { ui } from "./registry-ui";
 import { css, cssVars } from "./shared";
 
 // Shared between index and style for backward compatibility.
-const HEROCN_STYLE = {
+export const HEROCN_REGISTRY_STYLE = {
 	type: "registry:style" as const,
 	dependencies: ["@base-ui/react", "class-variance-authority", "lucide-react"],
 	devDependencies: ["tw-animate-css"],
@@ -22,11 +22,11 @@ export const registry = {
 	items: [
 		{
 			name: "index",
-			...HEROCN_STYLE,
+			...HEROCN_REGISTRY_STYLE,
 		},
 		{
 			name: "style",
-			...HEROCN_STYLE,
+			...HEROCN_REGISTRY_STYLE,
 		},
 		...ui,
 		...examples,
