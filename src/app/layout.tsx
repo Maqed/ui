@@ -3,6 +3,7 @@ import { Inter, Noto_Sans_Arabic, Noto_Sans_Hebrew } from "next/font/google";
 import { Provider } from "@/components/provider";
 
 import "./global.css";
+import { DarkModeScript } from "@/components/mode-switcher";
 import { SiteHeader } from "@/components/site-header";
 
 const inter = Inter({
@@ -26,6 +27,9 @@ export default function Layout({ children }: LayoutProps<"/">) {
 			className={`${inter.variable} ${notoSansArabic.variable} ${notoSansHebrew.variable}`}
 			suppressHydrationWarning
 		>
+			<head>
+				<DarkModeScript />
+			</head>
 			<body className="flex min-h-screen flex-col [--header-height:calc(var(--spacing)*13)]">
 				<Provider>
 					<SiteHeader />

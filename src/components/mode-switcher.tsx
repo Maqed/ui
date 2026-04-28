@@ -1,10 +1,18 @@
 "use client";
 
-import { useTheme } from "next-themes";
-import * as React from "react";
-
+import Script from "next/script";
+import type * as React from "react";
+import { useThemeToggle } from "@/hooks/use-theme";
 import { cn } from "@/lib/utils";
 import { Button } from "@/registry/new-york-v4/ui/button";
+import { Kbd } from "@/registry/new-york-v4/ui/kbd";
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
+} from "@/registry/new-york-v4/ui/tooltip";
+
+export const DARK_MODE_FORWARD_TYPE = "dark-mode-forward";
 
 export function ModeSwitcher({
 	variant = "ghost",
@@ -13,39 +21,83 @@ export function ModeSwitcher({
 	variant?: React.ComponentProps<typeof Button>["variant"];
 	className?: React.ComponentProps<typeof Button>["className"];
 }) {
-	const { setTheme, resolvedTheme } = useTheme();
-
-	const toggleTheme = React.useCallback(() => {
-		setTheme(resolvedTheme === "dark" ? "light" : "dark");
-	}, [resolvedTheme, setTheme]);
+	const { toggleTheme } = useThemeToggle();
 
 	return (
-		<Button
-			variant={variant}
-			size="icon-sm"
-			className={cn("group/toggle extend-touch-target", className)}
-			onClick={toggleTheme}
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				strokeWidth="2"
-				strokeLinecap="round"
-				strokeLinejoin="round"
-				className="size-4.5"
-			>
-				<title>Toggle theme</title>
-				<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-				<path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-				<path d="M12 3l0 18" />
-				<path d="M12 9l4.65 -4.65" />
-				<path d="M12 14.3l7.37 -7.37" />
-				<path d="M12 19.6l8.85 -8.85" />
-			</svg>
-		</Button>
+		<Tooltip>
+			<TooltipTrigger
+				render={
+					<Button
+						variant={variant}
+						size="icon"
+						className={cn("group/toggle extend-touch-target", className)}
+						onClick={toggleTheme}
+						id="mode-switcher-button"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							className="size-4.5"
+						>
+							<title>Toggle theme</title>
+							<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+							<path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+							<path d="M12 3l0 18" />
+							<path d="M12 9l4.65 -4.65" />
+							<path d="M12 14.3l7.37 -7.37" />
+							<path d="M12 19.6l8.85 -8.85" />
+						</svg>
+						<span className="sr-only">Toggle theme</span>
+					</Button>
+				}
+			/>
+			<TooltipContent side="bottom" align="end">
+				Press <Kbd>D</Kbd> to toggle theme
+			</TooltipContent>
+		</Tooltip>
+	);
+}
+
+export function DarkModeScript() {
+	return (
+		<Script
+			id="dark-mode-listener"
+			strategy="beforeInteractive"
+			// biome-ignore lint/security/noDangerouslySetInnerHtml: <added by me>
+			dangerouslySetInnerHTML={{
+				__html: `
+            (function() {
+              // Forward D key
+              document.addEventListener('keydown', function(e) {
+                if ((e.key === 'd' || e.key === 'D') && !e.metaKey && !e.ctrlKey && !e.altKey) {
+                  if (
+                    (e.target instanceof HTMLElement && e.target.isContentEditable) ||
+                    e.target instanceof HTMLInputElement ||
+                    e.target instanceof HTMLTextAreaElement ||
+                    e.target instanceof HTMLSelectElement
+                  ) {
+                    return;
+                  }
+                  e.preventDefault();
+                  if (window.parent && window.parent !== window) {
+                    window.parent.postMessage({
+                      type: '${DARK_MODE_FORWARD_TYPE}',
+                      key: e.key
+                    }, '*');
+                  }
+                }
+              });
+
+            })();
+          `,
+			}}
+		/>
 	);
 }
