@@ -59,49 +59,47 @@ const translations: Translations = {
 	},
 };
 
-export default function SheetRtl() {
+export function SheetRtl() {
 	const { dir, t, language } = useTranslation(translations, "ar");
 
 	return (
-		<div lang={language} dir={dir}>
-			<Sheet>
-				<SheetTrigger render={<Button variant="tertiary" />}>
-					{t.open}
-				</SheetTrigger>
-				<SheetContent
-					side={dir === "rtl" ? "left" : "right"}
-					data-lang={dir === "rtl" ? language : undefined}
-				>
-					<SheetHeader>
-						<SheetTitle>{t.editProfile}</SheetTitle>
-						<SheetDescription>{t.description}</SheetDescription>
-					</SheetHeader>
-					<FieldGroup className="px-4">
-						<Field>
-							<FieldLabel htmlFor="sheet-rtl-name">{t.name}</FieldLabel>
-							<Input
-								variant="secondary"
-								id="sheet-rtl-name"
-								defaultValue="Maged Ibrahim"
-							/>
-						</Field>
-						<Field>
-							<FieldLabel htmlFor="sheet-rtl-username">{t.username}</FieldLabel>
-							<Input
-								variant="secondary"
-								id="sheet-rtl-username"
-								defaultValue="0xMaqed"
-							/>
-						</Field>
-					</FieldGroup>
-					<SheetFooter>
-						<Button type="submit">{t.save}</Button>
-						<SheetClose render={<Button variant="tertiary" />}>
-							{t.close}
-						</SheetClose>
-					</SheetFooter>
-				</SheetContent>
-			</Sheet>
-		</div>
+		<Sheet>
+			<SheetTrigger
+				data-lang={language}
+				render={<Button variant="tertiary">{t.open}</Button>}
+			/>
+			<SheetContent
+				dir={dir}
+				side={dir === "rtl" ? "left" : "right"}
+				data-lang={dir === "rtl" ? language : undefined}
+			>
+				<SheetHeader>
+					<SheetTitle>{t.editProfile}</SheetTitle>
+					<SheetDescription>{t.description}</SheetDescription>
+				</SheetHeader>
+				<FieldGroup className="px-4">
+					<Field>
+						<FieldLabel htmlFor="sheet-rtl-name">{t.name}</FieldLabel>
+						<Input
+							variant="secondary"
+							id="sheet-rtl-name"
+							defaultValue="Maged Ibrahim"
+						/>
+					</Field>
+					<Field>
+						<FieldLabel htmlFor="sheet-rtl-username">{t.username}</FieldLabel>
+						<Input
+							variant="secondary"
+							id="sheet-rtl-username"
+							defaultValue="0xMaqed"
+						/>
+					</Field>
+				</FieldGroup>
+				<SheetFooter>
+					<Button type="submit">{t.save}</Button>
+					<SheetClose render={<Button variant="outline">{t.close}</Button>} />
+				</SheetFooter>
+			</SheetContent>
+		</Sheet>
 	);
 }
