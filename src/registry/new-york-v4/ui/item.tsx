@@ -88,7 +88,7 @@ const itemMediaVariants = cva(
 		variants: {
 			variant: {
 				default: "bg-transparent",
-				icon: "rounded-xl bg-default p-3 group-data-[size=sm]/item:p-2.5 group-data-[size=xs]/item:p-2 group-data-[variant=secondary]/item:brightness-95 group-data-[variant=tertiary]/item:brightness-90 dark:group-data-[variant=secondary]/item:brightness-150 dark:group-data-[variant=tertiary]/item:brightness-150 [&_svg:not([class*='size-'])]:size-5.5 group-data-[size=sm]/item:[&_svg:not([class*='size-'])]:size-4.5 group-data-[size=xs]/item:[&_svg:not([class*='size-'])]:size-4",
+				icon: "rounded-xl bg-default p-3 group-data-[size=sm]/item:p-2.5 group-data-[size=xs]/item:p-2.5 group-data-[variant=secondary]/item:brightness-95 group-data-[variant=tertiary]/item:brightness-90 dark:group-data-[variant=secondary]/item:brightness-150 dark:group-data-[variant=tertiary]/item:brightness-150 [&_svg:not([class*='size-'])]:size-5.5 group-data-[size=sm]/item:[&_svg:not([class*='size-'])]:size-4.5 group-data-[size=xs]/item:[&_svg:not([class*='size-'])]:size-4",
 				image:
 					"size-10 overflow-hidden rounded-lg group-data-[size=sm]/item:size-8 group-data-[size=xs]/item:size-6 group-data-[size=xs]/item:rounded-md [&_img]:size-full [&_img]:object-cover",
 			},
