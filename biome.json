@@ -56,7 +56,8 @@
 				"useSemanticElements": "off",
 				"noLabelWithoutControl": "off",
 				"useKeyWithClickEvents": "off",
-				"useValidAnchor": "off"
+				"useValidAnchor": "off",
+				"useAnchorContent": "off"
 			},
 			"correctness": {
 				"useExhaustiveDependencies": "info"

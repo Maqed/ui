@@ -1,0 +1,203 @@
+import { mergeProps } from "@base-ui/react/merge-props";
+import { useRender } from "@base-ui/react/use-render";
+import { cva, type VariantProps } from "class-variance-authority";
+import type * as React from "react";
+
+import { cn } from "@/lib/utils";
+import { Separator } from "@/registry/new-york-v4/ui/separator";
+
+function ItemGroup({ className, ...props }: React.ComponentProps<"div">) {
+	return (
+		<div
+			role="list"
+			data-slot="item-group"
+			className={cn(
+				"group/item-group flex w-full flex-col gap-4 has-data-[size=sm]:gap-2.5 has-data-[size=xs]:gap-2",
+				className,
+			)}
+			{...props}
+		/>
+	);
+}
+
+function ItemSeparator({
+	className,
+	...props
+}: React.ComponentProps<typeof Separator>) {
+	return (
+		<Separator
+			data-slot="item-separator"
+			orientation="horizontal"
+			className={cn("my-2", className)}
+			{...props}
+		/>
+	);
+}
+
+const itemVariants = cva(
+	"group/item focus-visible:focus-ring flex w-full flex-wrap items-center rounded-2xl text-sm outline-none transition-colors duration-100 [a]:transition-colors [a]:hover:bg-accent [a]:hover:text-accent-foreground",
+	{
+		variants: {
+			variant: {
+				default: "bg-surface shadow-md",
+				secondary: "bg-surface-secondary",
+				tertiary: "bg-surface-tertiary",
+				outline: "border border-border",
+				transparent: "",
+			},
+			size: {
+				default: "gap-3.5 px-4 py-3.5",
+				sm: "gap-3.5 px-3.5 py-3",
+				xs: "gap-2.5 in-data-[slot=dropdown-menu-content]:p-0 px-3 py-2.5",
+			},
+		},
+		defaultVariants: {
+			variant: "default",
+			size: "default",
+		},
+	},
+);
+
+function Item({
+	className,
+	variant = "default",
+	size = "default",
+	render,
+	...props
+}: useRender.ComponentProps<"div"> & VariantProps<typeof itemVariants>) {
+	return useRender({
+		defaultTagName: "div",
+		props: mergeProps<"div">(
+			{
+				className: cn(itemVariants({ variant, size, className })),
+			},
+			props,
+		),
+		render,
+		state: {
+			slot: "item",
+			variant,
+			size,
+		},
+	});
+}
+
+const itemMediaVariants = cva(
+	"flex shrink-0 items-center justify-center gap-2 group-has-data-[slot=item-description]/item:translate-y-0.5 group-has-data-[slot=item-description]/item:self-start [&_svg]:pointer-events-none",
+	{
+		variants: {
+			variant: {
+				default: "bg-transparent",
+				icon: "rounded-xl bg-default p-3 group-data-[size=sm]/item:p-2.5 group-data-[size=xs]/item:p-2 group-data-[variant=secondary]/item:brightness-95 group-data-[variant=tertiary]/item:brightness-90 dark:group-data-[variant=secondary]/item:brightness-150 dark:group-data-[variant=tertiary]/item:brightness-150 [&_svg:not([class*='size-'])]:size-5.5 group-data-[size=sm]/item:[&_svg:not([class*='size-'])]:size-4.5 group-data-[size=xs]/item:[&_svg:not([class*='size-'])]:size-4",
+				image:
+					"size-10 overflow-hidden rounded-lg group-data-[size=sm]/item:size-8 group-data-[size=xs]/item:size-6 group-data-[size=xs]/item:rounded-md [&_img]:size-full [&_img]:object-cover",
+			},
+		},
+		defaultVariants: {
+			variant: "default",
+		},
+	},
+);
+
+function ItemMedia({
+	className,
+	variant = "default",
+	...props
+}: React.ComponentProps<"div"> & VariantProps<typeof itemMediaVariants>) {
+	return (
+		<div
+			data-slot="item-media"
+			data-variant={variant}
+			className={cn(itemMediaVariants({ variant, className }))}
+			{...props}
+		/>
+	);
+}
+
+function ItemContent({ className, ...props }: React.ComponentProps<"div">) {
+	return (
+		<div
+			data-slot="item-content"
+			className={cn(
+				"flex flex-1 flex-col gap-1 group-data-[size=xs]/item:gap-0.5 [&+[data-slot=item-content]]:flex-none",
+				className,
+			)}
+			{...props}
+		/>
+	);
+}
+
+function ItemTitle({ className, ...props }: React.ComponentProps<"div">) {
+	return (
+		<div
+			data-slot="item-title"
+			className={cn(
+				"line-clamp-1 flex w-fit items-center gap-2 font-medium text-sm leading-snug underline-offset-4",
+				className,
+			)}
+			{...props}
+		/>
+	);
+}
+
+function ItemDescription({ className, ...props }: React.ComponentProps<"p">) {
+	return (
+		<p
+			data-slot="item-description"
+			className={cn(
+				"line-clamp-2 text-start font-normal text-muted-foreground text-sm [&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4",
+				className,
+			)}
+			{...props}
+		/>
+	);
+}
+
+function ItemActions({ className, ...props }: React.ComponentProps<"div">) {
+	return (
+		<div
+			data-slot="item-actions"
+			className={cn("flex items-center gap-2", className)}
+			{...props}
+		/>
+	);
+}
+
+function ItemHeader({ className, ...props }: React.ComponentProps<"div">) {
+	return (
+		<div
+			data-slot="item-header"
+			className={cn(
+				"flex basis-full items-center justify-between gap-2",
+				className,
+			)}
+			{...props}
+		/>
+	);
+}
+
+function ItemFooter({ className, ...props }: React.ComponentProps<"div">) {
+	return (
+		<div
+			data-slot="item-footer"
+			className={cn(
+				"flex basis-full items-center justify-between gap-2",
+				className,
+			)}
+			{...props}
+		/>
+	);
+}
+
+export {
+	Item,
+	ItemActions,
+	ItemContent,
+	ItemDescription,
+	ItemFooter,
+	ItemGroup,
+	ItemHeader,
+	ItemMedia,
+	ItemSeparator,
+	ItemTitle,
+};

@@ -1916,6 +1916,149 @@ export const examples: Registry["items"] = [
 		],
 	},
 	{
+		name: "item-demo",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("item"),
+		],
+		files: [
+			{
+				path: "examples/item-demo.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "item-variants",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("item")],
+		files: [
+			{
+				path: "examples/item-variants.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "item-sizes",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("item")],
+		files: [
+			{
+				path: "examples/item-sizes.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "item-icon",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("item"),
+		],
+		files: [
+			{
+				path: "examples/item-icon.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "item-avatar",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("avatar"),
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("item"),
+		],
+		files: [
+			{
+				path: "examples/item-avatar.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "item-image",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("item")],
+		files: [
+			{
+				path: "examples/item-image.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "item-group",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("avatar"),
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("item"),
+		],
+		files: [
+			{
+				path: "examples/item-group.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "item-header",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("item")],
+		files: [
+			{
+				path: "examples/item-header.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "item-link",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("item")],
+		files: [
+			{
+				path: "examples/item-link.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "item-dropdown",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("avatar"),
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("dropdown-menu"),
+			getRegistryItemInstallationAlias("item"),
+		],
+		files: [
+			{
+				path: "examples/item-dropdown.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "item-rtl",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("item"),
+		],
+		files: [
+			{
+				path: "examples/item-rtl.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
 		name: "kbd-demo",
 		type: "registry:example",
 		registryDependencies: [getRegistryItemInstallationAlias("kbd")],
