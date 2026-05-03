@@ -1,0 +1,116 @@
+---
+title: Sheet
+description: Extends the Dialog component to display content that complements the main content of the screen.
+base: base
+component: true
+links:
+  doc: https://base-ui.com/react/components/dialog
+  api: https://base-ui.com/react/components/dialog#api-reference
+---
+
+<ComponentPreview name="sheet-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add @herocn/sheet" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install @base-ui/react" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="sheet" title="components/ui/sheet.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+```
+
+```tsx
+<Sheet>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Are you absolutely sure?</SheetTitle>
+      <SheetDescription>This action cannot be undone.</SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>
+```
+
+## Composition
+
+Use the following composition to build a `Sheet`:
+
+```text
+Sheet
+├── SheetTrigger
+└── SheetContent
+    ├── SheetHeader
+    │   ├── SheetTitle
+    │   └── SheetDescription
+    └── SheetFooter
+```
+
+## Examples
+
+### Side
+
+Use the `side` prop on `SheetContent` to set the edge of the screen where the sheet appears. Values are `top`, `right`, `bottom`, or `left`.
+
+<ComponentPreview name="sheet-side" />
+
+### Overlay variant
+
+Use `overlayVariant` on `SheetContent` to choose an opaque dim (`opaque`), a blurred backdrop (`blur`), or transparent overlay (`transparent`).
+
+<ComponentPreview name="sheet-overlay-variant" />
+
+### No Close Button
+
+Use `showCloseButton={false}` on `SheetContent` to hide the close button.
+
+<ComponentPreview name="sheet-no-close-button" />
+
+## RTL
+
+To enable RTL support in herocn, see the [RTL configuration guide](/docs/rtl).
+
+<ComponentPreview name="sheet-rtl" direction="rtl" />
+
+## API Reference
+
+See the [Base UI Dialog](https://base-ui.com/react/components/dialog#api-reference) documentation.

@@ -248,6 +248,18 @@ export const ui: Registry["items"] = [
 		],
 	},
 	{
+		name: "sheet",
+		type: "registry:ui",
+		dependencies: ["@base-ui/react", "lucide-react"],
+		registryDependencies: [getRegistryItemInstallationAlias("button")],
+		files: [
+			{
+				path: "ui/sheet.tsx",
+				type: "registry:ui",
+			},
+		],
+	},
+	{
 		name: "field",
 		type: "registry:ui",
 		dependencies: ["class-variance-authority"],
@@ -295,6 +307,18 @@ export const ui: Registry["items"] = [
 		files: [
 			{
 				path: "ui/scroll-area.tsx",
+				type: "registry:ui",
+			},
+		],
+	},
+	{
+		name: "sheet",
+		type: "registry:ui",
+		dependencies: ["@base-ui/react", "lucide-react"],
+		registryDependencies: [getRegistryItemInstallationAlias("button")],
+		files: [
+			{
+				path: "ui/sheet.tsx",
 				type: "registry:ui",
 			},
 		],

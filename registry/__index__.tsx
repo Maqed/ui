@@ -200,6 +200,21 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "sheet": {
+    name: "sheet",
+    type: "registry:ui",
+    registryDependencies: ["https://herocn.dev/r/button.json"],
+    files: [{
+      path: "src/registry/new-york-v4/ui/sheet.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/sheet.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   "field": {
     name: "field",
     type: "registry:ui",
@@ -241,6 +256,21 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/ui/scroll-area.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "sheet": {
+    name: "sheet",
+    type: "registry:ui",
+    registryDependencies: ["https://herocn.dev/r/button.json"],
+    files: [{
+      path: "src/registry/new-york-v4/ui/sheet.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/sheet.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -3646,6 +3676,81 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/examples/dialog-rtl.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "sheet-demo": {
+    name: "sheet-demo",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/field.json","https://herocn.dev/r/input.json","https://herocn.dev/r/label.json","https://herocn.dev/r/sheet.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/sheet-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/sheet-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "sheet-side": {
+    name: "sheet-side",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/sheet.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/sheet-side.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/sheet-side.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "sheet-overlay-variant": {
+    name: "sheet-overlay-variant",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/sheet.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/sheet-overlay-variant.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/sheet-overlay-variant.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "sheet-no-close-button": {
+    name: "sheet-no-close-button",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/sheet.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/sheet-no-close-button.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/sheet-no-close-button.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "sheet-rtl": {
+    name: "sheet-rtl",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/field.json","https://herocn.dev/r/input.json","https://herocn.dev/r/sheet.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/sheet-rtl.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/sheet-rtl.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

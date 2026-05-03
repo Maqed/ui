@@ -659,6 +659,23 @@
       ]
     },
     {
+      "name": "sheet",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "field",
       "type": "registry:ui",
       "dependencies": [
@@ -708,6 +725,23 @@
       "files": [
         {
           "path": "src/registry/new-york-v4/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/ui/sheet.tsx",
           "type": "registry:ui"
         }
       ]
@@ -4090,6 +4124,81 @@
       "files": [
         {
           "path": "src/registry/new-york-v4/examples/dialog-rtl.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sheet-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/field.json",
+        "https://herocn.dev/r/input.json",
+        "https://herocn.dev/r/label.json",
+        "https://herocn.dev/r/sheet.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/sheet-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sheet-side",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/sheet.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/sheet-side.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sheet-overlay-variant",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/sheet.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/sheet-overlay-variant.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sheet-no-close-button",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/sheet.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/sheet-no-close-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "sheet-rtl",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/field.json",
+        "https://herocn.dev/r/input.json",
+        "https://herocn.dev/r/sheet.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/sheet-rtl.tsx",
           "type": "registry:example"
         }
       ]
