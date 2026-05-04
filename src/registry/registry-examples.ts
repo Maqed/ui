@@ -496,6 +496,105 @@ export const examples: Registry["items"] = [
 		],
 	},
 	{
+		name: "radio-group-demo",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("label"),
+			getRegistryItemInstallationAlias("radio-group"),
+		],
+		files: [
+			{
+				path: "examples/radio-group-demo.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "radio-group-variants",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("radio-group"),
+		],
+		files: [
+			{
+				path: "examples/radio-group-variants.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "radio-group-description",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("radio-group"),
+		],
+		files: [
+			{
+				path: "examples/radio-group-description.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "radio-group-disabled",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("radio-group"),
+		],
+		files: [
+			{
+				path: "examples/radio-group-disabled.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "radio-group-invalid",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("radio-group"),
+		],
+		files: [
+			{
+				path: "examples/radio-group-invalid.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "radio-group-in-surface",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("radio-group"),
+			getRegistryItemInstallationAlias("surface"),
+		],
+		files: [
+			{
+				path: "examples/radio-group-in-surface.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "radio-group-rtl",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("radio-group"),
+		],
+		files: [
+			{
+				path: "examples/radio-group-rtl.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
 		name: "field-switch",
 		type: "registry:example",
 		registryDependencies: [

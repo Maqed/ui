@@ -1,0 +1,177 @@
+---
+title: Radio Group
+description: A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
+---
+
+<ComponentPreview previewClassName="*:max-w-sm" name="radio-group-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add https://herocn.dev/r/radio-group.json" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install @base-ui/react" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="radio-group" title="components/ui/radio-group.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+```
+
+```tsx
+<RadioGroup defaultValue="option-one">
+  <div className="flex items-center gap-3">
+    <RadioGroupItem value="option-one" id="option-one" />
+    <Label htmlFor="option-one">Option One</Label>
+  </div>
+  <div className="flex items-center gap-3">
+    <RadioGroupItem value="option-two" id="option-two" />
+    <Label htmlFor="option-two">Option Two</Label>
+  </div>
+</RadioGroup>
+```
+
+## Composition
+
+Use the following composition to build a `RadioGroup`:
+
+```text
+RadioGroup
+├── RadioGroupItem
+└── RadioGroupItem
+```
+
+Pair options with [Label](/docs/components/label) or [Field](/docs/components/field) (`FieldLabel`, `FieldDescription`) for accessible names and richer layouts.
+
+## Value
+
+Use `defaultValue` for an uncontrolled group, or `value` and `onValueChange` for a controlled selection.
+
+```tsx
+"use client"
+
+import * as React from "react"
+import { Field, FieldLabel } from "@/components/ui/field"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+
+export function Example() {
+  const [plan, setPlan] = React.useState("monthly")
+
+  return (
+    <RadioGroup value={plan} onValueChange={setPlan} className="w-fit">
+      <Field orientation="horizontal">
+        <RadioGroupItem value="monthly" id="plan-monthly-ex" />
+        <FieldLabel htmlFor="plan-monthly-ex" className="font-normal">
+          Monthly
+        </FieldLabel>
+      </Field>
+      <Field orientation="horizontal">
+        <RadioGroupItem value="yearly" id="plan-yearly-ex" />
+        <FieldLabel htmlFor="plan-yearly-ex" className="font-normal">
+          Yearly
+        </FieldLabel>
+      </Field>
+    </RadioGroup>
+  )
+}
+```
+
+## Examples
+
+### Variants
+
+Use the `variant` prop on `RadioGroup` for a softer **secondary** style on tinted panels (see [In surface](#in-surface)).
+
+<ComponentPreview previewClassName="*:max-w-xs" name="radio-group-variants" />
+
+### Description
+
+Use `Field`, `FieldContent`, and `FieldDescription` for helper text beside each option.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="radio-group-description" />
+
+### Choice card
+
+Use `FieldLabel` to wrap the entire `Field` for a clickable card-style selection.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="field-choice-card" />
+
+### Fieldset
+
+Use `FieldSet` and `FieldLegend` to group radio items with a label and description.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="field-radio" />
+
+### Disabled
+
+Pass `disabled` to a `RadioGroupItem`. Add `data-disabled` on the surrounding `Field` when the row should use disabled field styling.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="radio-group-disabled" />
+
+### Invalid
+
+Set `aria-invalid` on `RadioGroupItem` and `data-invalid` on the `Field` wrapper to show invalid styles.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="radio-group-invalid" />
+
+### In surface
+
+Use `variant="secondary"` when placing a radio group inside a [Surface](/docs/components/surface) or card so controls match the panel background.
+
+<ComponentPreview previewClassName="*:max-w-sm" name="radio-group-in-surface" />
+
+## RTL
+
+Radio layout follows inline direction; use the same [Field](/docs/components/field) patterns as in LTR. See the [RTL guide](/docs/rtl) for app-wide configuration.
+
+<ComponentPreview previewClassName="*:max-w-sm" name="radio-group-rtl" direction="rtl" />
+
+## API Reference
+
+### RadioGroup
+
+The `RadioGroup` component forwards props to [`@base-ui/react` RadioGroup](https://base-ui.com/react/components/radio) and supports the following additional prop:
+
+<ApiRefTable
+  props={[
+    {
+      name: "variant",
+      type: '"default" | "secondary"',
+      defaultValue: '"default"',
+      description:
+        "Secondary removes heavy shadow on items so the group reads cleanly on tinted surfaces.",
+    },
+  ]}
+/>
+
+### RadioGroupItem
+
+`RadioGroupItem` forwards props to the Base UI [Radio](https://base-ui.com/react/components/radio) root. For the full prop surface, see the [Base UI Radio Group API](https://base-ui.com/react/components/radio#api-reference).

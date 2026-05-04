@@ -21,7 +21,7 @@ export default function FieldChoiceCard() {
 				<FieldDescription>
 					Select the compute environment for your cluster.
 				</FieldDescription>
-				<RadioGroup defaultValue="kubernetes">
+				<RadioGroup variant="secondary" defaultValue="kubernetes">
 					<FieldLabel htmlFor="kubernetes-r2h">
 						<Field orientation="horizontal">
 							<FieldContent>

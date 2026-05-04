@@ -1145,6 +1145,111 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "radio-group-demo": {
+    name: "radio-group-demo",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/label.json","https://herocn.dev/r/radio-group.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/radio-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/radio-group-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "radio-group-variants": {
+    name: "radio-group-variants",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/field.json","https://herocn.dev/r/radio-group.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/radio-group-variants.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/radio-group-variants.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "radio-group-description": {
+    name: "radio-group-description",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/field.json","https://herocn.dev/r/radio-group.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/radio-group-description.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/radio-group-description.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "radio-group-disabled": {
+    name: "radio-group-disabled",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/field.json","https://herocn.dev/r/radio-group.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/radio-group-disabled.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/radio-group-disabled.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "radio-group-invalid": {
+    name: "radio-group-invalid",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/field.json","https://herocn.dev/r/radio-group.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/radio-group-invalid.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/radio-group-invalid.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "radio-group-in-surface": {
+    name: "radio-group-in-surface",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/field.json","https://herocn.dev/r/radio-group.json","https://herocn.dev/r/surface.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/radio-group-in-surface.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/radio-group-in-surface.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "radio-group-rtl": {
+    name: "radio-group-rtl",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/field.json","https://herocn.dev/r/radio-group.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/radio-group-rtl.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/radio-group-rtl.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   "field-switch": {
     name: "field-switch",
     type: "registry:example",
