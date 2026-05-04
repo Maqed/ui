@@ -189,6 +189,42 @@ export const ui: Registry["items"] = [
 		},
 	},
 	{
+		name: "checkbox",
+		type: "registry:ui",
+		dependencies: ["@base-ui/react"],
+		files: [
+			{
+				path: "ui/checkbox.tsx",
+				type: "registry:ui",
+			},
+		],
+		cssVars: {
+			light: {
+				"--default": cssVars.light["--default"],
+				"--destructive": cssVars.light["--destructive"],
+				"--destructive-foreground": cssVars.light["--destructive-foreground"],
+				"--input": cssVars.light["--input"],
+			},
+			dark: {
+				"--default": cssVars.dark["--default"],
+				"--destructive": cssVars.dark["--destructive"],
+				"--destructive-foreground": cssVars.dark["--destructive-foreground"],
+				"--input": cssVars.dark["--input"],
+			},
+			theme: {
+				"--color-default": cssVars.theme["--color-default"],
+				"--color-destructive": cssVars.theme["--color-destructive"],
+				"--color-destructive-foreground":
+					cssVars.theme["--color-destructive-foreground"],
+				"--color-input": cssVars.theme["--color-input"],
+			},
+		},
+		css: {
+			"@utility focus-ring": css["@utility focus-ring"],
+			"@utility invalid-field-ring": css["@utility invalid-field-ring"],
+		},
+	},
+	{
 		name: "collapsible",
 		type: "registry:ui",
 		dependencies: ["@base-ui/react"],
@@ -559,6 +595,23 @@ export const ui: Registry["items"] = [
 		files: [
 			{
 				path: "ui/switch.tsx",
+				type: "registry:ui",
+			},
+		],
+		css: {
+			"@utility focus-ring": css["@utility focus-ring"],
+			"@utility invalid-field-ring": css["@utility invalid-field-ring"],
+			"@utility invalid-field-ring-focus":
+				css["@utility invalid-field-ring-focus"],
+		},
+	},
+	{
+		name: "checkbox",
+		type: "registry:ui",
+		dependencies: ["@base-ui/react"],
+		files: [
+			{
+				path: "ui/checkbox.tsx",
 				type: "registry:ui",
 			},
 		],

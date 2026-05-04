@@ -125,6 +125,21 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "checkbox": {
+    name: "checkbox",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "src/registry/new-york-v4/ui/checkbox.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/checkbox.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   "collapsible": {
     name: "collapsible",
     type: "registry:ui",
@@ -421,6 +436,21 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/ui/switch.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "checkbox": {
+    name: "checkbox",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "src/registry/new-york-v4/ui/checkbox.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/checkbox.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
@@ -976,6 +1006,126 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/examples/field-checkbox.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "checkbox-demo": {
+    name: "checkbox-demo",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/checkbox.json","https://herocn.dev/r/field.json","https://herocn.dev/r/label.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/checkbox-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/checkbox-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "checkbox-basic": {
+    name: "checkbox-basic",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/checkbox.json","https://herocn.dev/r/field.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/checkbox-basic.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/checkbox-basic.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "checkbox-variants": {
+    name: "checkbox-variants",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/checkbox.json","https://herocn.dev/r/field.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/checkbox-variants.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/checkbox-variants.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "checkbox-description": {
+    name: "checkbox-description",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/checkbox.json","https://herocn.dev/r/field.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/checkbox-description.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/checkbox-description.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "checkbox-disabled": {
+    name: "checkbox-disabled",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/checkbox.json","https://herocn.dev/r/field.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/checkbox-disabled.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/checkbox-disabled.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "checkbox-invalid": {
+    name: "checkbox-invalid",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/checkbox.json","https://herocn.dev/r/field.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/checkbox-invalid.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/checkbox-invalid.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "checkbox-in-surface": {
+    name: "checkbox-in-surface",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/checkbox.json","https://herocn.dev/r/field.json","https://herocn.dev/r/surface.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/checkbox-in-surface.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/checkbox-in-surface.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "checkbox-rtl": {
+    name: "checkbox-rtl",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/checkbox.json","https://herocn.dev/r/field.json","https://herocn.dev/r/label.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/checkbox-rtl.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/checkbox-rtl.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

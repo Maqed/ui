@@ -367,6 +367,121 @@ export const examples: Registry["items"] = [
 		],
 	},
 	{
+		name: "checkbox-demo",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("checkbox"),
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("label"),
+		],
+		files: [
+			{
+				path: "examples/checkbox-demo.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "checkbox-basic",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("checkbox"),
+			getRegistryItemInstallationAlias("field"),
+		],
+		files: [
+			{
+				path: "examples/checkbox-basic.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "checkbox-variants",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("checkbox"),
+			getRegistryItemInstallationAlias("field"),
+		],
+		files: [
+			{
+				path: "examples/checkbox-variants.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "checkbox-description",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("checkbox"),
+			getRegistryItemInstallationAlias("field"),
+		],
+		files: [
+			{
+				path: "examples/checkbox-description.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "checkbox-disabled",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("checkbox"),
+			getRegistryItemInstallationAlias("field"),
+		],
+		files: [
+			{
+				path: "examples/checkbox-disabled.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "checkbox-invalid",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("checkbox"),
+			getRegistryItemInstallationAlias("field"),
+		],
+		files: [
+			{
+				path: "examples/checkbox-invalid.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "checkbox-in-surface",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("checkbox"),
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("surface"),
+		],
+		files: [
+			{
+				path: "examples/checkbox-in-surface.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "checkbox-rtl",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("checkbox"),
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("label"),
+		],
+		files: [
+			{
+				path: "examples/checkbox-rtl.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
 		name: "field-radio",
 		type: "registry:example",
 		registryDependencies: [

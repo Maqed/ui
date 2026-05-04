@@ -1,0 +1,154 @@
+---
+title: Checkbox
+description: A control that allows the user to toggle between checked and not checked.
+---
+
+<ComponentPreview previewClassName="*:max-w-sm" name="checkbox-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add https://herocn.dev/r/checkbox.json" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install @base-ui/react" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="checkbox" title="components/ui/checkbox.tsx" />
+
+<Step>Add the following css utilities</Step>
+
+<RenderCSSShared
+  css={["@utility focus-ring", "@utility invalid-field-ring", "@utility invalid-field-ring-focus"]}
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Checkbox } from "@/components/ui/checkbox"
+```
+
+```tsx
+<Checkbox />
+```
+
+## Composition
+
+The checkbox is implemented as a single root control with a built-in check indicator:
+
+```text
+Checkbox (Root)
+└── Indicator (check icon, always mounted)
+```
+
+Pair it with [Field](/docs/components/field) and `FieldLabel` (or [Label](/docs/components/label)) so the control has an accessible name and correct layout.
+
+## Checked state
+
+Use `defaultChecked` for uncontrolled checkboxes, or `checked` and `onCheckedChange` for controlled state.
+
+```tsx
+"use client"
+
+import * as React from "react"
+import { Checkbox } from "@/components/ui/checkbox"
+
+export function Example() {
+  const [checked, setChecked] = React.useState(false)
+
+  return (
+    <Checkbox checked={checked} onCheckedChange={(value) => setChecked(value)} />
+  )
+}
+```
+
+## Examples
+
+### Basic
+
+Pair the checkbox with `Field`, `FieldGroup`, and `FieldLabel` for proper layout and labeling.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="checkbox-basic" />
+
+### Variants
+
+Use the `variant` prop for a softer, shadow-free **secondary** style (for example on tinted or secondary surfaces).
+
+<ComponentPreview previewClassName="*:max-w-xs" name="checkbox-variants" />
+
+### Description
+
+Use `FieldContent` and `FieldDescription` for helper text beside the control.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="checkbox-description" />
+
+### Disabled
+
+Pass `disabled` to the checkbox. Add `data-disabled` on the surrounding `Field` so disabled field styles apply consistently.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="checkbox-disabled" />
+
+### Invalid
+
+Set `aria-invalid` on the checkbox and `data-invalid` on the `Field` wrapper to show invalid styles.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="checkbox-invalid" />
+
+### Group
+
+Use `FieldSet`, `FieldLegend`, and multiple horizontal `Field` rows for a checkbox list.
+
+<ComponentPreview previewClassName="*:max-w-xs" name="field-checkbox" />
+
+### In surface
+
+Use `variant="secondary"` when placing checkboxes inside a [Surface](/docs/components/surface) or card so the control matches the panel background.
+
+<ComponentPreview previewClassName="*:max-w-sm" name="checkbox-in-surface" />
+
+## RTL
+
+Checkbox layout follows inline direction; use the same [Field](/docs/components/field) patterns as in LTR. See the [RTL guide](/docs/rtl) for app-wide configuration.
+
+<ComponentPreview previewClassName="*:max-w-sm" name="checkbox-rtl" direction="rtl" />
+
+## API Reference
+
+### Checkbox
+
+The `Checkbox` component forwards props to [`@base-ui/react` Checkbox](https://base-ui.com/react/components/checkbox) and supports the following additional prop:
+
+<ApiRefTable
+  props={[
+    {
+      name: "variant",
+      type: '"default" | "secondary"',
+      defaultValue: '"default"',
+    },
+  ]}
+/>
+
+For the full prop surface, see the [Base UI Checkbox API](https://base-ui.com/react/components/checkbox#api-reference).
