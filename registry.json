@@ -682,6 +682,19 @@
       }
     },
     {
+      "name": "empty",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "dependencies": [
@@ -4046,6 +4059,107 @@
       "files": [
         {
           "path": "src/registry/new-york-v4/examples/spinner-empty.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/empty.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/empty-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-outline",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/empty.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/empty-outline.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-background",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/empty.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/empty-background.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-avatar",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/avatar.json",
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/empty.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/empty-avatar.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-avatar-group",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/avatar.json",
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/empty.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/empty-avatar-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-input-group",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/empty.json",
+        "https://herocn.dev/r/input-group.json",
+        "https://herocn.dev/r/kbd.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/empty-input-group.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "empty-rtl",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/empty.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/empty-rtl.tsx",
           "type": "registry:example"
         }
       ]

@@ -275,6 +275,17 @@ export const ui: Registry["items"] = [
 		},
 	},
 	{
+		name: "empty",
+		type: "registry:ui",
+		dependencies: ["class-variance-authority"],
+		files: [
+			{
+				path: "ui/empty.tsx",
+				type: "registry:ui",
+			},
+		],
+	},
+	{
 		name: "dialog",
 		type: "registry:ui",
 		dependencies: ["@base-ui/react", "lucide-react"],

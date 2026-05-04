@@ -1,0 +1,198 @@
+---
+title: Empty
+description: Display an empty state with media, text, and actions.
+---
+
+<ComponentPreview name="empty-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add https://herocn.dev/r/empty.json" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="empty" title="components/ui/empty.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from "@/components/ui/empty"
+```
+
+```tsx
+<Empty>
+  <EmptyHeader>
+    <EmptyMedia variant="icon">
+      <Icon />
+    </EmptyMedia>
+    <EmptyTitle>No data</EmptyTitle>
+    <EmptyDescription>No data found</EmptyDescription>
+  </EmptyHeader>
+  <EmptyContent>
+    <Button>Add data</Button>
+  </EmptyContent>
+</Empty>
+```
+
+## Composition
+
+Use the following composition to build an `Empty` state:
+
+```text
+Empty
+├── EmptyHeader
+│   ├── EmptyMedia
+│   ├── EmptyTitle
+│   └── EmptyDescription
+└── EmptyContent
+```
+
+## Examples
+
+### Outline
+
+Use a dashed border to make an outlined empty state.
+
+<ComponentPreview name="empty-outline" />
+
+### Background
+
+Add a muted background for low-contrast states.
+
+<ComponentPreview name="empty-background" />
+
+### Avatar
+
+Use `EmptyMedia` to render an avatar-based empty state.
+
+<ComponentPreview name="empty-avatar" />
+
+### Avatar Group
+
+Show a group of avatars to indicate team or collaborator context.
+
+<ComponentPreview name="empty-avatar-group" />
+
+### Input Group
+
+Place interactive search or filter controls in `EmptyContent`.
+
+<ComponentPreview name="empty-input-group" />
+
+## RTL
+
+<ComponentPreview name="empty-rtl" direction="rtl" />
+
+## API Reference
+
+### Empty
+
+The root container for the empty state.
+
+<ApiRefTable
+  props={[
+    {
+      name: "className",
+      type: "string",
+    },
+  ]}
+/>
+
+### EmptyHeader
+
+Wraps the media, title, and description.
+
+<ApiRefTable
+  props={[
+    {
+      name: "className",
+      type: "string",
+    },
+  ]}
+/>
+
+### EmptyMedia
+
+Displays an icon, image, avatar, or any custom media.
+
+<ApiRefTable
+  props={[
+    {
+      name: "variant",
+      type: '"default" | "icon"',
+      defaultValue: '"default"',
+    },
+    {
+      name: "className",
+      type: "string",
+    },
+  ]}
+/>
+
+### EmptyTitle
+
+The primary heading for the empty state.
+
+<ApiRefTable
+  props={[
+    {
+      name: "className",
+      type: "string",
+    },
+  ]}
+/>
+
+### EmptyDescription
+
+Secondary text that explains the empty state.
+
+<ApiRefTable
+  props={[
+    {
+      name: "className",
+      type: "string",
+    },
+  ]}
+/>
+
+### EmptyContent
+
+Action area for buttons, inputs, or links.
+
+<ApiRefTable
+  props={[
+    {
+      name: "className",
+      type: "string",
+    },
+  ]}
+/>
