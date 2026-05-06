@@ -101,7 +101,7 @@ export function SelectRtl() {
 		>
 			<SelectTrigger
 				data-lang={dir === "rtl" ? language : undefined}
-				className="w-32"
+				className="w-auto min-w-32"
 				dir={dir}
 			>
 				<SelectValue />
