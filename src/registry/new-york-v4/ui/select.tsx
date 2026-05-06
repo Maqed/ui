@@ -56,7 +56,7 @@ function SelectTrigger({
 		<SelectPrimitive.Trigger
 			data-slot="select-trigger"
 			className={cn(
-				"no-highlight no-highlight focus-visible:focus-ring aria-invalid:invalid-field-ring aria-invalid:focus-visible:invalid-field-ring-focus group/button relative isolate inline-flex min-h-9 w-fit shrink-0 origin-center cursor-pointer select-none items-center justify-center gap-2 whitespace-nowrap rounded-xl border bg-surface px-3 py-2 font-medium text-foreground text-sm shadow-xs outline-none transition-all hover:bg-input/80 active:bg-input/80 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 has-data-[icon=inline-start]:ps-3 has-data-[icon=inline-end]:pe-3 aria-disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:opacity-70 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+				"no-highlight no-highlight focus-visible:focus-ring aria-invalid:invalid-field-ring aria-invalid:focus-visible:invalid-field-ring-focus group/button relative isolate inline-flex min-h-9 w-fit shrink-0 origin-center cursor-pointer select-none items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-surface px-3 py-2 font-medium text-foreground text-sm shadow-xs outline-none brightness-100 transition-all hover:not-data-popup-open:brightness-96 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 has-data-[icon=inline-start]:ps-3 has-data-[icon=inline-end]:pe-3 aria-disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:opacity-70 dark:hover:not-data-popup-open:brightness-110 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
 				variant === "secondary" &&
 					"bg-surface-secondary shadow-none hover:bg-surface-secondary/90 active:bg-surface-secondary/90",
 				className,
@@ -101,7 +101,7 @@ function SelectContent({
 					data-slot="select-content"
 					data-align-trigger={alignItemWithTrigger}
 					className={cn(
-						"data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-start-2 data-[side=inline-start]:slide-in-from-end-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:fade-in-0 data-open:zoom-in-95 data-closed:fade-out-0 data-closed:zoom-out-95 relative isolate z-50 max-h-(--available-height) w-(--anchor-width) min-w-36 origin-(--transform-origin) overflow-y-auto overflow-x-hidden rounded-3xl border-input bg-popover text-popover-foreground shadow-2xl duration-150 data-[align-trigger=true]:animate-none data-closed:animate-out data-open:animate-in",
+						"data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-start-2 data-[side=inline-start]:slide-in-from-end-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:fade-in-0 data-open:zoom-in-95 data-closed:fade-out-0 data-closed:zoom-out-95 relative isolate z-50 max-h-(--available-height) w-(--anchor-width) min-w-36 origin-(--transform-origin) overflow-y-auto overflow-x-hidden rounded-3xl border-input bg-popover text-popover-foreground drop-shadow-xl duration-150 data-[align-trigger=true]:animate-none data-closed:animate-out data-open:animate-in",
 						className,
 					)}
 					{...props}
