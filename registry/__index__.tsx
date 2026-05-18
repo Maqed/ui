@@ -4262,6 +4262,20 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "drawer-responsive-dialog": {
+    name: "drawer-responsive-dialog",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/dialog.json","https://herocn.dev/r/drawer.json","https://herocn.dev/r/input.json","https://herocn.dev/r/label.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/drawer-responsive-dialog.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/drawer-responsive-dialog.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   "sonner-demo": {
     name: "sonner-demo",
     type: "registry:example",

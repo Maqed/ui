@@ -3415,6 +3415,23 @@ export const examples: Registry["items"] = [
 		],
 	},
 	{
+		name: "drawer-responsive-dialog",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("dialog"),
+			getRegistryItemInstallationAlias("drawer"),
+			getRegistryItemInstallationAlias("input"),
+			getRegistryItemInstallationAlias("label"),
+		],
+		files: [
+			{
+				path: "examples/drawer-responsive-dialog.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
 		name: "sonner-demo",
 		type: "registry:example",
 		registryDependencies: [

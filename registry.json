@@ -5121,6 +5121,23 @@
       ]
     },
     {
+      "name": "drawer-responsive-dialog",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/dialog.json",
+        "https://herocn.dev/r/drawer.json",
+        "https://herocn.dev/r/input.json",
+        "https://herocn.dev/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/drawer-responsive-dialog.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "sonner-demo",
       "type": "registry:example",
       "registryDependencies": [
