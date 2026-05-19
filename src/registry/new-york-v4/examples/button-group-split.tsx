@@ -19,7 +19,7 @@ export default function ButtonGroupSplit() {
 			<ButtonGroup orientation="vertical" className="h-fit">
 				<Button variant="secondary">Button</Button>
 				<ButtonGroupSeparator orientation="horizontal" />
-				<Button size="icon" variant="secondary">
+				<Button className="w-full" size="icon" variant="secondary">
 					<PlusIcon />
 				</Button>
 			</ButtonGroup>
