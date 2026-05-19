@@ -19,6 +19,7 @@
 		"@base-ui/react": "^1.4.1",
 		"@orama/orama": "^3.1.18",
 		"@takumi-rs/image-response": "^1.1.2",
+		"chrono-node": "^2.9.1",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"cmdk": "^1.1.1",

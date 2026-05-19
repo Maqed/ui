@@ -5102,4 +5102,116 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "date-picker-demo": {
+    name: "date-picker-demo",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/calendar.json","https://herocn.dev/r/popover.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/date-picker-demo.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/date-picker-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "date-picker-simple": {
+    name: "date-picker-simple",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/calendar.json","https://herocn.dev/r/field.json","https://herocn.dev/r/popover.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/date-picker-simple.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/date-picker-simple.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "date-picker-with-range": {
+    name: "date-picker-with-range",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/calendar.json","https://herocn.dev/r/field.json","https://herocn.dev/r/popover.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/date-picker-with-range.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/date-picker-with-range.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "date-picker-dob": {
+    name: "date-picker-dob",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/calendar.json","https://herocn.dev/r/field.json","https://herocn.dev/r/popover.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/date-picker-dob.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/date-picker-dob.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "date-picker-input": {
+    name: "date-picker-input",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/calendar.json","https://herocn.dev/r/field.json","https://herocn.dev/r/input-group.json","https://herocn.dev/r/popover.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/date-picker-input.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/date-picker-input.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "date-picker-time": {
+    name: "date-picker-time",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/calendar.json","https://herocn.dev/r/field.json","https://herocn.dev/r/input.json","https://herocn.dev/r/popover.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/date-picker-time.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/date-picker-time.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "date-picker-natural-language": {
+    name: "date-picker-natural-language",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/calendar.json","https://herocn.dev/r/field.json","https://herocn.dev/r/input-group.json","https://herocn.dev/r/popover.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/date-picker-natural-language.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/date-picker-natural-language.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "date-picker-rtl": {
+    name: "date-picker-rtl",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/calendar.json","https://herocn.dev/r/popover.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/date-picker-rtl.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/date-picker-rtl.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   }

@@ -4140,4 +4140,131 @@ export const examples: Registry["items"] = [
 			},
 		],
 	},
+	{
+		name: "date-picker-demo",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("popover"),
+		],
+		files: [
+			{
+				path: "examples/date-picker-demo.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "date-picker-simple",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("popover"),
+		],
+		files: [
+			{
+				path: "examples/date-picker-simple.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "date-picker-with-range",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("popover"),
+		],
+		files: [
+			{
+				path: "examples/date-picker-with-range.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "date-picker-dob",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("popover"),
+		],
+		files: [
+			{
+				path: "examples/date-picker-dob.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "date-picker-input",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("input-group"),
+			getRegistryItemInstallationAlias("popover"),
+		],
+		files: [
+			{
+				path: "examples/date-picker-input.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "date-picker-time",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("input"),
+			getRegistryItemInstallationAlias("popover"),
+		],
+		files: [
+			{
+				path: "examples/date-picker-time.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "date-picker-natural-language",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("input-group"),
+			getRegistryItemInstallationAlias("popover"),
+		],
+		files: [
+			{
+				path: "examples/date-picker-natural-language.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "date-picker-rtl",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("popover"),
+		],
+		files: [
+			{
+				path: "examples/date-picker-rtl.tsx",
+				type: "registry:example",
+			},
+		],
+	},
 ];

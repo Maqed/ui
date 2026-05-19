@@ -1,0 +1,124 @@
+---
+title: Date Picker
+description: A date picker component with range and presets.
+---
+
+<ComponentPreview name="date-picker-demo" />
+
+## Usage
+
+The Date Picker is built using a composition of the `<Popover />` and the `<Calendar />` components.
+
+```tsx showLineNumbers
+"use client"
+
+import * as React from "react"
+import { format } from "date-fns"
+import { CalendarIcon } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+
+export function DatePickerDemo() {
+  const [date, setDate] = React.useState<Date>()
+
+  return (
+    <Popover>
+      <PopoverTrigger
+        render={
+          <Button
+            variant="outline"
+            data-empty={!date}
+            className="justify-start text-left font-normal data-[empty=true]:text-muted-foreground"
+          />
+        }
+      >
+        <CalendarIcon />
+        {date ? format(date, "PPP") : <span>Pick a date</span>}
+      </PopoverTrigger>
+      <PopoverContent className="w-auto p-0">
+        <Calendar mode="single" selected={date} onSelect={setDate} />
+      </PopoverContent>
+    </Popover>
+  )
+}
+```
+
+See the [React DayPicker](https://react-day-picker.js.org) documentation for more information.
+
+## Composition
+
+A date picker is built from `Popover` and `Calendar` (there is no `DatePicker` root component):
+
+```text
+Popover
+├── PopoverTrigger
+└── PopoverContent
+    └── Calendar
+```
+
+## Examples
+
+### Basic
+
+A basic date picker component.
+
+<ComponentPreview name="date-picker-simple" />
+
+### Range Picker
+
+A date picker component for selecting a range of dates.
+
+<ComponentPreview name="date-picker-with-range" />
+
+### Date of Birth
+
+A date picker component for selecting a date of birth. This component includes a dropdown caption layout for date and month selection.
+
+<ComponentPreview name="date-picker-dob" />
+
+### Input
+
+A date picker component with an input field for selecting a date.
+
+<ComponentPreview name="date-picker-input" />
+
+### Time Picker
+
+A date picker component with a time input field for selecting a time.
+
+<ComponentPreview name="date-picker-time" />
+
+### Natural Language Picker
+
+This component uses the `chrono-node` library to parse natural language dates.
+
+<ComponentPreview name="date-picker-natural-language" />
+
+## RTL
+
+<ComponentPreview name="date-picker-rtl" direction="rtl" />
+
+To enable RTL support in the date picker, import locales from both `date-fns/locale` and `react-day-picker/locale`, then pass `dir`, `locale` to the `Calendar` component and `dir` to the `PopoverContent` and `PopoverTrigger`:
+
+```tsx
+import { arSA } from "date-fns/locale"
+import { arSA as arSADayPicker } from "react-day-picker/locale"
+
+<Popover>
+  <PopoverContent className="w-auto p-0" align="start" dir="rtl">
+    <Calendar
+      mode="single"
+      selected={date}
+      onSelect={setDate}
+      dir="rtl"
+      locale={arSADayPicker}
+    />
+  </PopoverContent>
+</Popover>
+```
