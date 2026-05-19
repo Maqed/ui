@@ -1,0 +1,160 @@
+---
+title: Calendar
+description: A calendar component that allows users to select a date or a range of dates.
+---
+
+<ComponentPreview name="calendar-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add https://herocn.dev/r/calendar.json" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install react-day-picker date-fns" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="calendar" title="components/ui/calendar.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Calendar } from "@/components/ui/calendar"
+```
+
+```tsx
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+return (
+  <Calendar
+    mode="single"
+    selected={date}
+    onSelect={setDate}
+    className="rounded-lg border"
+  />
+)
+```
+
+See the [React DayPicker](https://react-day-picker.js.org) documentation for more information.
+
+## About
+
+The `Calendar` component is built on top of [React DayPicker](https://react-day-picker.js.org).
+
+## Date Picker
+
+You can use the `<Calendar>` component to build a date picker. See the [Date Picker](/docs/components/base/date-picker) page for more information.
+
+## Examples
+
+### Basic
+
+A basic calendar component. We used `className="rounded-lg border"` to style the calendar.
+
+<ComponentPreview name="calendar-basic" />
+
+### Range Calendar
+
+Use the `mode="range"` prop to enable range selection.
+
+<ComponentPreview name="calendar-range" />
+
+### Month and Year Selector
+
+Use `captionLayout="dropdown"` to show month and year dropdowns.
+
+<ComponentPreview name="calendar-caption" />
+
+### Presets
+
+<ComponentPreview name="calendar-with-presets" />
+
+### Date and Time Picker
+
+<ComponentPreview name="calendar-with-time" />
+
+### Booked dates
+
+<ComponentPreview name="calendar-booked-dates" />
+
+### Custom Cell Size
+
+You can customize the size of calendar cells using the `--cell-size` CSS variable.
+
+<ComponentPreview name="calendar-custom-days" />
+
+### Week Numbers
+
+Use `showWeekNumber` to show week numbers.
+
+<ComponentPreview name="calendar-week-numbers" />
+
+## RTL
+
+<ComponentPreview name="calendar-rtl" direction="rtl" />
+
+To enable RTL support, import the locale from `react-day-picker/locale` and pass both the `locale` and `dir` props to the Calendar component:
+
+```tsx
+import { arSA } from "react-day-picker/locale"
+
+<Calendar
+  mode="single"
+  selected={date}
+  onSelect={setDate}
+  locale={arSA}
+  dir="rtl"
+/>
+```
+
+## Reference
+
+### Props
+
+The `Calendar` component accepts all props from [`react-day-picker` DayPicker](https://react-day-picker.js.org) plus the following:
+
+<ApiRefTable
+  props={[
+    {
+      name: "buttonVariant",
+      type: '"default" | "secondary" | "outline" | "ghost" | "tertiary" | "destructive" | "destructive-soft"',
+      defaultValue: '"ghost"',
+      description: "The variant of the navigation buttons.",
+    },
+    {
+      name: "captionLayout",
+      type: '"label" | "dropdown"',
+      defaultValue: '"label"',
+      description: "The layout of the caption. When set to `dropdown`, month and year dropdowns are shown.",
+    },
+    {
+      name: "locale",
+      type: "Partial<Locale>",
+      description: "The locale to use for date formatting. Used for RTL support.",
+    },
+  ]}
+/>

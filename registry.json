@@ -5787,6 +5787,144 @@
           "type": "registry:example"
         }
       ]
+    },
+    {
+      "name": "calendar-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/calendar.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/calendar-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-basic",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/calendar.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/calendar-basic.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-range",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/calendar.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/calendar-range.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-caption",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/calendar.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/calendar-caption.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-with-presets",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/calendar.json",
+        "https://herocn.dev/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/calendar-with-presets.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-with-time",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/calendar.json",
+        "https://herocn.dev/r/card.json",
+        "https://herocn.dev/r/field.json",
+        "https://herocn.dev/r/input-group.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/calendar-with-time.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-booked-dates",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/calendar.json",
+        "https://herocn.dev/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/calendar-booked-dates.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-custom-days",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/calendar.json",
+        "https://herocn.dev/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/calendar-custom-days.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-week-numbers",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/calendar.json",
+        "https://herocn.dev/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/calendar-week-numbers.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "calendar-rtl",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/calendar.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/calendar-rtl.tsx",
+          "type": "registry:example"
+        }
+      ]
     }
   ]
 }

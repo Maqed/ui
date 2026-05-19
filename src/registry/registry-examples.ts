@@ -4012,4 +4012,132 @@ export const examples: Registry["items"] = [
 			},
 		],
 	},
+	{
+		name: "calendar-demo",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("calendar")],
+		files: [
+			{
+				path: "examples/calendar-demo.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "calendar-basic",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("calendar")],
+		files: [
+			{
+				path: "examples/calendar-basic.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "calendar-range",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("calendar")],
+		files: [
+			{
+				path: "examples/calendar-range.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "calendar-caption",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("calendar")],
+		files: [
+			{
+				path: "examples/calendar-caption.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "calendar-with-presets",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("card"),
+		],
+		files: [
+			{
+				path: "examples/calendar-with-presets.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "calendar-with-time",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("card"),
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("input-group"),
+		],
+		files: [
+			{
+				path: "examples/calendar-with-time.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "calendar-booked-dates",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("card"),
+		],
+		files: [
+			{
+				path: "examples/calendar-booked-dates.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "calendar-custom-days",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("card"),
+		],
+		files: [
+			{
+				path: "examples/calendar-custom-days.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "calendar-week-numbers",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("calendar"),
+			getRegistryItemInstallationAlias("card"),
+		],
+		files: [
+			{
+				path: "examples/calendar-week-numbers.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "calendar-rtl",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("calendar")],
+		files: [
+			{
+				path: "examples/calendar-rtl.tsx",
+				type: "registry:example",
+			},
+		],
+	},
 ];

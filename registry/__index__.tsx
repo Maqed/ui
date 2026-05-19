@@ -4948,4 +4948,144 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "calendar-demo": {
+    name: "calendar-demo",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/calendar.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/calendar-demo.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/calendar-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "calendar-basic": {
+    name: "calendar-basic",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/calendar.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/calendar-basic.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/calendar-basic.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "calendar-range": {
+    name: "calendar-range",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/calendar.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/calendar-range.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/calendar-range.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "calendar-caption": {
+    name: "calendar-caption",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/calendar.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/calendar-caption.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/calendar-caption.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "calendar-with-presets": {
+    name: "calendar-with-presets",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/calendar.json","https://herocn.dev/r/card.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/calendar-with-presets.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/calendar-with-presets.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "calendar-with-time": {
+    name: "calendar-with-time",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/calendar.json","https://herocn.dev/r/card.json","https://herocn.dev/r/field.json","https://herocn.dev/r/input-group.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/calendar-with-time.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/calendar-with-time.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "calendar-booked-dates": {
+    name: "calendar-booked-dates",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/calendar.json","https://herocn.dev/r/card.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/calendar-booked-dates.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/calendar-booked-dates.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "calendar-custom-days": {
+    name: "calendar-custom-days",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/calendar.json","https://herocn.dev/r/card.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/calendar-custom-days.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/calendar-custom-days.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "calendar-week-numbers": {
+    name: "calendar-week-numbers",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/calendar.json","https://herocn.dev/r/card.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/calendar-week-numbers.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/calendar-week-numbers.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "calendar-rtl": {
+    name: "calendar-rtl",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/calendar.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/calendar-rtl.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/calendar-rtl.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   }
