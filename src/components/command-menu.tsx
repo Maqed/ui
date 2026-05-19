@@ -1,7 +1,6 @@
 "use client";
 import { SearchIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import type { ComponentProps } from "react";
 import * as React from "react";
 import type { source } from "@/lib/source";
 import { Button } from "@/registry/new-york-v4/ui/button";
@@ -32,7 +31,7 @@ export function CommandMenu({
 	tree,
 	navItems,
 	...props
-}: ComponentProps<typeof CommandDialog> & {
+}: {
 	tree: typeof source.pageTree;
 	navItems?: { href: string; label: string; isExternal?: boolean }[];
 }) {
