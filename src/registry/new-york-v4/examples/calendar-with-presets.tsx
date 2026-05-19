@@ -16,7 +16,7 @@ export default function CalendarWithPresets() {
 	);
 
 	return (
-		<Card className="mx-auto w-fit max-w-96" size="sm">
+		<Card className="mx-auto w-fit max-w-76" size="sm">
 			<CardContent>
 				<Calendar
 					mode="single"
@@ -25,7 +25,7 @@ export default function CalendarWithPresets() {
 					month={currentMonth}
 					onMonthChange={setCurrentMonth}
 					fixedWeeks
-					className="w-full p-0 [--cell-size:--spacing(9.5)]"
+					className="w-full p-0"
 				/>
 			</CardContent>
 			<CardFooter className="flex flex-wrap gap-2 border-t">

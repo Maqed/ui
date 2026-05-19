@@ -162,6 +162,18 @@ export const ui: Registry["items"] = [
 		},
 	},
 	{
+		name: "calendar",
+		type: "registry:ui",
+		dependencies: ["lucide-react", "react-day-picker"],
+		registryDependencies: [getRegistryItemInstallationAlias("button")],
+		files: [
+			{
+				path: "ui/calendar.tsx",
+				type: "registry:ui",
+			},
+		],
+	},
+	{
 		name: "card",
 		type: "registry:ui",
 		files: [
