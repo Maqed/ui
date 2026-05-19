@@ -36,16 +36,18 @@ function CommandDialog({
 	title = "Command Palette",
 	description = "Search for a command to run...",
 	children,
+	overlayVariant = "opaque",
 	className,
 	showCloseButton = false,
 	...props
-}: Omit<React.ComponentProps<typeof Dialog>, "children"> & {
-	title?: string;
-	description?: string;
-	className?: string;
-	showCloseButton?: boolean;
-	children: React.ReactNode;
-}) {
+}: Omit<React.ComponentProps<typeof Dialog>, "children"> &
+	Pick<React.ComponentProps<typeof DialogContent>, "overlayVariant"> & {
+		title?: string;
+		description?: string;
+		className?: string;
+		showCloseButton?: boolean;
+		children: React.ReactNode;
+	}) {
 	return (
 		<Dialog {...props}>
 			<DialogHeader className="sr-only">
@@ -54,6 +56,7 @@ function CommandDialog({
 			</DialogHeader>
 			<DialogContent
 				className={cn("overflow-hidden rounded-2xl p-0 sm:max-w-xl", className)}
+				overlayVariant={overlayVariant}
 				showCloseButton={showCloseButton}
 			>
 				{children}

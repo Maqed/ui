@@ -3998,4 +3998,18 @@ export const examples: Registry["items"] = [
 			},
 		],
 	},
+	{
+		name: "command-overlay-variant",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("command"),
+		],
+		files: [
+			{
+				path: "examples/command-overlay-variant.tsx",
+				type: "registry:example",
+			},
+		],
+	},
 ];
