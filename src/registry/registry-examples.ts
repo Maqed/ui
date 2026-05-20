@@ -4281,4 +4281,137 @@ export const examples: Registry["items"] = [
 			},
 		],
 	},
+	{
+		name: "input-otp-demo",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("input-otp")],
+		files: [
+			{
+				path: "examples/input-otp-demo.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "input-otp-variants",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("input-otp")],
+		files: [
+			{
+				path: "examples/input-otp-variants.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "input-otp-in-surface",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("input-otp"),
+			getRegistryItemInstallationAlias("surface"),
+		],
+		files: [
+			{
+				path: "examples/input-otp-in-surface.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "input-otp-separator",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("input-otp")],
+		files: [
+			{
+				path: "examples/input-otp-separator.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "input-otp-disabled",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("input-otp")],
+		files: [
+			{
+				path: "examples/input-otp-disabled.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "input-otp-controlled",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("input-otp")],
+		files: [
+			{
+				path: "examples/input-otp-controlled.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "input-otp-invalid",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("input-otp")],
+		files: [
+			{
+				path: "examples/input-otp-invalid.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "input-otp-four-digits",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("input-otp")],
+		files: [
+			{
+				path: "examples/input-otp-four-digits.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "input-otp-alphanumeric",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("input-otp")],
+		files: [
+			{
+				path: "examples/input-otp-alphanumeric.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "input-otp-form",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("button"),
+			getRegistryItemInstallationAlias("card"),
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("input-otp"),
+		],
+		files: [
+			{
+				path: "examples/input-otp-form.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "input-otp-rtl",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("field"),
+			getRegistryItemInstallationAlias("input-otp"),
+		],
+		files: [
+			{
+				path: "examples/input-otp-rtl.tsx",
+				type: "registry:example",
+			},
+		],
+	},
 ];

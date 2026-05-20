@@ -412,6 +412,20 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "input-otp": {
+    name: "input-otp",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "src/registry/new-york-v4/ui/input-otp.tsx",
+      type: "registry:ui"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/input-otp.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   "item": {
     name: "item",
     type: "registry:ui",
@@ -5224,6 +5238,160 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/examples/date-picker-rtl.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "input-otp-demo": {
+    name: "input-otp-demo",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/input-otp.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/input-otp-demo.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/input-otp-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "input-otp-variants": {
+    name: "input-otp-variants",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/input-otp.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/input-otp-variants.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/input-otp-variants.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "input-otp-in-surface": {
+    name: "input-otp-in-surface",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/field.json","https://herocn.dev/r/input-otp.json","https://herocn.dev/r/surface.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/input-otp-in-surface.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/input-otp-in-surface.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "input-otp-separator": {
+    name: "input-otp-separator",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/input-otp.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/input-otp-separator.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/input-otp-separator.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "input-otp-disabled": {
+    name: "input-otp-disabled",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/input-otp.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/input-otp-disabled.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/input-otp-disabled.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "input-otp-controlled": {
+    name: "input-otp-controlled",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/input-otp.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/input-otp-controlled.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/input-otp-controlled.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "input-otp-invalid": {
+    name: "input-otp-invalid",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/input-otp.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/input-otp-invalid.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/input-otp-invalid.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "input-otp-four-digits": {
+    name: "input-otp-four-digits",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/input-otp.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/input-otp-four-digits.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/input-otp-four-digits.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "input-otp-alphanumeric": {
+    name: "input-otp-alphanumeric",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/input-otp.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/input-otp-alphanumeric.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/input-otp-alphanumeric.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "input-otp-form": {
+    name: "input-otp-form",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/button.json","https://herocn.dev/r/card.json","https://herocn.dev/r/field.json","https://herocn.dev/r/input-otp.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/input-otp-form.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/input-otp-form.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "input-otp-rtl": {
+    name: "input-otp-rtl",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/field.json","https://herocn.dev/r/input-otp.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/input-otp-rtl.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/input-otp-rtl.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),

@@ -580,6 +580,34 @@ export const ui: Registry["items"] = [
 		},
 	},
 	{
+		name: "input-otp",
+		type: "registry:ui",
+		dependencies: ["input-otp", "lucide-react"],
+		files: [
+			{
+				path: "ui/input-otp.tsx",
+				type: "registry:ui",
+			},
+		],
+		cssVars: {
+			light: {
+				"--default": cssVars.light["--default"],
+			},
+			dark: {
+				"--default": cssVars.dark["--default"],
+			},
+			theme: {
+				"--color-default": cssVars.theme["--color-default"],
+			},
+		},
+		css: {
+			"@utility focus-field-ring": css["@utility focus-field-ring"],
+			"@utility invalid-field-ring": css["@utility invalid-field-ring"],
+			"@utility invalid-field-ring-focus":
+				css["@utility invalid-field-ring-focus"],
+		},
+	},
+	{
 		name: "item",
 		type: "registry:ui",
 		dependencies: ["@base-ui/react", "class-variance-authority"],

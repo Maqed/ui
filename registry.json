@@ -1064,6 +1064,42 @@
       }
     },
     {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "dependencies": [
+        "input-otp",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "light": {
+          "--default": "oklch(94% 0.001 286.375)"
+        },
+        "dark": {
+          "--default": "oklch(27.4% 0.006 286.033)"
+        },
+        "theme": {
+          "--color-default": "var(--default)"
+        }
+      },
+      "css": {
+        "@utility focus-field-ring": {
+          "@apply ring-2 ring-ring ring-offset-0 outline-none": {}
+        },
+        "@utility invalid-field-ring": {
+          "@apply outline-1 outline-destructive outline-solid": {}
+        },
+        "@utility invalid-field-ring-focus": {
+          "@apply ring-2 outline-none ring-destructive ring-offset-0": {}
+        }
+      }
+    },
+    {
       "name": "item",
       "type": "registry:ui",
       "dependencies": [
@@ -6080,6 +6116,155 @@
       "files": [
         {
           "path": "src/registry/new-york-v4/examples/date-picker-rtl.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/input-otp.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/input-otp-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-variants",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/input-otp.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/input-otp-variants.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-in-surface",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/field.json",
+        "https://herocn.dev/r/input-otp.json",
+        "https://herocn.dev/r/surface.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/input-otp-in-surface.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-separator",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/input-otp.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/input-otp-separator.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-disabled",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/input-otp.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/input-otp-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-controlled",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/input-otp.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/input-otp-controlled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-invalid",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/input-otp.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/input-otp-invalid.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-four-digits",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/input-otp.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/input-otp-four-digits.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-alphanumeric",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/input-otp.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/input-otp-alphanumeric.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-form",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/button.json",
+        "https://herocn.dev/r/card.json",
+        "https://herocn.dev/r/field.json",
+        "https://herocn.dev/r/input-otp.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/input-otp-form.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-rtl",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/field.json",
+        "https://herocn.dev/r/input-otp.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/input-otp-rtl.tsx",
           "type": "registry:example"
         }
       ]
