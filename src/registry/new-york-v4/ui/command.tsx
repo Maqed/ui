@@ -55,7 +55,10 @@ function CommandDialog({
 				<DialogDescription>{description}</DialogDescription>
 			</DialogHeader>
 			<DialogContent
-				className={cn("overflow-hidden rounded-2xl p-0 sm:max-w-xl", className)}
+				className={cn(
+					"top-1/3 -translate-y-1/3 overflow-hidden rounded-2xl p-0 sm:max-w-xl",
+					className,
+				)}
 				overlayVariant={overlayVariant}
 				showCloseButton={showCloseButton}
 			>
@@ -75,6 +78,9 @@ function CommandInput({
 			className="rounded-t-xl border-border border-b p-1 pb-1.5"
 		>
 			<InputGroup className="rounded-xl hover:not-focus-within:brightness-100 dark:hover:not-focus-within:brightness-100">
+				<InputGroupAddon align="inline-start">
+					<SearchIcon className="size-4" />
+				</InputGroupAddon>
 				<CommandPrimitive.Input
 					data-slot="command-input"
 					className={cn(
@@ -83,9 +89,6 @@ function CommandInput({
 					)}
 					{...props}
 				/>
-				<InputGroupAddon>
-					<SearchIcon className="size-4" />
-				</InputGroupAddon>
 			</InputGroup>
 		</div>
 	);
@@ -158,7 +161,7 @@ function CommandItem({
 		<CommandPrimitive.Item
 			data-slot="command-item"
 			className={cn(
-				"group/command-item relative flex cursor-default select-none items-center gap-2 rounded-lg px-3 py-2 text-sm outline-hidden data-[disabled=true]:pointer-events-none data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 data-[selected=true]:*:[svg]:text-foreground",
+				"group/command-item relative flex cursor-pointer select-none items-center gap-2 rounded-lg px-3 py-2 text-sm outline-hidden data-[disabled=true]:pointer-events-none data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground data-[disabled=true]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 data-[selected=true]:*:[svg]:text-foreground",
 				className,
 			)}
 			{...props}
