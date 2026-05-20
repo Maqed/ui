@@ -4414,4 +4414,95 @@ export const examples: Registry["items"] = [
 			},
 		],
 	},
+	{
+		name: "accordion-demo",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("accordion")],
+		files: [
+			{
+				path: "examples/accordion-demo.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "accordion-basic",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("accordion")],
+		files: [
+			{
+				path: "examples/accordion-basic.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "accordion-multiple",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("accordion")],
+		files: [
+			{
+				path: "examples/accordion-multiple.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "accordion-disabled",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("accordion")],
+		files: [
+			{
+				path: "examples/accordion-disabled.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "accordion-borders",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("accordion")],
+		files: [
+			{
+				path: "examples/accordion-borders.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "accordion-card",
+		type: "registry:example",
+		registryDependencies: [
+			getRegistryItemInstallationAlias("accordion"),
+			getRegistryItemInstallationAlias("card"),
+		],
+		files: [
+			{
+				path: "examples/accordion-card.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "accordion-surface",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("accordion")],
+		files: [
+			{
+				path: "examples/accordion-surface.tsx",
+				type: "registry:example",
+			},
+		],
+	},
+	{
+		name: "accordion-rtl",
+		type: "registry:example",
+		registryDependencies: [getRegistryItemInstallationAlias("accordion")],
+		files: [
+			{
+				path: "examples/accordion-rtl.tsx",
+				type: "registry:example",
+			},
+		],
+	},
 ];

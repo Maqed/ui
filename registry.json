@@ -441,6 +441,39 @@
       ]
     },
     {
+      "name": "accordion",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "light": {
+          "--default": "oklch(94% 0.001 286.375)",
+          "--surface": "white"
+        },
+        "dark": {
+          "--default": "oklch(27.4% 0.006 286.033)",
+          "--surface": "oklch(0.2103 0.0059 285.89)"
+        },
+        "theme": {
+          "--color-default": "var(--default)",
+          "--color-surface": "var(--surface)"
+        }
+      },
+      "css": {
+        "@utility focus-ring": {
+          "@apply ring-2 ring-ring ring-offset-2 ring-offset-background outline-none": {}
+        }
+      }
+    },
+    {
       "name": "avatar",
       "type": "registry:ui",
       "dependencies": [
@@ -6265,6 +6298,111 @@
       "files": [
         {
           "path": "src/registry/new-york-v4/examples/input-otp-rtl.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "accordion-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/accordion.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/accordion-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "accordion-basic",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/accordion.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/accordion-basic.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "accordion-multiple",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/accordion.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/accordion-multiple.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "accordion-disabled",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/accordion.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/accordion-disabled.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "accordion-borders",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/accordion.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/accordion-borders.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "accordion-card",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/accordion.json",
+        "https://herocn.dev/r/card.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/accordion-card.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "accordion-surface",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/accordion.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/accordion-surface.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "accordion-rtl",
+      "type": "registry:example",
+      "registryDependencies": [
+        "https://herocn.dev/r/accordion.json"
+      ],
+      "files": [
+        {
+          "path": "src/registry/new-york-v4/examples/accordion-rtl.tsx",
           "type": "registry:example"
         }
       ]

@@ -1,0 +1,146 @@
+---
+title: Accordion
+description: A vertically stacked set of interactive headings that each reveal a section of content.
+---
+
+<ComponentPreview name="accordion-demo" />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+<CodeBlockCommand command="npx shadcn@latest add @herocn/accordion" />
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps className="mb-0 pt-2">
+
+<Step>Install the following dependencies:</Step>
+
+<CodeBlockCommand command="npm install @base-ui/react" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource
+  name="accordion"
+  title="components/ui/accordion.tsx"
+/>
+
+<Step>Add the following css colors & utilities</Step>
+
+<RenderCSSShared
+  light={["--default", "--surface"]}
+  dark={["--default", "--surface"]}
+  theme={["--color-default", "--color-surface"]}
+  css={["@utility focus-ring"]}
+/>
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+```
+
+```tsx
+<Accordion defaultValue={["item-1"]}>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Composition
+
+Use the following composition to build an `Accordion`:
+
+```text
+Accordion
+├── AccordionItem
+│   ├── AccordionTrigger
+│   └── AccordionContent
+└── AccordionItem
+    ├── AccordionTrigger
+    └── AccordionContent
+```
+
+## Examples
+
+### Basic
+
+A basic accordion that shows one item at a time. The first item is open by default.
+
+<ComponentPreview name="accordion-basic" />
+
+### Surface
+
+Use the `variant="surface"` prop to render the accordion with a surface background.
+
+<ComponentPreview name="accordion-surface" />
+
+### Multiple
+
+Use the `multiple` prop to allow multiple items to be open at the same time.
+
+<ComponentPreview name="accordion-multiple" />
+
+### Disabled
+
+Use the `disabled` prop on `AccordionItem` to disable individual items.
+
+<ComponentPreview name="accordion-disabled" />
+
+### Borders
+
+Add `border` to the `Accordion` and `border-b last:border-b-0` to the `AccordionItem` to add borders to the items.
+
+<ComponentPreview name="accordion-borders" />
+
+### Card
+
+Wrap the `Accordion` in a `Card` component.
+
+<ComponentPreview name="accordion-card" />
+
+## RTL
+
+<ComponentPreview name="accordion-rtl" direction="rtl" />
+
+## API Reference
+
+### Accordion
+
+<ApiRefTable
+  props={[
+    {
+      name: "variant",
+      type: '"default" | "surface"',
+      defaultValue: '"default"',
+    }
+  ]}
+/>
+
+See the [Base UI](https://base-ui.com/react/components/accordion#api-reference) documentation for more information.

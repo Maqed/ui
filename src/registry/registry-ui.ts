@@ -40,6 +40,34 @@ export const ui: Registry["items"] = [
 		],
 	},
 	{
+		name: "accordion",
+		type: "registry:ui",
+		dependencies: ["@base-ui/react", "lucide-react"],
+		files: [
+			{
+				path: "ui/accordion.tsx",
+				type: "registry:ui",
+			},
+		],
+		cssVars: {
+			light: {
+				"--default": cssVars.light["--default"],
+				"--surface": cssVars.light["--surface"],
+			},
+			dark: {
+				"--default": cssVars.dark["--default"],
+				"--surface": cssVars.dark["--surface"],
+			},
+			theme: {
+				"--color-default": cssVars.theme["--color-default"],
+				"--color-surface": cssVars.theme["--color-surface"],
+			},
+		},
+		css: {
+			"@utility focus-ring": css["@utility focus-ring"],
+		},
+	},
+	{
 		name: "avatar",
 		type: "registry:ui",
 		dependencies: ["@base-ui/react"],

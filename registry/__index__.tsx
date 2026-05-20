@@ -48,6 +48,20 @@ export const Index: Record<string, any> = {
       return { default: mod.default || mod[exportName] }
     }),
   },
+  "accordion": {
+    name: "accordion",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [{
+      path: "src/registry/new-york-v4/ui/accordion.tsx",
+      type: "registry:ui"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/ui/accordion.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
   "avatar": {
     name: "avatar",
     type: "registry:ui",
@@ -5392,6 +5406,118 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(async () => {
       const mod = await import("@/registry/new-york-v4/examples/input-otp-rtl.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "accordion-demo": {
+    name: "accordion-demo",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/accordion.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/accordion-demo.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/accordion-demo.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "accordion-basic": {
+    name: "accordion-basic",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/accordion.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/accordion-basic.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/accordion-basic.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "accordion-multiple": {
+    name: "accordion-multiple",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/accordion.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/accordion-multiple.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/accordion-multiple.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "accordion-disabled": {
+    name: "accordion-disabled",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/accordion.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/accordion-disabled.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/accordion-disabled.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "accordion-borders": {
+    name: "accordion-borders",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/accordion.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/accordion-borders.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/accordion-borders.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "accordion-card": {
+    name: "accordion-card",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/accordion.json","https://herocn.dev/r/card.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/accordion-card.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/accordion-card.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "accordion-surface": {
+    name: "accordion-surface",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/accordion.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/accordion-surface.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/accordion-surface.tsx")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+  },
+  "accordion-rtl": {
+    name: "accordion-rtl",
+    type: "registry:example",
+    registryDependencies: ["https://herocn.dev/r/accordion.json"],
+    files: [{
+      path: "src/registry/new-york-v4/examples/accordion-rtl.tsx",
+      type: "registry:example"
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/new-york-v4/examples/accordion-rtl.tsx")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object') || item.name
       return { default: mod.default || mod[exportName] }
     }),
